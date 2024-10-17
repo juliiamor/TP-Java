@@ -4,7 +4,7 @@ import
 import java.util.List;
 
 public abstract class Artista {
-    private String identificador;
+    private String idt;
     private String nombre;
     private int cantIntegrantes;
     private String generoMusical;
