@@ -10,6 +10,5 @@ public abstract class Artista {
     private String generoMusical;
     private List<Disco> discos;
     private List<Recital> recitales;
-    private String fecha; //prueba
 }
 
