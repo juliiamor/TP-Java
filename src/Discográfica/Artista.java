@@ -63,26 +63,26 @@ public abstract class Artista {
         return listado;
     }
 
-    public void listadoCompleto(){
-        System.out.println("identificador = " + identificador);
-        System.out.println("nombre = " + nombre);
-        System.out.println("cantIntegrantes = " + cantIntegrantes);
-        System.out.println("generoMusical = " + generoMusical);
-        System.out.println(listaDiscos());
-        System.out.println(listaRecitales());
+    public String listadoCompleto(){
+        String listado="\nListado Completo"+" identificador = " + identificador+" nombre = " + nombre + " cantIntegrantes = " + cantIntegrantes+" generoMusical = " + generoMusical+listaDiscos()+listaRecitales();
+        return listado;
     }
 
-    public void listadoUnidadesVendidasPorDisco(){
+    public String listadoUnidadesVendidasPorDisco(){
         Iterator<Disco> iterator= discos.iterator();
         Disco disco;
-        System.out.println("Listado de Unidades vendidas por disco: ");
+        String listado;
+        listado="Listado de Unidades vendidas por disco: ";
         while(iterator.hasNext()){
             disco= iterator.next();
-            System.out.println(disco.toString());
+            listado+="\n"+disco.toString();
         }
+        
         if(!discos.isEmpty()){
-            System.out.println("Promedio de unidades vendidas por Disco: "+(unidadesDiscosVendidas()/discos.size()));
+            float promedio=unidadesDiscosVendidas()/discos.size();
+            listado+="Promedio de unidades vendidas por Disco: "+promedio;
         }
+        return listado;
     }
 
     public long unidadesDiscosVendidas(){
