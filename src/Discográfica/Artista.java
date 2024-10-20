@@ -30,14 +30,14 @@ public abstract class Artista {
     public String getGeneroMusical(){return generoMusical;}
 
     public void addDisco(Disco disco){
-        if(!discos.add(disco)){
-            discos.add(disco);
+        if (!discos.add(disco)) {
+            throw new IllegalArgumentException("El disco ya existe en la colección.");
         }
     }
 
     public void addRecital(Recital recital){
         if(!recitales.add(recital)){
-            recitales.add(recital);
+            throw new IllegalArgumentException("El recital ya existe en la colección.");
         }
     }
 
