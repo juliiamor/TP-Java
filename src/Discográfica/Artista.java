@@ -41,22 +41,80 @@ public abstract class Artista {
         }
     }
 
-    public void listadoUnidadesVendidasPorDisco(){
-        long acumulaVentas=0;
-        byte cantDiscos=0;
-        float promedio;
-        Iterator<Disco> iterator = discos.iterator();
-        System.out.println("\nListado de Ventas por disco en el Mes\n");
+    public String listaRecitales(){
+        String listado="\nRecitales";
+        Iterator<Recital> iterator = recitales.iterator();
+        Recital recital;
         while(iterator.hasNext()){
-            Disco disco = iterator.next();
-            System.out.println(disco.toString());
-            acumulaVentas+=disco.getUnidadesVendidasUltMes();
-            cantDiscos++;
+            recital = iterator.next();
+            listado+="\n"+recital.toString();
         }
-        if(cantDiscos!=0){
-            promedio=acumulaVentas/(float)cantDiscos;
-            System.out.println("\nPromedio de ventas en el mes: "+promedio);
+        return listado;
+    }
+
+    public String listaDiscos(){
+        String listado="\nDiscos";
+        Iterator<Disco> iterator = discos.iterator();
+        Disco disco;
+        while(iterator.hasNext()){
+            disco = iterator.next();
+            listado+="\n"+disco.toString();
+        }
+        return listado;
+    }
+
+    public void listadoCompleto(){
+        System.out.println("identificador = " + identificador);
+        System.out.println("nombre = " + nombre);
+        System.out.println("cantIntegrantes = " + cantIntegrantes);
+        System.out.println("generoMusical = " + generoMusical);
+        System.out.println(listaDiscos());
+        System.out.println(listaRecitales());
+    }
+
+    public void listadoUnidadesVendidasPorDisco(){
+        Iterator<Disco> iterator= discos.iterator();
+        Disco disco;
+        System.out.println("Listado de Unidades vendidas por disco: ");
+        while(iterator.hasNext()){
+            disco= iterator.next();
+            System.out.println(disco.toString());
+        }
+        if(!discos.isEmpty()){
+            System.out.println("Promedio de unidades vendidas por Disco: "+(unidadesDiscosVendidas()/discos.size()));
         }
     }
 
+    public long unidadesDiscosVendidas(){
+        long total=0;
+        Iterator<Disco> iterator= discos.iterator();
+        Disco disco;
+        while(iterator.hasNext()){
+            disco = iterator.next();
+            total+=disco.getUnidadesVendidasUltMes();
+        }
+        return total;
+    }
+
+    public long reproduccionesMensuales(){
+        long total=0;
+        Iterator<Disco> iterator= discos.iterator();
+        Disco disco;
+        while(iterator.hasNext()){
+            disco = iterator.next();
+            total+=disco.getReproduccionesDisco();
+        }
+        return total;
+    }
+
+    public float netoRecitales(){
+        float total=0;
+        Iterator<Recital> iterator = recitales.iterator();
+        Recital recital;
+        while(iterator.hasNext()){
+            recital = iterator.next();
+            total+=recital.getNeto();
+        }
+        return total;
+    }
 }
