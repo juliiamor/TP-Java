@@ -24,20 +24,20 @@ public class Disco {
     public long getReproduccionesDisco(){
         long total=0;
         Iterator<Cancion> iterator = canciones.iterator();
+        Cancion cancion;
         while(iterator.hasNext()){
-            Cancion cancion = iterator.next();
+            cancion = iterator.next();
             total+=cancion.getCantReprodUltMes();
         }
         return total;
     }
 
-
-
     public String toString(){
         String retorna= "Disco\nUnidades Vendidas en el último mes: "+unidadesVendidasUltMes+"\nCanciones del disco: \n";
         Iterator<Cancion> iterator = canciones.iterator();
+        Cancion cancion;
         while(iterator.hasNext()){
-            Cancion cancion = iterator.next();
+            cancion = iterator.next();
             retorna+="\n"+cancion.toString();
         }
         return retorna;
