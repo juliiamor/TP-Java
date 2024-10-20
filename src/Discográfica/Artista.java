@@ -79,7 +79,7 @@ public abstract class Artista {
         }
         
         if(!discos.isEmpty()){
-            float promedio=unidadesDiscosVendidas()/discos.size();
+            float promedio=unidadesDiscosVendidas()/(float)discos.size();
             listado+="Promedio de unidades vendidas por Disco: "+promedio;
         }
         return listado;
