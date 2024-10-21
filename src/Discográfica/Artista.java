@@ -5,13 +5,13 @@ import java.util.Iterator;
 import java.util.Set;
 
 public abstract class Artista {
-    private String identificador;
-    private String nombre;
+    private String identificador,nombre,generoMusical;
     private byte cantIntegrantes;
-    private String generoMusical;
     private Set<Disco> discos;
     private Set<Recital> recitales;
 
+
+    //Constructor
     public Artista(String identificador,String nombre,byte cantIntegrantes,String generoMusical){
         this.identificador=identificador;
         this.nombre=nombre;
@@ -63,23 +63,27 @@ public abstract class Artista {
         return listado;
     }
 
+    public String listadoDatos(){
+        String listado=" identificador = " + identificador+" nombre = " + nombre + " cantIntegrantes = " + cantIntegrantes+" generoMusical = " + generoMusical;
+        return listado;
+    }
+
     public String listadoCompleto(){
-        String listado="\nListado Completo"+" identificador = " + identificador+" nombre = " + nombre + " cantIntegrantes = " + cantIntegrantes+" generoMusical = " + generoMusical+listaDiscos()+listaRecitales();
+        String listado=listadoDatos()+listaDiscos()+listaRecitales();
         return listado;
     }
 
     public String listadoUnidadesVendidasPorDisco(){
         Iterator<Disco> iterator= discos.iterator();
         Disco disco;
-        String listado;
-        listado="Listado de Unidades vendidas por disco: ";
+        String listado="";
         while(iterator.hasNext()){
             disco= iterator.next();
             listado+="\n"+disco.toString();
         }
-        
+
         if(!discos.isEmpty()){
-            float promedio=unidadesDiscosVendidas()/(float)discos.size();
+            float promedio=unidadesDiscosVendidas()/discos.size();
             listado+="Promedio de unidades vendidas por Disco: "+promedio;
         }
         return listado;
