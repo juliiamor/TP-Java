@@ -49,50 +49,21 @@ public abstract class Artista implements Serializable {
         }
     }
 
-    public String listaRecitales(){
-        String listado="";
-        Iterator<Recital> iterator = recitales.iterator();
-        Recital recital;
-        while(iterator.hasNext()){
-            recital = iterator.next();
-            listado+=recital+"\n";
-        }
-        return listado;
-    }
-
-    public String listaDiscos(){
-        String listado="";
-        Iterator<Disco> iterator = discos.iterator();
+    public String toString(){
+        String listado="Identificador: "+identificador+" - Nombre: " + nombre + " - Integrantes: " + cantIntegrantes+" - Genero musical: " + generoMusical+"\n";
+        Iterator<Disco> iteratorDiscos = discos.iterator();
         Disco disco;
-        while(iterator.hasNext()){
-            disco = iterator.next();
+        listado+="Lista de Discos\n";
+        while(iteratorDiscos.hasNext()){
+            disco = iteratorDiscos.next();
             listado+=disco;
         }
-        return listado;
-    }
-
-    public String listadoDatos(){
-        String listado=identificador+" - " + nombre + " - " + cantIntegrantes+" - " + generoMusical;
-        return listado;
-    }
-
-    public String toString(){
-        String listado=listadoDatos()+"\n"+listaDiscos()+listaRecitales();
-        return listado;
-    }
-
-    public String listadoUnidadesVendidasPorDisco(){
-        Iterator<Disco> iterator= discos.iterator();
-        Disco disco;
-        String listado="";
-        while(iterator.hasNext()){
-            disco= iterator.next();
-            listado+="\n"+disco.toString();
-        }
-
-        if(!discos.isEmpty()){
-            float promedio=unidadesDiscosVendidas()/discos.size();
-            listado+="Promedio de unidades vendidas por Disco: "+promedio;
+        Iterator<Recital> iteratorRecitales = recitales.iterator();
+        Recital recital;
+        listado+="Lista de Recitales\n";
+        while(iteratorRecitales.hasNext()){
+            recital = iteratorRecitales.next();
+            listado+=recital+"\n";
         }
         return listado;
     }
@@ -143,6 +114,3 @@ public abstract class Artista implements Serializable {
         return total;
     }
 }
-
-
-
