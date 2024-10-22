@@ -50,4 +50,9 @@ public class Disco implements Serializable{
     public String toString(){
         return "Disco - Unidades vendidas "+unidadesVendidasUltMes+"\n"+listadoCanciones()+"\n";
     }
+
+    public boolean EsSencillo(){
+        return canciones.size()==1;
+    }
 }
+

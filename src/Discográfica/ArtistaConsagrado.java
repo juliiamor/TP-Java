@@ -8,3 +8,4 @@ public class ArtistaConsagrado extends Artista{
         return "ArtistaConsagrado - "+super.toString();
     }
 }
+

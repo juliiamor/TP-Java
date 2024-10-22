@@ -110,11 +110,12 @@ public abstract class Artista implements Serializable {
 
     public long reproduccionesMensuales(){
         long total=0;
+
         Iterator<Disco> iterator= discos.iterator();
         Disco disco;
         while(iterator.hasNext()){
             disco = iterator.next();
-            total+=disco.getReproduccionesDisco();
+            total+=(disco.EsSencillo())?disco.getReproduccionesDisco()*1.5:disco.getReproduccionesDisco();
         }
         return total;
     }
@@ -129,4 +130,19 @@ public abstract class Artista implements Serializable {
         }
         return total;
     }
+
+    public float LiquidacionUltMes(){ //falta terminar, solo tiene los recitales.
+        float total=0;
+        Iterator<Recital> iterator= recitales.iterator();
+        Recital recital;
+        while(iterator.hasNext()){
+            recital= iterator.next();
+            total+=recital.getNeto();
+        }
+
+        return total;
+    }
 }
+
+
+
