@@ -6,11 +6,17 @@ import java.util.Set;
 
 public class Disco implements Serializable{
     private long unidadesVendidasUltMes;
+    private String nombre;
     private Set<Cancion> canciones;
 
-    public Disco(long unidadesVendidasUltMes){
-        this.unidadesVendidasUltMes=unidadesVendidasUltMes;
-        canciones = new HashSet<>();
+    public Disco(long unidadesVendidasUltMes, String nombre, Set<Cancion> canciones) {
+        this.unidadesVendidasUltMes = unidadesVendidasUltMes;
+        this.nombre = nombre;
+        this.canciones = canciones;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public long getUnidadesVendidasUltMes(){return unidadesVendidasUltMes;}
