@@ -11,6 +11,14 @@ public class Cancion implements Serializable{
         this.duracion=duracion;
     }
 
+    public String getDuracion() {
+        return duracion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
     public long getCantReprodUltMes(){return cantReprodUltMes;}
 
     public String toString(){

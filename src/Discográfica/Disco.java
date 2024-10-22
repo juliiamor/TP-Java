@@ -15,6 +15,10 @@ public class Disco implements Serializable{
 
     public long getUnidadesVendidasUltMes(){return unidadesVendidasUltMes;}
 
+    public Set<Cancion> getCanciones() {
+        return canciones;
+    }
+
     public void addCancion(Cancion cancion){
         if(!canciones.add(cancion)){
             canciones.add(cancion);
