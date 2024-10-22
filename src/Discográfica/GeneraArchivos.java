@@ -5,9 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-public class GeneraArchivos {
-    public void generaArchivoTop10Canciones(String genero, List<Cancion> top10Canciones) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Top10Canciones_" + genero + ".txt"))) {
+public abstract class GeneraArchivos {
+    public static void generaArchivoTop10Canciones(String genero, List<Cancion> top10Canciones) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/Discográfica/Archivos/Top10Canciones_" + genero + ".txt"))) {
             writer.write("Top 10 canciones del género " + genero + ":\n");
             for (int i = 0; i < top10Canciones.size(); i++) {
                 Cancion cancion = top10Canciones.get(i);
@@ -18,13 +18,12 @@ public class GeneraArchivos {
         }
     }
 
-    //Método para generar el archivo de unidades vendidas
-    public void generaArchivoUnidadesVendidas(String artistaNombre, String contenido) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("UnidadesVendidas_" + artistaNombre + ".txt"))) {
+    //Metodo para generar el archivo de unidades vendidas
+    public static void generaArchivoUnidadesVendidas(String artistaNombre, String contenido) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/Discográfica/Archivos/UnidadesVendidas_" + artistaNombre + ".txt"))) {
             writer.write(contenido);
         } catch (IOException e) {
             System.out.println("Error al escribir el archivo de Unidades Vendidas: " + e.getMessage());
         }
     }
 }
-
