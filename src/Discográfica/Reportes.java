@@ -53,7 +53,7 @@ public abstract class Reportes {
         if (artistas.containsKey(identificador)) {
             Artista artista = artistas.get(identificador);
 
-            // Crea el archivo de texto para almacenar el reporte
+            //Crea el archivo de texto para almacenar el reporte
             try (BufferedWriter writer = new BufferedWriter(new FileWriter("UnidadesVendidas_" + artista.getNombre() + ".txt"))) {
                 // Encabezado en txt
                 String encabezado = "Reporte de Unidades Vendidas para " + artista.getNombre() + ":\n";
