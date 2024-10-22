@@ -13,7 +13,7 @@ public abstract class Reportes {
     public Reportes() {
     }
 
-    public static void Top10CancionesPorGenero(TreeMap<String, Artista> artistas,String genero) {
+    public void Top10CancionesPorGenero(TreeMap<String, Artista> artistas,String genero) {
         //Lista para almacenar canciones del genero dado
         List<Cancion> cancionesDelGenero = new ArrayList<>();
 
@@ -45,6 +45,56 @@ public abstract class Reportes {
             }
         } catch (IOException e) {
             System.out.println("Error al escribir el archivo: " + e.getMessage());
+        }
+    }
+
+    public void unidadesVendidas(String identificador, TreeMap<String, Artista> artistas) {
+        // Verifica si el artista existe
+        if (artistas.containsKey(identificador)) {
+            Artista artista = artistas.get(identificador);
+
+            // Crea el archivo de texto para almacenar el reporte
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("UnidadesVendidas_" + artista.getNombre() + ".txt"))) {
+                // Encabezado en txt
+                String encabezado = "Reporte de Unidades Vendidas para " + artista.getNombre() + ":\n";
+                writer.write(encabezado);
+                System.out.print(encabezado); // Imprime encabezado en pantalla
+
+                // Variables para calcular el total de unidades vendidas y el promedio
+                int totalUnidadesVendidas = 0;
+                int cantidadDiscos = artista.getDiscos().size();
+
+                // Recorre los discos del artista
+                for (Disco disco : artista.getDiscos()) {
+                    // Escribe el nombre del disco y sus unidades vendidas
+                    String discoInfo = "Disco: " + disco.getNombre() + " - Unidades vendidas: " + disco.getUnidadesVendidasUltMes() + "\n";
+                    writer.write(discoInfo);
+                    System.out.print(discoInfo); // Imprime info del disco en pantalla
+                    totalUnidadesVendidas += disco.getUnidadesVendidasUltMes(); // Suma las unidades vendidas
+                }
+
+                // Escribe el total de discos
+                String totalDiscos = "\nTotal de discos: " + cantidadDiscos + "\n";
+                writer.write(totalDiscos);
+                System.out.print(totalDiscos); //Imprime total de discos en pantalla
+
+                // Calcula y escribe el promedio de unidades vendidas
+                if (cantidadDiscos > 0) {
+                    double promedioUnidades = (double) totalUnidadesVendidas / cantidadDiscos;
+                    String promedio = "Promedio de unidades vendidas por disco: " + promedioUnidades + "\n";
+                    writer.write(promedio);
+                    System.out.print(promedio); // Imprime promedio en pantalla
+                } else {
+                    String noDiscos = "No hay discos para calcular el promedio.\n";
+                    writer.write(noDiscos);
+                    System.out.print(noDiscos);
+                }
+
+            } catch (IOException e) {
+                System.out.println("Error al escribir el archivo: " + e.getMessage());
+            }
+        } else {
+            throw new IllegalArgumentException("Artista no encontrado");
         }
     }
 }
