@@ -9,10 +9,10 @@ public class Disco implements Serializable{
     private String nombre;
     private Set<Cancion> canciones;
 
-    public Disco(long unidadesVendidasUltMes, String nombre, Set<Cancion> canciones) {
+    public Disco(long unidadesVendidasUltMes, String nombre) {
         this.unidadesVendidasUltMes = unidadesVendidasUltMes;
         this.nombre = nombre;
-        this.canciones = canciones;
+        this.canciones = new HashSet<>();
     }
 
     public String getNombre() {
@@ -42,8 +42,8 @@ public class Disco implements Serializable{
         return total;
     }
 
-    public String listadoCanciones(){
-        String listado="";
+    public String toString(){
+        String listado = "Disco - Nombre: "+nombre+" - Unidades Vendidas en el Mes: "+unidadesVendidasUltMes+"\n Lista de canciones\n";
         Iterator<Cancion> iterator = canciones.iterator();
         Cancion cancion;
         while(iterator.hasNext()){
@@ -53,12 +53,7 @@ public class Disco implements Serializable{
         return listado;
     }
 
-    public String toString(){
-        return "Disco - Unidades vendidas "+unidadesVendidasUltMes+"\n"+listadoCanciones()+"\n";
-    }
-
     public boolean EsSencillo(){
         return canciones.size()==1;
     }
 }
-
