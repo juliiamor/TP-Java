@@ -1,6 +1,6 @@
 package Discográfica;
-
-public class Cancion {
+import java.io.Serializable;
+public class Cancion implements Serializable{
     private String nombre;
     private String duracion; //string o que??? porq dice minutos y segundos, puede ser 3:23
     private long cantReprodUltMes;
@@ -14,6 +14,6 @@ public class Cancion {
     public long getCantReprodUltMes(){return cantReprodUltMes;}
 
     public String toString(){
-        return "Cancion: "+nombre+" Duracion: "+duracion+" Reproducciones en el Mes: "+cantReprodUltMes;
+        return "Cancion "+nombre+" - Duracion: "+duracion+" - Reproducciones en el Mes: "+cantReprodUltMes;
     }
 }
