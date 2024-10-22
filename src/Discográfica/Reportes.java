@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
 import java.util.Comparator;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public abstract class Reportes {
     public Reportes() {
@@ -32,5 +35,17 @@ public abstract class Reportes {
             Cancion cancion = top10Canciones.get(i);
             System.out.println((i + 1) + ". " + cancion.getNombre() + " - " + cancion.getCantReprodUltMes() + " reproducciones");
         }
+
+        //genera archivo con top 10
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Top10Canciones" + genero + ".txt"))) {
+            writer.write("Top 10 canciones del género " + genero + ":\n");
+            for (int i = 0; i < top10Canciones.size(); i++) {
+                Cancion cancion = top10Canciones.get(i);
+                writer.write((i + 1) + ". " + cancion.getNombre() + " - " + cancion.getCantReprodUltMes() + " reproducciones\n");
+            }
+        } catch (IOException e) {
+            System.out.println("Error al escribir el archivo: " + e.getMessage());
+        }
     }
 }
+
