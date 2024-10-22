@@ -1,10 +1,10 @@
 package Discográfica;
-
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public abstract class Artista {
+public abstract class Artista implements Serializable {
     private String identificador,nombre,generoMusical;
     private byte cantIntegrantes;
     private Set<Disco> discos;
@@ -29,6 +29,14 @@ public abstract class Artista {
 
     public String getGeneroMusical(){return generoMusical;}
 
+    public Set<Disco> getDiscos() {
+        return discos;
+    }
+
+    public Set<Recital> getRecitales() {
+        return recitales;
+    }
+
     public void addDisco(Disco disco){
         if (!discos.add(disco)) {
             throw new IllegalArgumentException("El disco ya existe en la colección.");
@@ -42,34 +50,34 @@ public abstract class Artista {
     }
 
     public String listaRecitales(){
-        String listado="\nRecitales";
+        String listado="";
         Iterator<Recital> iterator = recitales.iterator();
         Recital recital;
         while(iterator.hasNext()){
             recital = iterator.next();
-            listado+="\n"+recital.toString();
+            listado+=recital+"\n";
         }
         return listado;
     }
 
     public String listaDiscos(){
-        String listado="\nDiscos";
+        String listado="";
         Iterator<Disco> iterator = discos.iterator();
         Disco disco;
         while(iterator.hasNext()){
             disco = iterator.next();
-            listado+="\n"+disco.toString();
+            listado+=disco;
         }
         return listado;
     }
 
     public String listadoDatos(){
-        String listado=" identificador = " + identificador+" nombre = " + nombre + " cantIntegrantes = " + cantIntegrantes+" generoMusical = " + generoMusical;
+        String listado=identificador+" - " + nombre + " - " + cantIntegrantes+" - " + generoMusical;
         return listado;
     }
 
-    public String listadoCompleto(){
-        String listado=listadoDatos()+listaDiscos()+listaRecitales();
+    public String toString(){
+        String listado=listadoDatos()+"\n"+listaDiscos()+listaRecitales();
         return listado;
     }
 
