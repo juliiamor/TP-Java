@@ -1,10 +1,10 @@
 package Discográfica;
-
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class Disco {
+public class Disco implements Serializable{
     private long unidadesVendidasUltMes;
     private Set<Cancion> canciones;
 
@@ -32,15 +32,18 @@ public class Disco {
         return total;
     }
 
-    public String toString(){
-        String retorna= "Disco\nUnidades Vendidas en el último mes: "+unidadesVendidasUltMes+"\nCanciones del disco: \n";
+    public String listadoCanciones(){
+        String listado="";
         Iterator<Cancion> iterator = canciones.iterator();
         Cancion cancion;
         while(iterator.hasNext()){
-            cancion = iterator.next();
-            retorna+="\n"+cancion.toString();
+            cancion=iterator.next();
+            listado+=cancion+"\n";
         }
-        return retorna;
+        return listado;
     }
 
+    public String toString(){
+        return "Disco - Unidades vendidas "+unidadesVendidasUltMes+"\n"+listadoCanciones()+"\n";
+    }
 }
