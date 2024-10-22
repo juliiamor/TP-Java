@@ -1,6 +1,9 @@
 package Discográfica;
 
-public class Recital {
+
+import java.io.Serializable;
+
+public class Recital implements Serializable {
     private String fecha;
     private float recaudacion;
     private float costosProduccion;
@@ -14,6 +17,6 @@ public class Recital {
     public float getNeto(){return recaudacion-costosProduccion;}
 
     public String toString() {
-        return "Fecha: "+fecha+" Recaudacion: "+recaudacion+" Costos de Produccion: "+costosProduccion+" Ingresos netos: "+getNeto();
+        return "Recital - Fecha - "+fecha+" - Recaudacion - "+recaudacion+" - Costos de Produccion - "+costosProduccion;
     }
 }
