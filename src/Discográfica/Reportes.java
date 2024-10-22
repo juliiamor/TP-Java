@@ -5,18 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
 import java.util.Comparator;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public abstract class Reportes {
-    private GeneraArchivos generaArchivos;
 
-    public Reportes(GeneraArchivos generaArchivos) {
-        this.generaArchivos = generaArchivos;
+    public Reportes() {
     }
 
-    public void Top10CancionesPorGenero(TreeMap<String, Artista> artistas, String genero) {
+    public static void Top10CancionesPorGenero(TreeMap<String, Artista> artistas, String genero) {
         // Lista para almacenar canciones del género dado
         List<Cancion> cancionesDelGenero = new ArrayList<>();
 
@@ -40,10 +35,10 @@ public abstract class Reportes {
             System.out.println((i + 1) + ". " + cancion.getNombre() + " - " + cancion.getCantReprodUltMes() + " reproducciones");
         }
 
-        generaArchivos.generaArchivoTop10Canciones(genero, top10Canciones);
+        GeneraArchivos.generaArchivoTop10Canciones(genero, top10Canciones);
     }
 
-    public void unidadesVendidas(String identificador, TreeMap<String, Artista> artistas) {
+    public static void unidadesVendidas(String identificador, TreeMap<String, Artista> artistas) {
         // Verifica si el artista existe
         if (artistas.containsKey(identificador)) {
             Artista artista = artistas.get(identificador);
@@ -53,7 +48,7 @@ public abstract class Reportes {
             contenido.append("Reporte de Unidades Vendidas para ").append(artista.getNombre()).append(":\n");
 
             // Variables para calcular el total de unidades vendidas y el promedio
-            int totalUnidadesVendidas = 0;
+            long totalUnidadesVendidas = artista.unidadesDiscosVendidas(); //Utiliza el metodo ya existente que calcula el total de unidades de discos vendidos
             int cantidadDiscos = artista.getDiscos().size();
 
             // Recorre los discos del artista
@@ -62,11 +57,10 @@ public abstract class Reportes {
                 String discoInfo = "Disco: " + disco.getNombre() + " - Unidades vendidas: " + disco.getUnidadesVendidasUltMes() + "\n";
                 contenido.append(discoInfo);
                 System.out.print(discoInfo); // Imprime info del disco en pantalla
-                totalUnidadesVendidas += disco.getUnidadesVendidasUltMes(); // Suma las unidades vendidas
             }
 
             // Escribe el total de discos
-            String totalDiscos = "\nTotal de discos: " + cantidadDiscos + "\n";
+            String totalDiscos = "\nTotal de discos: " + totalUnidadesVendidas + "\n";
             contenido.append(totalDiscos);
             System.out.print(totalDiscos); // Imprime total de discos en pantalla
 
@@ -83,11 +77,10 @@ public abstract class Reportes {
             }
 
             // Llama al método para generar el archivo con las unidades vendidas
-            generaArchivos.generaArchivoUnidadesVendidas(artista.getNombre(), contenido.toString());
+            GeneraArchivos.generaArchivoUnidadesVendidas(artista.getNombre(), contenido.toString());
 
         } else {
             throw new IllegalArgumentException("Artista no encontrado");
         }
     }
 }
-
