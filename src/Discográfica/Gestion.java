@@ -2,8 +2,8 @@ package Discográfica;
 
 import java.util.Iterator;
 import java.util.TreeMap;
-
-public class Gestion {
+import java.io.Serializable;
+public class Gestion implements Serializable {
     private TreeMap<String, Artista> artistas;
 
     //constructor
@@ -60,7 +60,7 @@ public class Gestion {
         String listado;
         if(artistas.containsKey(identificador)){
             Artista artista = artistas.get(identificador);
-            listado="Listado de Unidades vendidas por disco: "+artista.listadoDatos()+artista.listadoUnidadesVendidasPorDisco();
+            listado="Listado de Unidades vendidas por disco: \n"+artista.listadoDatos()+artista.listadoUnidadesVendidasPorDisco();
         }else
             throw new IllegalArgumentException("Artista no encontrado");
         return listado;
@@ -84,13 +84,21 @@ public class Gestion {
     //Informe completo de los datos de cada artista de la Discografica
 
     public String toString(){
-        String listado="Lista de Artistas de la Discografica";
         Iterator<Artista> iterator = artistas.values().iterator();
         Artista artista;
+        String listado = "";
         while(iterator.hasNext()){
-            artista = iterator.next();
-            listado+="\n"+artista.toString();
+            artista=iterator.next();
+            listado+=artista;
         }
         return listado;
+    }
+
+    public void cargaDatos(){
+        LecturaDeArchivos.cargarArtistas(artistas);
+    }
+
+    public void guardaDatos(){
+        LecturaDeArchivos.guardarArtistas(artistas);
     }
 }
