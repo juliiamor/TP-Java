@@ -22,28 +22,6 @@ public class Gestion implements Serializable {
         }
     }
 
-    //agrega un disco verificando que el artista exista
-
-    public void addDisco(String identificador,Disco disco){
-        if(artistas.containsKey(identificador)){
-            Artista artista = artistas.get(identificador);
-            artista.addDisco(disco);
-        }else{
-            throw new IllegalArgumentException("Artista no encontrado");
-        }
-    }
-
-    //agrega un recital verificando que el artista exista
-
-    public void addRecital(String identificador,Recital recital){
-        if(artistas.containsKey(identificador)){
-            Artista artista = artistas.get(identificador);
-            artista.addRecital(recital);
-        }else{
-            throw new IllegalArgumentException("Artista no encontrado");
-        }
-    }
-
     //elimina un artista verificando que este exista
 
     public void removeArtista(String identificador){
@@ -54,31 +32,8 @@ public class Gestion implements Serializable {
         }
     }
 
-    //Reporte de detalles de unidades vendidas para cada disco de un artista, informando el promedio de unidades vendidas por disco
-
-    public String listadoUnidadesVendidasPorDisco(String identificador){
-        String listado;
-        if(artistas.containsKey(identificador)){
-            Artista artista = artistas.get(identificador);
-            listado="Listado de Unidades vendidas por disco: \n"+artista.listadoDatos()+artista.listadoUnidadesVendidasPorDisco();
-        }else
-            throw new IllegalArgumentException("Artista no encontrado");
-        return listado;
-    }
-
-    //Consulta datos completos de artistas de x numero de integrantes y segun el genero del artista
-
-    public String listadoCompletoPorGeneroIntegrantes(String genero,byte integrantes){
-        String listado="Lista de Artistas del genero musical "+genero+" de "+integrantes+" Integrantes";
-        Iterator<Artista> iterator = artistas.values().iterator();
-        Artista artista;
-        while(iterator.hasNext()){
-            artista= iterator.next();
-            if(artista.getCantIntegrantes()==integrantes && artista.getGeneroMusical().equals(genero)){
-                listado+= artista.toString();
-            }
-        }
-        return listado;
+    public TreeMap<String, Artista> getArtistas() {
+        return artistas;
     }
 
     //Informe completo de los datos de cada artista de la Discografica
@@ -89,16 +44,8 @@ public class Gestion implements Serializable {
         String listado = "";
         while(iterator.hasNext()){
             artista=iterator.next();
-            listado+=artista;
+            listado+=artista+"\n";
         }
         return listado;
-    }
-
-    public void cargaDatos(){
-        LecturaDeArchivos.cargarArtistas(artistas);
-    }
-
-    public void guardaDatos(){
-        LecturaDeArchivos.guardarArtistas(artistas);
     }
 }
