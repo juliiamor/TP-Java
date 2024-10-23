@@ -5,14 +5,15 @@ import java.util.Iterator;
 import java.util.Set;
 
 public abstract class Artista implements Serializable {
-    private String identificador,nombre,generoMusical;
+    private String identificador,nombre;
+    private GeneroMusical generoMusical;
     private byte cantIntegrantes;
     private Set<Disco> discos;
     private Set<Recital> recitales;
 
 
     //Constructor
-    public Artista(String identificador,String nombre,byte cantIntegrantes,String generoMusical){
+    public Artista(String identificador,String nombre,byte cantIntegrantes,GeneroMusical generoMusical){
         this.identificador=identificador;
         this.nombre=nombre;
         this.cantIntegrantes=cantIntegrantes;
@@ -27,7 +28,7 @@ public abstract class Artista implements Serializable {
 
     public byte getCantIntegrantes(){return cantIntegrantes;}
 
-    public String getGeneroMusical(){return generoMusical;}
+    public GeneroMusical getGeneroMusical(){return generoMusical;}
 
     public Set<Disco> getDiscos() {
         return discos;

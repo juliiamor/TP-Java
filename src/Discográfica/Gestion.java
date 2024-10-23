@@ -3,6 +3,9 @@ package Discográfica;
 import java.util.Iterator;
 import java.util.TreeMap;
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+
 public class Gestion implements Serializable {
     private TreeMap<String, Artista> artistas;
 
@@ -31,6 +34,19 @@ public class Gestion implements Serializable {
             throw new IllegalArgumentException("Artista no encontrado");
         }
     }
+
+    // metodo para filtrar artistas x cant de integrantes y genero
+    public List<Artista> filtrarArtistas(byte cantidadIntegrantes, GeneroMusical genero) {
+        List<Artista> artistasFiltrados = new ArrayList<>();
+
+        for (Artista artista : artistas.values()) {
+            if (artista.getCantIntegrantes() == cantidadIntegrantes && artista.getGeneroMusical() == genero) {
+                artistasFiltrados.add(artista);
+            }
+        }
+        return artistasFiltrados;
+    } //se puede usar solo un filtro para buscar o tienen que ser si o si con los dos???. Preguntar profe
+
 
     public TreeMap<String, Artista> getArtistas() {
         return artistas;
