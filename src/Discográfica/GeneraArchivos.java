@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.List;
 
 public abstract class GeneraArchivos {
-    public static void generaArchivoTop10Canciones(String genero, List<Cancion> top10Canciones) {
+    public static void generaArchivoTop10Canciones(GeneroMusical genero, List<Cancion> top10Canciones) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/Discográfica/Archivos/Top10Canciones_" + genero + ".txt"))) {
             writer.write("Top 10 canciones del género " + genero + ":\n");
             for (int i = 0; i < top10Canciones.size(); i++) {

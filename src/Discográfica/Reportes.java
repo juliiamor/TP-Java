@@ -11,12 +11,12 @@ public abstract class Reportes {
     public Reportes() {
     }
 
-    public static void Top10CancionesPorGenero(TreeMap<String, Artista> artistas, String genero) {
+    public static void Top10CancionesPorGenero(TreeMap<String, Artista> artistas,GeneroMusical genero) {
         // Lista para almacenar canciones del género dado
         List<Cancion> cancionesDelGenero = new ArrayList<>();
 
         for (Artista artista : artistas.values()) {
-            if (artista.getGeneroMusical().equalsIgnoreCase(genero)) {
+            if (artista.getGeneroMusical()== genero) {
                 for (Disco disco : artista.getDiscos()) {
                     cancionesDelGenero.addAll(disco.getCanciones());
                 }

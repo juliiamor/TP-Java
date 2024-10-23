@@ -52,6 +52,11 @@ public class Gestion implements Serializable {
         return artistas;
     }
 
+    //metodo para buscar artistas x id
+    public Artista filtraArtistaPorID(String identificador){
+        return artistas.get(identificador); //si no encuentra devuelve null
+    }
+
     //Informe completo de los datos de cada artista de la Discografica
 
     public String toString(){

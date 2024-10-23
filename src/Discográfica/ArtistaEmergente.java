@@ -1,6 +1,6 @@
 package Discográfica;
 public class ArtistaEmergente extends Artista{
-    public ArtistaEmergente(String identificador,String nombre,byte cantIntegrantes,String generoMusical){
+    public ArtistaEmergente(String identificador,String nombre,byte cantIntegrantes,GeneroMusical generoMusical){
         super(identificador, nombre, cantIntegrantes, generoMusical);
     }
 
