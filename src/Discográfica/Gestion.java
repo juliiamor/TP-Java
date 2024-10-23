@@ -70,67 +70,36 @@ public class Gestion implements Serializable {
         return listado;
     }
 
-    public void facturacionUltMes(String identificador){
+    public StringBuilder facturacionUltMes(String identificador){
         Artista artista = artistas.get(identificador);
         float total=0, aux;
-        System.out.println("Descripcion \t\t\t Total recaudado");
+        StringBuilder listado = new StringBuilder();
+
         if (artista!=null){
+            listado.append("Descripcion \t\t\t Total recaudado").append("\n");
             aux=artista.netoRecitalUltMes();
-            System.out.println("Recitales \t\t\t "+aux);
+            listado.append("Recitales \t\t\t ").append(aux).append("\n");
             total+=aux;
+
             aux=artista.totalDiscosVendidos()*100;//no se si cada disco tiene el mismo precio o si tiene un costo
-            System.out.println("Discos vendidos \t\t\t"+aux);
+            listado.append("Discos vendidos \t\t\t").append(aux).append("\n");
             total+=aux;
+
             aux=artista.reproduccionesUltMes()*0.85f;//cualquier cosa se cambia el precio del disco y de la reproduccion
-            System.out.println("Reproducciones \t\t\t"+aux);
+            listado.append("Reproducciones \t\t\t").append(aux).append("\n");
+            total+=aux;
+
             if (artista instanceof ArtistaConsagrado){
                 aux=total*0.2f;
-                System.out.println("Regalias (20%) \t\t\t-"+aux);
+                listado.append("Regalias (20%) \t\t\t-").append(aux).append("\n");
             } else{
                 aux=total*0.35f;
-                System.out.println("Regalias (35%) \t\t\t-"+aux);
+                listado.append("Regalias (35%) \t\t\t-").append(aux).append("\n");
             }
             total-=aux;
-            System.out.println("Total: \t\t\t"+total);
-        } else{
-            System.out.println("No se encontro al artista");
+            listado.append("Total: \t\t\t").append(total).append("\n");
+            listado.append("No se encontro al artista");
         }
+        return listado;
     }
 }
-/*
-    public void facturacionUltMes(String identificador){
-
-        Artista artista = artistas.get(identificador);
-        float total=0;
-        System.out.println("Descripcion \t\t\t Total recaudado");
-        if (artista!=null){
-            System.out.println("Recitales \t\t\t "+artista.netoRecitalUltMes());
-            System.out.println("Discos vendidos \t\t\t"+artista.totalDiscosVendidos()*100);
-            total+= artista.netoRecitalUltMes();
-            total+=artista.totalDiscosVendidos()*100;
-        } else{
-            System.out.println("No se encontro al artista");
-        }
-    }
-
-
-    public void facturacionUltMes(String identificador){
-        Artista artista = artistas.get(identificador);
-        float total=0, nrum, tdv;
-        System.out.println("Descripcion \t\t\t Total recaudado");
-        if (artista!=null){
-            nrum=artista.netoRecitalUltMes();
-            System.out.println("Recitales \t\t\t "+nrum);
-            tdv=artista.totalDiscosVendidos()*100;
-            System.out.println("Discos vendidos \t\t\t"+tdv);
-            total+=tdv;
-            total+=nrum;
-
-        } else{
-            System.out.println("No se encontro al artista");
-        }
-    }
-
-
-
- */
