@@ -10,7 +10,6 @@ public class Main {
         Gestion gestion = new Gestion();
 
         cargarDatosPrueba(gestion);
-
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -65,5 +64,6 @@ public class Main {
         // Añadir artistas a la colección
         gestion.addArtista(artista1);
         gestion.addArtista(artista2);
+
     }
 }

@@ -70,36 +70,38 @@ public class Gestion implements Serializable {
         return listado;
     }
 
-    public StringBuilder facturacionUltMes(String identificador){
+    public StringBuilder facturacionUltMes(String identificador) {
         Artista artista = artistas.get(identificador);
-        float total=0, aux;
+        float total = 0, aux;
         StringBuilder listado = new StringBuilder();
 
-        if (artista!=null){
-            listado.append("Descripcion \t\t\t Total recaudado").append("\n");
-            aux=artista.netoRecitalUltMes();
+        if (artista != null) {
+            listado.append("Descripción \t\t\t Total recaudado").append("\n");
+            aux = artista.netoRecitalUltMes();
             listado.append("Recitales \t\t\t ").append(aux).append("\n");
-            total+=aux;
+            total += aux;
 
-            aux=artista.totalDiscosVendidos()*100;//no se si cada disco tiene el mismo precio o si tiene un costo
+            aux = artista.totalDiscosVendidos() * 100; // no se si cada disco tiene el mismo precio o si tiene un costo
             listado.append("Discos vendidos \t\t\t").append(aux).append("\n");
-            total+=aux;
+            total += aux;
 
-            aux=artista.reproduccionesUltMes()*0.85f;//cualquier cosa se cambia el precio del disco y de la reproduccion
+            aux = artista.reproduccionesUltMes() * 0.85f; // cualquier cosa se cambia el precio del disco y de la reproduccion
             listado.append("Reproducciones \t\t\t").append(aux).append("\n");
-            total+=aux;
+            total += aux;
 
-            if (artista instanceof ArtistaConsagrado){
-                aux=total*0.2f;
-                listado.append("Regalias (20%) \t\t\t-").append(aux).append("\n");
-            } else{
-                aux=total*0.35f;
-                listado.append("Regalias (35%) \t\t\t-").append(aux).append("\n");
+            if (artista instanceof ArtistaConsagrado) {
+                aux = total * 0.2f;
+                listado.append("Regalías (20%) \t\t\t-").append(aux).append("\n");
+            } else {
+                aux = total * 0.35f;
+                listado.append("Regalías (35%) \t\t\t-").append(aux).append("\n");
             }
-            total-=aux;
+            total -= aux;
             listado.append("Total: \t\t\t").append(total).append("\n");
-            listado.append("No se encontro al artista");
+        } else {
+            listado.append("No se encontró al artista");
         }
+        System.out.println("Contenido del listado generado: \n" + listado.toString());
         return listado;
     }
 }
