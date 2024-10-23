@@ -1,7 +1,7 @@
 package Discográfica;
 
 import javax.swing.*;
-
+import java.awt.*;
 
 public class Pantalla extends JFrame {   // Hereda de JFrame
 
@@ -26,10 +26,34 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         add(ventana);
         this.setSize(1000, 700);
 
+        // Acción del botón facturar
+        facturarButton.addActionListener(e -> {
+            String identificador = textField1.getText().trim();
+            mostrarLiquidacion(identificador);
+        });
     }
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
+    }
+
+    public void mostrarLiquidacion(String identificador) {
+        StringBuilder liquidacion = gestion.facturacionUltMes(identificador);
+
+        if (liquidacion.toString().contains("No se encontró al artista")) {
+            JOptionPane.showMessageDialog(this, liquidacion.toString());
+            return;
+        }
+
+        JTextArea textArea = new JTextArea(liquidacion.toString());
+        textArea.setEditable(false);
+        textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
+
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        scrollPane.setPreferredSize(new Dimension(600, 400));
+
+        // Mostrar la ventana con la liquidación
+        JOptionPane.showMessageDialog(this, scrollPane, "Liquidación del Artista", JOptionPane.INFORMATION_MESSAGE);
     }
 
 }

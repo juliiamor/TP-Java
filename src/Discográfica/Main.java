@@ -10,6 +10,8 @@ public class Main {
         Gestion gestion = new Gestion();
 
         cargarDatosPrueba(gestion);
+        //gestion.facturacionUltMes("001");
+
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
