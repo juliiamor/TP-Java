@@ -46,7 +46,6 @@ public class Pantalla extends JFrame{   //Hereda de JFrame
             float liquidacion = artista.LiquidacionUltMes();
             String mensaje = "Liquidación para el artista " + artista.getNombre() + ": $" + liquidacion;
             JOptionPane.showMessageDialog(this, mensaje); // Muestra la liquidación en una ventana emergente
-            textField2.setText("Liquidación: $" + liquidacion); // Actualiza un campo de texto con la liquidación
         } else {
             JOptionPane.showMessageDialog(this, "Artista no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
         }
