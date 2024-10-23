@@ -1,8 +1,12 @@
 package Discográfica;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 
 public abstract class Artista implements Serializable {
     private String identificador,nombre;
@@ -80,7 +84,7 @@ public abstract class Artista implements Serializable {
         return total;
     }
 
-    public long reproduccionesMensuales(){
+    public long reproduccionesUltMes(){
         long total=0;
 
         Iterator<Disco> iterator= discos.iterator();
@@ -92,26 +96,30 @@ public abstract class Artista implements Serializable {
         return total;
     }
 
-    public float netoRecitales(){
+    public float netoRecitalUltMes() {
         float total=0;
-        Iterator<Recital> iterator = recitales.iterator();
-        Recital recital;
-        while(iterator.hasNext()){
-            recital = iterator.next();
-            total+=recital.getNeto();
+        LocalDate ultMes = LocalDate.now().minusMonths(1);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+        Iterator<Recital>iterator=recitales.iterator();
+        while (iterator.hasNext()){
+            Recital recital=iterator.next();
+            LocalDate fechaRecital = LocalDate.parse(recital.getFecha(), formatter);
+            if (!fechaRecital.isBefore(ultMes) && !fechaRecital.isAfter(LocalDate.now())){
+                total+=recital.getNeto();
+            }
         }
         return total;
     }
 
-    public float LiquidacionUltMes(){ //falta terminar, solo tiene los recitales.
-        float total=0;
-        Iterator<Recital> iterator= recitales.iterator();
-        Recital recital;
+    public int totalDiscosVendidos(){
+        int total=0;
+        Disco disco;
+        Iterator <Disco>iterator=discos.iterator();
         while(iterator.hasNext()){
-            recital= iterator.next();
-            total+=recital.getNeto();
+            disco=iterator.next();
+            total+=disco.getUnidadesVendidasUltMes();
         }
-
         return total;
     }
 }

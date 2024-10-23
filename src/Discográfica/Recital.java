@@ -16,6 +16,7 @@ public class Recital implements Serializable {
 
     public float getNeto(){return recaudacion-costosProduccion;}
 
+    public String getFecha(){return fecha;}
     public String toString() {
         return "Recital - Fecha - "+fecha+" - Recaudacion - "+recaudacion+" - Costos de Produccion - "+costosProduccion;
     }
