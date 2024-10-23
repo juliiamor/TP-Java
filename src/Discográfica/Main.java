@@ -1,7 +1,7 @@
 package Discográfica;
+import IGU.Pantalla;
+
 import javax.swing.*;
-
-
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -20,8 +20,6 @@ public class Main {
                 panta.setLocationRelativeTo(null);
             }
         });
-
-
     }
     //puse datos para ir probando mientras no tenemos los archivos
     private static void cargarDatosPrueba(Gestion gestion) {

@@ -76,7 +76,8 @@ public class Gestion implements Serializable {
         StringBuilder listado = new StringBuilder();
 
         if (artista != null) {
-            listado.append("Descripción \t\t\t Total recaudado").append("\n");
+            listado.append("Artista: ").append(artista.getNombre());
+            listado.append("\nDescripción \t\t\t Total recaudado").append("\n");
             aux = artista.netoRecitalUltMes();
             listado.append("Recitales \t\t\t ").append(aux).append("\n");
             total += aux;

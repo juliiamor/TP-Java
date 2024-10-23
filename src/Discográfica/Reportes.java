@@ -1,5 +1,7 @@
 package Discográfica;
 
+import Archivos.GeneraArchivos;
+
 import java.util.TreeMap;
 import java.util.ArrayList;
 import java.util.List;
