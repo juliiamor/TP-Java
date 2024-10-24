@@ -45,8 +45,27 @@ public class Gestion implements Serializable {
             }
         }
         return artistasFiltrados;
-    } //se puede usar solo un filtro para buscar o tienen que ser si o si con los dos???. Preguntar profe
+    }
+    //filtra solo por cant de integrantes
+    public List<Artista> filtrarArtistas(byte cantidadIntegrantes){
+        List<Artista> artistasFiltrados = new ArrayList<>();
 
+        for(Artista artista : artistas.values()){
+            if(artista.getCantIntegrantes()== cantidadIntegrantes){
+                artistasFiltrados.add(artista);
+            }
+        }
+    }
+    //filtra solo por genero
+    public List<Artista> filtrarArtistas(GeneroMusical genero){
+        List<Artista> artistasFiltrados = new ArrayList<>();
+
+        for(Artista artista : artistas.values()){
+            if(artista.getGeneroMusical()== genero){
+                artistasFiltrados.add(artista);
+            }
+        }
+    }
 
     public TreeMap<String, Artista> getArtistas() {
         return artistas;
@@ -83,11 +102,11 @@ public class Gestion implements Serializable {
             total += aux;
 
             aux = artista.totalDiscosVendidos() * 100; // no se si cada disco tiene el mismo precio o si tiene un costo
-            listado.append("Discos vendidos \t\t\t").append(aux).append("\n");
+            listado.append("Discos \t\t\t\t ").append(aux).append("\n");
             total += aux;
 
-            aux = artista.reproduccionesUltMes() * 0.85f; // cualquier cosa se cambia el precio del disco y de la reproduccion
-            listado.append("Reproducciones \t\t\t").append(aux).append("\n");
+            aux = artista.reproduccionesUltMes() * 0.1f; // cualquier cosa se cambia el precio del disco y de la reproduccion
+            listado.append("Reproducciones \t\t\t ").append(aux).append("\n");
             total += aux;
 
             if (artista instanceof ArtistaConsagrado) {
@@ -98,7 +117,7 @@ public class Gestion implements Serializable {
                 listado.append("Regalías (35%) \t\t\t-").append(aux).append("\n");
             }
             total -= aux;
-            listado.append("Total: \t\t\t").append(total).append("\n");
+            listado.append("Total: \t\t\t\t ").append(total).append("\n");
         } else {
             listado.append("No se encontró al artista");
         }

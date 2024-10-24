@@ -48,10 +48,10 @@ public class Main {
         disco3.addCancion(cancion7);
 
         artista1.addDisco(disco1);
-        artista1.addDisco(disco2);
+        artista2.addDisco(disco2);
         artista2.addDisco(disco3);
 
-        Recital recital1 = new Recital("23-04-2020", 3647, 2000);
+        Recital recital1 = new Recital("23-10-2024", 3647, 2000);
         Recital recital2 = new Recital("20-10-2022", 2000, 1500);
         Recital recital3 = new Recital("12-02-2024", 5083, 3000);
         Recital recital4 = new Recital("02-11-2024", 6000, 3000);
