@@ -117,7 +117,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             JOptionPane.showMessageDialog(this,scrollPane,titulo,JOptionPane.INFORMATION_MESSAGE);
 
         }catch (IllegalArgumentException e){
-            JOptionPane.showMessageDialog(this, "El artista ingresado no existe", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "No hay artistas registrados aún con ese genero", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
