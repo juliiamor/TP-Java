@@ -1,6 +1,5 @@
 Reporte de Unidades Vendidas para Artista 1:
-Disco: red - Unidades vendidas: 2877
 Disco: Fearless - Unidades vendidas: 5000
 
-Total de discos: 7877
-Promedio de unidades vendidas por disco: 3938.5
+Total de discos: 5000
+Promedio de unidades vendidas por disco: 5000.0

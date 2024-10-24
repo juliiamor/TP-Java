@@ -41,15 +41,19 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         consultarButton.addActionListener(e -> {
             GeneroMusical generoSeleccionado = (GeneroMusical) generoComboBox.getSelectedItem();
             String integrantesStr = textField2.getText().trim();
-
-            // Manejo de la entrada de la cantidad de integrantes
             byte cantidadIntegrantes;
-            try {
+            if (integrantesStr.isEmpty()) {
+                cantidadIntegrantes = 0;
+            } else {
+                cantidadIntegrantes = Byte.parseByte(integrantesStr);
+            }
+
+            /*try {
                 cantidadIntegrantes = Byte.parseByte(integrantesStr);
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(this, "Por favor ingresa un número válido para la cantidad de integrantes.");
                 return;
-            }
+            }*/
 
             filtrarArtistasPorGeneroYIntegrantes(generoSeleccionado, cantidadIntegrantes);
         });
