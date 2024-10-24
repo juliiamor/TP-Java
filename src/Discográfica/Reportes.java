@@ -96,7 +96,7 @@ public abstract class Reportes {
         if(cantIntegrantes==0){
             artistasFiltrados = gestion.filtrarArtistas(genero);
             resultado.append(" Genero: ").append(genero);
-        }else if(genero==null){
+        }else if(genero==GeneroMusical.INGRESE_GENERO){
             artistasFiltrados = gestion.filtrarArtistas(cantIntegrantes);
             resultado.append(" Cantidad de Integrantes: ").append(cantIntegrantes);
         }else{
