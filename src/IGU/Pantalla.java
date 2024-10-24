@@ -17,9 +17,9 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     private JComboBox<GeneroMusical> generoComboBox; // ComboBox para el género musical
     private JTextField textField2; // integrantes
     private JButton consultarButton;
+    private JComboBox<GeneroMusical> generoComboBox2;
     private JTextField textField4;
     private JButton bajaButton;
-    private JTextField textField5;
     private JButton top10Button;
     private JTextField textField6;
     private JButton discosButton;
@@ -31,6 +31,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         this.setSize(1000, 700);
 
         generoComboBox.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
+        generoComboBox2.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
         // Acción del botón facturar
         facturarButton.addActionListener(e -> {
             String identificador = textField1.getText().trim();
@@ -53,8 +54,8 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             filtrarArtistasPorGeneroYIntegrantes(generoSeleccionado, cantidadIntegrantes);
         });
         top10Button.addActionListener(e -> {
-            String genero = textField5.getText().trim();
-            mostrarTop10(genero);
+            GeneroMusical generoSeleccionado = (GeneroMusical) generoComboBox2.getSelectedItem();
+            mostrarTop10(generoSeleccionado);
         });
         discosButton.addActionListener( e -> {
             String identificador = textField6.getText().trim();
@@ -106,11 +107,8 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         }
     }
 
-    public void mostrarTop10(String genero){
-        try{
-            GeneroMusical generoMusical=GeneroMusical.valueOf(genero.toUpperCase());
-
-            JTextArea textArea = new JTextArea(Reportes.Top10CancionesPorGenero(gestion.getArtistas(),generoMusical));
+    public void mostrarTop10(GeneroMusical genero){
+            JTextArea textArea = new JTextArea(Reportes.Top10CancionesPorGenero(gestion.getArtistas(),genero));
             textArea.setEditable(false);
             textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
 
@@ -120,9 +118,6 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             String titulo = "Top 10 canciones del género "+genero;
             JOptionPane.showMessageDialog(this,scrollPane,titulo,JOptionPane.INFORMATION_MESSAGE);
 
-        }catch (IllegalArgumentException e){
-            JOptionPane.showMessageDialog(this, "No hay artistas registrados aún con ese genero", "Error", JOptionPane.ERROR_MESSAGE);
-        }
     }
 
     public void mostrarListadoArtistas(){
