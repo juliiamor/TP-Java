@@ -92,14 +92,19 @@ public abstract class Reportes {
     public static String consultaDatosConFiltros(byte cantIntegrantes, GeneroMusical genero, Gestion gestion) {
         StringBuilder resultado = new StringBuilder();
         List<Artista> artistasFiltrados = new ArrayList<>();
-        resultado.append("Artistas Filtrados por");
-        if(cantIntegrantes==0){
+        if(cantIntegrantes==0 && genero!=GeneroMusical.INGRESE_GENERO){
+            resultado.append("Artistas Filtrados por");
             artistasFiltrados = gestion.filtrarArtistas(genero);
             resultado.append(" Genero: ").append(genero);
-        }else if(genero==GeneroMusical.INGRESE_GENERO){
+        }else if(genero==GeneroMusical.INGRESE_GENERO && cantIntegrantes!=0){
+            resultado.append("Artistas Filtrados por");
             artistasFiltrados = gestion.filtrarArtistas(cantIntegrantes);
             resultado.append(" Cantidad de Integrantes: ").append(cantIntegrantes);
-        }else{
+        }else if(genero==GeneroMusical.INGRESE_GENERO && cantIntegrantes==0){
+            resultado.append("error");
+        }
+        else{
+            resultado.append("Artistas Filtrados por");
             artistasFiltrados = gestion.filtrarArtistas(cantIntegrantes,genero);
             resultado.append(" Genero ").append(genero).append(" y Cantidad de Integrantes ").append(cantIntegrantes);
         }

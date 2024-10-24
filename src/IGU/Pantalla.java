@@ -73,14 +73,19 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     // Método para filtrar los artistas por género musical
     private void filtrarArtistasPorGeneroYIntegrantes(GeneroMusical genero,byte cantidadIntegrantes) {
         String artistasEncontrados = Reportes.consultaDatosConFiltros(cantidadIntegrantes,genero,gestion);
-        JTextArea textArea = new JTextArea(artistasEncontrados);
-        textArea.setEditable(false);
-        textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
+        if (artistasEncontrados.contains("error")) {
+            JOptionPane.showMessageDialog(this, "No se ha ingresado ningun dato válido");
+        }else {
+            JTextArea textArea = new JTextArea(artistasEncontrados);
+            textArea.setEditable(false);
+            textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
 
-        JScrollPane scrollPane = new JScrollPane(textArea);
-        scrollPane.setPreferredSize(new Dimension(600, 400));
+            JScrollPane scrollPane = new JScrollPane(textArea);
+            scrollPane.setPreferredSize(new Dimension(600, 400));
 
-        JOptionPane.showMessageDialog(this, scrollPane, "Artistas filtrados:", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, scrollPane, "Artistas filtrados:", JOptionPane.INFORMATION_MESSAGE);
+        }
+
     }
 
     public void mostrarLiquidacion(String identificador) {
@@ -88,18 +93,17 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
 
         if (liquidacion.toString().contains("No se encontró al artista")) {
             JOptionPane.showMessageDialog(this, liquidacion.toString());
-            return;
+        }else {
+            JTextArea textArea = new JTextArea(liquidacion.toString());
+            textArea.setEditable(false);
+            textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
+
+            JScrollPane scrollPane = new JScrollPane(textArea);
+            scrollPane.setPreferredSize(new Dimension(600, 400));
+
+            // Mostrar la ventana con la liquidación
+            JOptionPane.showMessageDialog(this, scrollPane, "Liquidación del Artista", JOptionPane.INFORMATION_MESSAGE);
         }
-
-        JTextArea textArea = new JTextArea(liquidacion.toString());
-        textArea.setEditable(false);
-        textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
-
-        JScrollPane scrollPane = new JScrollPane(textArea);
-        scrollPane.setPreferredSize(new Dimension(600, 400));
-
-        // Mostrar la ventana con la liquidación
-        JOptionPane.showMessageDialog(this, scrollPane, "Liquidación del Artista", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void mostrarTop10(String genero){
