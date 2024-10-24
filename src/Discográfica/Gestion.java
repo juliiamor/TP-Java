@@ -55,6 +55,7 @@ public class Gestion implements Serializable {
                 artistasFiltrados.add(artista);
             }
         }
+        return artistasFiltrados;
     }
     //filtra solo por genero
     public List<Artista> filtrarArtistas(GeneroMusical genero){
@@ -65,6 +66,8 @@ public class Gestion implements Serializable {
                 artistasFiltrados.add(artista);
             }
         }
+        return artistasFiltrados;
+
     }
 
     public TreeMap<String, Artista> getArtistas() {
@@ -124,4 +127,30 @@ public class Gestion implements Serializable {
         System.out.println("Contenido del listado generado: \n" + listado.toString());
         return listado;
     }
+
+    public StringBuilder listadoArtistasCompleto() {
+        StringBuilder listado = new StringBuilder();
+
+        for (Artista artista : artistas.values()) {
+            listado.append(artista.getNombre()).append(" (").append(artista instanceof ArtistaConsagrado? "Consagrado" : "Emergente").append("):\n");
+
+            for (Disco disco : artista.getDiscos()) {
+                listado.append("\tDisco: ").append(disco.getNombre()).append("\n");
+                listado.append("\t\tCanciones:\n");
+                for (Cancion cancion : disco.getCanciones()) {
+                    listado.append("\t\t\t- ").append(cancion.getNombre()).append("\n"); // Asegúrate de que Cancion tenga el método getNombre()
+                }
+            }
+
+            listado.append("\tRecitales:\n");
+            for (Recital recital : artista.getRecitales()) {
+                listado.append("\t\t- Fecha: ").append(recital.getFecha()).append(", Neto: ").append(recital.getNeto()).append("\n");
+            }
+
+            listado.append("\n");
+        }
+
+        return listado;
+    }
+
 }

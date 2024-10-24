@@ -43,12 +43,22 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             String identificador = textField6.getText().trim();
             mostrarUnidadesVendidas(identificador);
         });
+
+        artistasButton.addActionListener(e -> {
+            mostrarListadoArtistas();
+        });
+
+
     }
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
     }
 
+    public void mostrarListadoArtistas(){
+        //
+
+    }
     public void mostrarLiquidacion(String identificador) {
         StringBuilder liquidacion = gestion.facturacionUltMes(identificador);
 
