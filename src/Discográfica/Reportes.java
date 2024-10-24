@@ -13,7 +13,7 @@ public abstract class Reportes {
     public Reportes() {
     }
 
-    public static void Top10CancionesPorGenero(TreeMap<String, Artista> artistas,GeneroMusical genero) {
+    public static String Top10CancionesPorGenero(TreeMap<String, Artista> artistas,GeneroMusical genero) {
         // Lista para almacenar canciones del género dado
         List<Cancion> cancionesDelGenero = new ArrayList<>();
 
@@ -30,17 +30,19 @@ public abstract class Reportes {
         // Genera una sublista con las primeras 10 canciones, si hay menos de 10 la genera con la cantidad que haya
         List<Cancion> top10Canciones = cancionesDelGenero.subList(0, Math.min(10, cancionesDelGenero.size()));
 
+        StringBuilder resultado = new StringBuilder();
         // Imprimir en pantalla
-        System.out.println("Top 10 canciones del género " + genero + ":");
+        resultado.append("Top 10 canciones del género ").append(genero).append(":\n");
         for (int i = 0; i < top10Canciones.size(); i++) {
             Cancion cancion = top10Canciones.get(i);
-            System.out.println((i + 1) + ". " + cancion.getNombre() + " - " + cancion.getCantReprodUltMes() + " reproducciones");
+            resultado.append((i + 1)).append(". ").append(cancion.getNombre()).append(" ").append(cancion.getCantReprodUltMes()).append(" reproducciones\n");
         }
 
         GeneraArchivos.generaArchivoTop10Canciones(genero, top10Canciones);
+        return resultado.toString();
     }
 
-    public static void unidadesVendidas(String identificador, TreeMap<String, Artista> artistas) {
+    public static String unidadesVendidas(String identificador, TreeMap<String, Artista> artistas) {
         // Verifica si el artista existe
         if (artistas.containsKey(identificador)) {
             Artista artista = artistas.get(identificador);
@@ -80,7 +82,7 @@ public abstract class Reportes {
 
             // Llama al método para generar el archivo con las unidades vendidas
             GeneraArchivos.generaArchivoUnidadesVendidas(artista.getNombre(), contenido.toString());
-
+            return contenido.toString();
         } else {
             throw new IllegalArgumentException("Artista no encontrado");
         }
