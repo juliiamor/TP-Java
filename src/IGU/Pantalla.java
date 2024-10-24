@@ -10,7 +10,7 @@ import java.awt.*;
 public class Pantalla extends JFrame {   // Hereda de JFrame
 
     private JPanel ventana;
-    private JList list1;
+    private JList<String> list1;
     private JButton artistasButton;
     private JTextField textField1; // ID del artista para la facturación
     private JButton facturarButton; // Botón para facturar
@@ -48,13 +48,6 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
                 cantidadIntegrantes = Byte.parseByte(integrantesStr);
             }
 
-            /*try {
-                cantidadIntegrantes = Byte.parseByte(integrantesStr);
-            } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(this, "Por favor ingresa un número válido para la cantidad de integrantes.");
-                return;
-            }*/
-
             filtrarArtistasPorGeneroYIntegrantes(generoSeleccionado, cantidadIntegrantes);
         });
         top10Button.addActionListener(e -> {
@@ -69,13 +62,20 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         artistasButton.addActionListener(e -> {
             mostrarListadoArtistas();
         });
+        artistasButton.addActionListener(e -> mostrarListadoArtistas());
     }
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
     }
 
-    // Método para filtrar los artistas por género musical
+    public void mostrarListadoArtistas() {
+        StringBuilder listadoArtistas = gestion.listadoArtistasCompleto();
+        String[] artistasArray = listadoArtistas.toString().split("\n");
+        list1.setListData(artistasArray);
+    }
+
+
     private void filtrarArtistasPorGeneroYIntegrantes(GeneroMusical genero,byte cantidadIntegrantes) {
         String artistasEncontrados = Reportes.consultaDatosConFiltros(cantidadIntegrantes,genero,gestion);
         if (artistasEncontrados.contains("error")) {
@@ -124,9 +124,6 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
 
     }
 
-    public void mostrarListadoArtistas(){
-        //
-    }
 
     public void mostrarUnidadesVendidas(String identificador){
         try{
