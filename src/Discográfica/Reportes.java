@@ -87,4 +87,27 @@ public abstract class Reportes {
             throw new IllegalArgumentException("Artista no encontrado");
         }
     }
+
+    public static String consultaDatosConFiltros(byte cantIntegrantes, GeneroMusical genero, Gestion gestion) {
+        StringBuilder resultado = new StringBuilder();
+        List<Artista> artistasFiltrados = new ArrayList<>();
+        resultado.append("Artistas Filtrados por");
+        if(cantIntegrantes==0){
+            artistasFiltrados = gestion.filtrarArtistas(genero);
+            resultado.append(" Genero: ").append(genero);
+        }else if(genero==null){
+            artistasFiltrados = gestion.filtrarArtistas(cantIntegrantes);
+            resultado.append(" Cantidad de Integrantes: ").append(cantIntegrantes);
+        }else{
+            artistasFiltrados = gestion.filtrarArtistas(cantIntegrantes,genero);
+            resultado.append(" Genero ").append(genero).append(" y Cantidad de Integrantes ").append(cantIntegrantes);
+        }
+        Iterator<Artista> iterator = artistasFiltrados.iterator();
+        Artista artista;
+        while (iterator.hasNext()) {
+            artista = iterator.next();
+            resultado.append("\n\n").append(artista);
+        }
+        return resultado.toString();
+    }
 }
