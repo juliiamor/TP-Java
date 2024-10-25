@@ -22,6 +22,6 @@ public class Cancion implements Serializable{
     public long getCantReprodUltMes(){return cantReprodUltMes;}
 
     public String toString(){
-        return "Cancion "+nombre+" - Duracion: "+duracion+" - Reproducciones en el Mes: "+cantReprodUltMes;
+        return nombre+" - Duracion: "+duracion+" - Reproducciones en el Mes: "+cantReprodUltMes;
     }
 }
