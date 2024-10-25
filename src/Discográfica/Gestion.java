@@ -31,7 +31,7 @@ public class Gestion implements Serializable {
         if(artistas.containsKey(identificador)){
             artistas.remove(identificador);
         }else{
-            throw new IllegalArgumentException("Artista no encontrado");
+            throw new IllegalArgumentException("El artista no existe");
         }
     }
 
@@ -84,12 +84,12 @@ public class Gestion implements Serializable {
     public String toString(){
         Iterator<Artista> iterator = artistas.values().iterator();
         Artista artista;
-        String listado = "";
+        StringBuilder listado = new StringBuilder();
         while(iterator.hasNext()){
             artista=iterator.next();
-            listado+=artista+"\n";
+            listado.append(artista).append("\n\n");
         }
-        return listado;
+        return listado.toString();
     }
 
     public StringBuilder facturacionUltMes(String identificador) {
@@ -128,6 +128,11 @@ public class Gestion implements Serializable {
         return listado;
     }
 
+
+    /*
+
+    Seria innecesario, porque ya tenemos el metodo toString() que emite el listado.
+
     public StringBuilder listadoArtistasCompleto() {
         StringBuilder listado = new StringBuilder();
 
@@ -152,5 +157,5 @@ public class Gestion implements Serializable {
 
         return listado;
     }
-
+    */
 }
