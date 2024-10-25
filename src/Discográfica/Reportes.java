@@ -61,24 +61,20 @@ public abstract class Reportes {
                 // Escribe el nombre del disco y sus unidades vendidas
                 String discoInfo = "Disco: " + disco.getNombre() + " - Unidades vendidas: " + disco.getUnidadesVendidasUltMes() + "\n";
                 contenido.append(discoInfo);
-                System.out.print(discoInfo); // Imprime info del disco en pantalla
             }
 
             // Escribe el total de discos
             String totalDiscos = "\nTotal de discos: " + totalUnidadesVendidas + "\n";
             contenido.append(totalDiscos);
-            System.out.print(totalDiscos); // Imprime total de discos en pantalla
 
             // Calcula y escribe el promedio de unidades vendidas
             if (cantidadDiscos > 0) {
                 double promedioUnidades = (double) totalUnidadesVendidas / cantidadDiscos;
                 String promedio = "Promedio de unidades vendidas por disco: " + promedioUnidades + "\n";
                 contenido.append(promedio);
-                System.out.print(promedio); // Imprime promedio en pantalla
             } else {
                 String noDiscos = "No hay discos para calcular el promedio.\n";
                 contenido.append(noDiscos);
-                System.out.print(noDiscos); // Imprime mensaje en pantalla
             }
 
             // Llama al método para generar el archivo con las unidades vendidas
