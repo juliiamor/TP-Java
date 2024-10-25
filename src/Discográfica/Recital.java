@@ -18,6 +18,6 @@ public class Recital implements Serializable {
 
     public String getFecha(){return fecha;}
     public String toString() {
-        return "Recital - Fecha - "+fecha+" - Recaudacion - "+recaudacion+" - Costos de Produccion - "+costosProduccion;
+        return "\t\tFecha - "+fecha+" - Recaudacion - "+recaudacion+" - Costos de Produccion - "+costosProduccion;
     }
 }
