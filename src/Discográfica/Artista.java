@@ -54,22 +54,26 @@ public abstract class Artista implements Serializable {
     }
 
     public String toString(){
-        String listado="Identificador: "+identificador+" - Nombre: " + nombre + " - Integrantes: " + cantIntegrantes+" - Genero musical: " + generoMusical+"\n";
+        StringBuilder listado = new StringBuilder();
+        listado.append(identificador).append("- Nombre: ").append(nombre)
+                .append(" - Integrantes: ").append(cantIntegrantes)
+                .append(" - Género musical: ").append(generoMusical);
+
+        listado.append("\n\tLista de Discos:\n");
         Iterator<Disco> iteratorDiscos = discos.iterator();
         Disco disco;
-        listado+="Lista de Discos\n";
-        while(iteratorDiscos.hasNext()){
+        while (iteratorDiscos.hasNext()) {
             disco = iteratorDiscos.next();
-            listado+=disco;
+            listado.append(disco).append("\n");
         }
+        listado.append("\n\tLista de Recitales:\n");
         Iterator<Recital> iteratorRecitales = recitales.iterator();
         Recital recital;
-        listado+="Lista de Recitales\n";
-        while(iteratorRecitales.hasNext()){
+        while (iteratorRecitales.hasNext()) {
             recital = iteratorRecitales.next();
-            listado+=recital+"\n";
+            listado.append(recital).append("\n");
         }
-        return listado;
+        return listado.toString();
     }
 
     public long unidadesDiscosVendidas(){
