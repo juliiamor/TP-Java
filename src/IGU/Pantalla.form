@@ -32,6 +32,7 @@
             </constraints>
             <properties>
               <background color="-1245205"/>
+              <text value=""/>
             </properties>
           </component>
           <component id="88b70" class="javax.swing.JButton" binding="facturarButton" default-binding="true">
@@ -58,6 +59,7 @@
             </constraints>
             <properties>
               <background color="-1245205"/>
+              <text value=""/>
             </properties>
           </component>
           <component id="e96d8" class="javax.swing.JLabel">
@@ -105,6 +107,7 @@
             </constraints>
             <properties>
               <background color="-1245205"/>
+              <text value=""/>
             </properties>
           </component>
           <component id="8d861" class="javax.swing.JButton" binding="bajaButton" default-binding="true">
@@ -157,6 +160,7 @@
             </constraints>
             <properties>
               <background color="-1245205"/>
+              <text value=""/>
             </properties>
           </component>
           <component id="49cd6" class="javax.swing.JButton" binding="discosButton" default-binding="true">
@@ -195,22 +199,23 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="7df19" class="javax.swing.JList" binding="list1" default-binding="true">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="50"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-7426883"/>
-            </properties>
-          </component>
           <component id="a01e5" class="javax.swing.JButton" binding="artistasButton" default-binding="true">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Artistas"/>
+            </properties>
+          </component>
+          <component id="24042" class="javax.swing.JTextArea" binding="textAreaListadoArtistas">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6644577"/>
+              <margin top="15" left="15" bottom="15" right="15"/>
             </properties>
           </component>
         </children>
