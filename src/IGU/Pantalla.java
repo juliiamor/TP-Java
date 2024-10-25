@@ -10,7 +10,6 @@ import java.awt.*;
 public class Pantalla extends JFrame {   // Hereda de JFrame
 
     private JPanel ventana;
-    private JList<String> list1;
     private JButton artistasButton;
     private JTextField textField1; // ID del artista para la facturación
     private JButton facturarButton; // Botón para facturar
@@ -23,6 +22,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     private JButton top10Button;
     private JTextField textField6;
     private JButton discosButton;
+    private JTextArea textAreaListadoArtistas;
     private Gestion gestion;
 
     public Pantalla(Gestion gestion) {
@@ -59,10 +59,16 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             mostrarUnidadesVendidas(identificador);
         });
 
-        artistasButton.addActionListener(e -> {
-            mostrarListadoArtistas();
-        });
         artistasButton.addActionListener(e -> mostrarListadoArtistas());
+
+        bajaButton.addActionListener(e -> {
+            String identificador = textField4.getText().trim();
+            if(identificador.isEmpty()){
+                JOptionPane.showMessageDialog(this, "Ingrese un ID", "Error", JOptionPane.ERROR_MESSAGE);
+            }else{
+                bajaArtista(identificador);
+            }
+        });
     }
 
     private void createUIComponents() {
@@ -70,11 +76,9 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     }
 
     public void mostrarListadoArtistas() {
-        StringBuilder listadoArtistas = gestion.listadoArtistasCompleto();
-        String[] artistasArray = listadoArtistas.toString().split("\n");
-        list1.setListData(artistasArray);
+        String listado=gestion.toString();
+        textAreaListadoArtistas.setText(listado);
     }
-
 
     private void filtrarArtistasPorGeneroYIntegrantes(GeneroMusical genero,byte cantidadIntegrantes) {
         String artistasEncontrados = Reportes.consultaDatosConFiltros(cantidadIntegrantes,genero,gestion);
@@ -91,6 +95,15 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             JOptionPane.showMessageDialog(this, scrollPane, "Artistas filtrados:", JOptionPane.INFORMATION_MESSAGE);
         }
 
+    }
+
+    public void bajaArtista(String identificador){
+        try{
+            gestion.removeArtista(identificador);
+            JOptionPane.showMessageDialog(this,"Se ha dado de baja al artista con éxito","Baja Artista",JOptionPane.INFORMATION_MESSAGE);
+        }catch (IllegalArgumentException e){
+            JOptionPane.showMessageDialog(this, "El artista ingresado no existe", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public void mostrarLiquidacion(String identificador) {
@@ -112,6 +125,9 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     }
 
     public void mostrarTop10(GeneroMusical genero){
+        if(genero.equals(GeneroMusical.INGRESE_GENERO)){
+            JOptionPane.showMessageDialog(this, "No se ha ingresado ningun género válido");
+        }else{
             JTextArea textArea = new JTextArea(Reportes.Top10CancionesPorGenero(gestion.getArtistas(),genero));
             textArea.setEditable(false);
             textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
@@ -121,7 +137,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
 
             String titulo = "Top 10 canciones del género "+genero;
             JOptionPane.showMessageDialog(this,scrollPane,titulo,JOptionPane.INFORMATION_MESSAGE);
-
+        }
     }
 
 
