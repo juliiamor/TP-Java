@@ -125,4 +125,22 @@ public abstract class Artista implements Serializable {
         }
         return total;
     }
+
+    //agrego para acceder a disco en carga de cancion
+    public Disco getDisco(String nombre){
+        for(Disco disco : discos){
+            if(disco.getNombre().equals(nombre))
+                return disco;
+        }
+        return null;
+    }
+    //agrego para verificar disco en coleccion
+    public boolean estaDisco(String nombre){
+        for(Disco disco : discos){
+            if(disco.getNombre().equals(nombre))
+                return true;
+        }
+        return false;
+    }
+
 }

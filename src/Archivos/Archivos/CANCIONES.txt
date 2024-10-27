@@ -1,0 +1,43 @@
+TBI;La Ultima Noche Magica;Buscame;4:30;84012481
+TBI;La Ultima Noche Magica;Tapa de Moda;3:40;550000
+TBI;La Ultima Noche Magica;Adolescente Incoherente;3:20;900000
+TBI;La Ultima Noche Magica;ByeBye;4:20;720000
+TBI;La Ultima Noche Magica; Estrella;4:10;470000
+TBI;Wonderful Noches;WonderfulNoches;2:47;923792
+TBI;Wonderful Noches;Veneno;5:04;900000
+TBI;Wonderful Noches;Razón perdida;3:09;490000
+TBI;Wonderful Noches;Teléfono;3:32;815000
+TBI;Wonderful Noches;Frágil;3:28;230000
+TBI;Canciones Del Huracan;Chica biónica;4:30;700000
+TBI;Canciones Del Huracan;Arruinarse;4:09;350000
+TBI;Canciones Del Huracan;MisMadrugaditas;4:09;900000
+TBI;Canciones Del Huracan;LaEnsalada;5:22;450000
+TBI;Canciones Del Huracan;Yo te Espero;3:37;349000
+TBI;Obsesionario;Beautiful;3:47;980000
+TBI;Obsesionario;Obsesionario En La Mayor;4:36;430000
+TBI;Obsesionario;Loca;3:23;320000
+TBI;Destinologia;Ciudad Mágica;3:50;12000000
+TBI;Destinologia;La Melodía de Dios;4:20;800000
+TBI;Destinologia;Música;4:12;360000
+TBI;Destinologia;Vámonos;2:57;550000
+TBI;Destinologia;Mis noches de enero;3:48;450000
+MAN;Maná;Robot;4:30;450000
+MAN;Maná;Mentirosa;3:15;900000
+MAN;Maná;Bailando;3:38;540000
+MAN;Maná;México;2:51;790000
+MAN;Maná;Entré por la ventana;3:25;590000
+MAN;Falta Amor;Gitana;4:17;780000
+MAN;Falta Amor;Refrigerador;3:58;450000
+MAN;Falta Amor;Rayando el sol;4:14;320000
+MAN;Falta Amor;Buscándola;4:09;670000
+MAN;Falta Amor;Soledad;4:38;790000
+MAN;Sueños Líquidos;Hechicera;4:58;590000
+MAN;Sueños Líquidos;Un lobo por tu amor;5:21;460000
+MAN;Sueños Líquidos;Cómo dueles en los labios;4:08;320000
+MAN;Sueños Líquidos;Chamán;5:11;902000
+MAN;Sueños Líquidos;Tú tienes lo que quiero;4:38;540000
+MAN;Revolución De Amor;Eres mi religión;5:32;340000
+MAN;Revolución De Amor;Justicia, tierra y libertad;5:20;390000
+MAN;Revolución De Amor;Ay, doctor;5:32;540000
+MAN;Revolución De Amor;Fe;4:43;320000
+MAN;Revolución De Amor;Sábanas frías;5:22;570000

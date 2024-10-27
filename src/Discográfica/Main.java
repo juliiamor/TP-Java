@@ -1,4 +1,5 @@
 package Discográfica;
+import Archivos.LecturaDeArchivosTXT;
 import IGU.Pantalla;
 
 import javax.swing.*;
@@ -7,10 +8,13 @@ import javax.swing.*;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Gestion gestion = new Gestion();
 
-        cargarDatosPrueba(gestion);
-        //gestion.facturacionUltMes("001");
+
+        Gestion gestion = new Gestion();            // creacion de collecion de artistas
+        LecturaDeArchivosTXT.leeArtistas(gestion);  // carga de artistas desde txt
+        LecturaDeArchivosTXT.leeDiscos(gestion);    // carga de discos desde txt
+        LecturaDeArchivosTXT.leeCancion(gestion);   // carga de caciones desde txt
+        LecturaDeArchivosTXT.leeRecital(gestion);   // carga de recitales desde txt
 
         SwingUtilities.invokeLater(new Runnable() {
             @Override
@@ -21,7 +25,11 @@ public class Main {
             }
         });
     }
-    //puse datos para ir probando mientras no tenemos los archivos
+
+    /*puse datos para ir probando mientras no tenemos los archivos
+        cargarDatosPrueba(gestion);
+        gestion.facturacionUltMes("001");
+
     private static void cargarDatosPrueba(Gestion gestion) {
         ArtistaConsagrado artista1 = new ArtistaConsagrado("001", "Artista 1", (byte) 4, GeneroMusical.ROCK);
         ArtistaEmergente artista2 = new ArtistaEmergente("002", "Artista 2",(byte)3, GeneroMusical.POP);
@@ -65,5 +73,5 @@ public class Main {
         gestion.addArtista(artista1);
         gestion.addArtista(artista2);
 
-    }
+    }*/
 }
