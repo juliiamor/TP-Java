@@ -1,15 +1,15 @@
-c;TBI;TanBionica;POP;4
+c;TBI;Tan Bionica;POP;4
 c;MAN;Maná;ROCK;5
-c;TSF;TylorSwift;POP;1
+c;TSF;Tylor Swift;POP;1
 c;COL;Coldplay;ROCK;5
-c;PIN;AbelPintos;POP;1
+c;PIN;Abel Pintos;POP;1
 c;SHA;Shakira;POP;1
-c;DUA;DuaLipa;POP;1
+c;DUA;Dua Lipa;POP;1
 c;UTW;U2;ROCK;5
 c;MAR;Marama;CUMBIA;5
-c;TOT;LosTotora;CUMBIA;4
+c;TOT;Los Totora;CUMBIA;4
 c;LGA;LGante;CUMBIA;1
 c;RAF;Rafaga;CUMBIA;5
-c;DAD;DaddyYankee;REGGAETON;1
-c;NIK;NickyJam;REGGAETON;1
+c;DAD;Daddy Yankee;REGGAETON;1
+c;NIK;Nicky Jam;REGGAETON;1
 c;OZU;Ozuna;REGGAETON;1

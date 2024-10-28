@@ -41,3 +41,248 @@ MAN;Revolución De Amor;Justicia, tierra y libertad;5:20;390000
 MAN;Revolución De Amor;Ay, doctor;5:32;540000
 MAN;Revolución De Amor;Fe;4:43;320000
 MAN;Revolución De Amor;Sábanas frías;5:22;570000
+MAN;Drama y Luz;Lluvia al corazón;4:10;47091
+MAN;Drama y Luz;Amor clandestino;4:52;1234789
+MAN;Drama y Luz;Mi reina del dolor;4:06;87912
+MAN;Drama y Luz;El espejo;5:24;108273
+MAN;Drama y Luz;Sor María;5:04;124323
+TSF;Fearless;Fearless;4:01;12000546
+TSF;Fearless;Fifteen;4:54;14500540
+TSF;Fearless;Love Story;3:55;23004560
+TSF;Fearless;Hey Stephen;4:14;13005440
+TSF;Fearless;White Horse;3:54;11079800
+TSF;Speak Now;Mine;3:50;24000000
+TSF;Speak Now;Sparks Fly;4:20;32000000
+TSF;Speak Now;Back to December;4:53;2100000
+TSF;Speak Now;Speak Now;4:00;10000000
+TSF;Speak Now;Dear John;6:43;40000000
+TSF;Lover;I Forgot That You Existed;2:50;4000000
+TSF;Lover;Cruel Summer;2:58;39000000
+TSF;Lover;Lover;3:41;67000000
+TSF;Lover;The Man;3:10;87000000
+TSF;Lover;The Archer;3:31;3200000
+TSF;Folklore;The 1;3:30;9000000
+TSF;Folklore;Cardigan;3:5;29000000
+TSF;Folklore;The Last Great American Dynasty;3:50;34000000
+TSF;Folklore;Exile;4:45;37000000
+TSF;Folklore;My Tears Ricochet;4:15;30000000
+TSF;Midnights;Lavender Haze;3:22;34000000
+TSF;Midnights;Maroon;3:20;65000000
+TSF;Midnights;Anti-Hero;3:20;4000000
+TSF;Midnights;Snow on the Beach;4:16;39000000
+TSF;Midnights;You're on Your Own, Kid;3:14;58000000
+COL;Parachutes;Don't Panic;2:17;45000000
+COL;Parachutes;Shiver;4:59;80000000
+COL;Parachutes;Spies;5:18;28000000
+COL;Parachutes;Sparks;3:47;23000000
+COL;Parachutes;Yellow;4:29;9500000
+COL;Music Of The Spheres;Music of the Spheres;2:53;23812
+COL;Music Of The Spheres;Higher Power;3:31;123378462
+COL;Music Of The Spheres;Humankind;4:26;5312084
+COL;Music Of The Spheres;Alien Choir;2:53;2349754320
+COL;Music Of The Spheres;Let Somebody Go;4:01;3247832423
+COL;A Head Full Of Dreams;Sunrise;2:31;1231294350
+COL;A Head Full Of Dreams;Church;3:50;230235201
+COL;A Head Full Of Dreams;Trouble in Town;4:38;723401231
+COL;A Head Full Of Dreams;Broken;2:30;23452105
+COL;A Head Full Of Dreams;Daddy;4:58;9230534
+PIN;Para Cantar He Nacido;Para cantar he nacido;3:27;423045
+PIN;Para Cantar He Nacido;Cuando llegue el alba;3:46;430184
+PIN;Para Cantar He Nacido;Chacarera del triste;2:07;90342
+PIN;Para Cantar He Nacido;Campo afuera;2:27;4091280
+PIN;Para Cantar He Nacido;Mi pueblo azul;3:04;120459
+PIN;Todos Los Dias Un Poco;El alcatraz;2:30;7802341
+PIN;Todos Los Dias Un Poco;La Tucumanita;3:40;80123034
+PIN;Todos Los Dias Un Poco;Amémonos;4:10;40120543
+PIN;Todos Los Dias Un Poco;La Sacha Pera;2:50;1032054
+PIN;Todos Los Dias Un Poco; Ojos De Cielo;2:42;301230
+PIN;Todos Los Dias Un Poco;Sentidos;3:22;81224
+PIN;Sentidos;Tu voz;3:32;901237
+PIN;Sentidos;Sueño Dorado;4:46;907611
+PIN;Sentidos;Filosofía viajera;2:29;901273
+PIN;Sentidos;Soledad;3:54;79120
+PIN;Sentidos;El río va;3:13;4012384
+PIN;Reflejo Real;Quien pudiera;4:05;601247
+PIN;Reflejo Real;Anclada en mis sueños;3:05;801246
+PIN;Reflejo Real;El beso;2:56;760124874
+PIN;Reflejo Real;A veces pasa;3:27;81264012
+PIN;Reflejo Real;Buenos amores;2:52;127848787
+PIN;La Llave;Todo está en vos;3:50;102741
+PIN;La Llave;Dueños del amor;2:44;1267410
+PIN;La Llave;Solo canto por vos;2:27;12674129
+PIN;La Llave;Hasta aquí;3:17;12674716
+PIN;La Llave;La llave;4:11;8712412
+SHA;Magia;Sueños;4:47;8017244
+SHA;Magia;Esta noche voy contigo;3:53;7124800
+SHA;Magia;Lejos de tu amor;3:09;17240275
+SHA;Magia;Magia;4:43;82512508
+SHA;Magia;Cuentas conmigo;4:01;58912
+SHA;Peligro;Eres;5:02;7401274
+SHA;Peligro;Último momento;4:56;26741240
+SHA;Peligro;Tú serás la historia de mi vida;4:52;1240480
+SHA;Peligro;Peligro;4:39;8410241274
+SHA;Peligro;Quince años;3:30;279410
+SHA;Pies Descalzos;Estoy aquí;3:52;912301248
+SHA;Pies Descalzos;Antología;4:14;82131
+SHA;Pies Descalzos;Un poco de amor;4:01;91208
+SHA;Pies Descalzos;Quiero;4:10;189241298
+SHA;Pies Descalzos;Te necesito;4:00;1294817
+SHA;Loba;She Wolf;3:10;70124879
+SHA;Loba;Did It Again;3:13;781240124
+SHA;Loba;Long Time;2:56;89124790
+SHA;Loba;Why Wait;3:43;214108
+SHA;Loba;Good Stuff;3:18;12849
+DUA;Genesis;Lost in Your Light;3:23;78210
+DUA;Genesis;Hotter than Hell;3:07;712840
+DUA;Genesis;Be the One;3:22;1278410
+DUA;Genesis;IDGAF;3:38;7218401
+DUA;Future Nostalgia;Future Nostalgia;3:04;8401240
+DUA;Future Nostalgia;Don't Start Now;3:03;9841202714
+DUA;Future Nostalgia;Cool;3:29;1274120
+DUA;Future Nostalgia;Physical;3:13;54320
+DUA;Future Nostalgia;Levitating;3:23;184100124
+DUA;Radical Optimism;End of an Era;3:16;902358
+DUA;Radical Optimism;Houdini;3:06;23502357
+DUA;Radical Optimism;Training Season;3:24;823052
+DUA;Radical Optimism;These Walls;3:38;82038
+DUA;Radical Optimism;Whatcha Doing;3:18;203572
+UTW;Boy;I Will Follow;3:36;4023487
+UTW;Boy;Twilight;4:22;280347
+UTW;Boy;An Cat Dubh;6:21;2934083
+UTW;Boy;Into the Heart;1:53;823408
+UTW;Boy;Out of Control;4:13;832450
+UTW;October;Gloria;4:14;60127349
+UTW;October;I Fall Down;3:39;7214071
+UTW;October;I Threw a Brick Through a Window;4:54;12498712408
+UTW;October;Rejoice;3:37;8124079
+UTW;October;Fire;3:56;10421894
+UTW;War;Sunday Bloody Sunday;4:40;801723
+UTW;War;Seconds;3:10;7401247
+UTW;War;New Year's Day;5:35;7012479
+UTW;War;Like a Song;4:46;7410240
+UTW;War;Drowning Man;4:14;81240084
+UTW;Zooropa;Zooropa;6:31;20981892
+UTW;Zooropa;Babyface;4:01;721401
+UTW;Zooropa;Numb;4:20;1924179
+UTW;Zooropa;Lemon;6:58;27914520
+UTW;Zooropa;Stay;4:58;29147218
+UTW;Pop;Discotheque;5:19;7214910
+UTW;Pop;Do You Feel Loved;5:07;6248112840
+UTW;Pop;Mofo;5:46;2714294210
+UTW;Pop;If God Will Send His Angels;5:22;249214
+UTW;Pop;Staring at the Sun;4:36;2849127
+MAR;Todo Comenzo Bailando;Todo Comenzó Bailando;3:20;78247120
+MAR;Todo Comenzo Bailando;Loquita;2:30;721904102
+MAR;Todo Comenzo Bailando;No te Vayas;3:12;782491
+MAR;Todo Comenzo Bailando;Una Noche Contigo;2:10;75102
+MAR;Todo Comenzo Bailando;Bronceado;2:40;751920
+MAR;La Culpa;La Culpa;2:30;38259
+TOT;Sin Mirar Atras;Yo Da Igual;2:39;742190
+TOT;Sin Mirar Atras;No te vayas;3:29;704712
+TOT;Sin Mirar Atras;Me voy de aquí;3:26;7452190
+TOT;Sin Mirar Atras;Marcha ahora;2:50;4712940
+TOT;Sin Mirar Atras;Qué Importa;4:10;721840
+TOT;Cuestion De Tiempo;No hay más nada;2:30;57813242
+TOT;Cuestion De Tiempo;Bebés De Mí;3:15;74521941
+TOT;Cuestion De Tiempo;El Tequila;2:20;742194
+TOT;Cuestion De Tiempo;Contigo No;3:10;47219
+TOT;Cuestion De Tiempo;Una Mirada;3:55;70124750
+TOT;Y Ahora Vivo;Tu cárcel;2:20;721490124
+TOT;Y Ahora Vivo;Mientes tan bien;2:30;124028410
+TOT;Y Ahora Vivo;Te extraño, te olvido, te amo;3:20;274810124
+TOT;Y Ahora Vivo;Como yo nadie te ha amado;3:10;7241924
+TOT;Y Ahora Vivo;Te Vas;2:30;9079012
+TOT;Me Veras Bailando;El Tequila;3:20;748120124
+TOT;Me Veras Bailando;Tu Cárcel;2:50;401238
+TOT;Me Veras Bailando;Mi Amor Prohibido;3:20;5091283
+TOT;Me Veras Bailando;Contigo No;2:20;590123
+TOT;Me Veras Bailando;Ensamble;4:10;40910
+TOT;Encontrandonos;Otra Oportunidad;2:56;902147
+TOT;Encontrandonos;Un día sin ti;2:43;9012479
+TOT;Encontrandonos;Mientes tan bien;3:08;12404040
+TOT;Encontrandonos;Tu ay;2:17;4049210
+TOT;Encontrandonos;Como yo nadie te ha amado;3:23;7412790124
+LGA;A Escondidas;A Escondidas;3:10;742101243
+LGA;Uno Mas Uno;Uno mas Uno;3:33;62410124
+LGA;El Baile de las Egresadas;El Baile de las Egresadas;2:30;3091240
+LGA;Gucci;Gucci;2:57;8241012408
+RAF;Soplando Fuerte;Pensando en ti;3:10;879412890
+RAF;Soplando Fuerte;Este es el momento;2:30;470123
+RAF;Soplando Fuerte;Muriendo Lentamente;3:11;6701247
+RAF;Soplando Fuerte;Falsa infiel;2:30;8172487780
+RAF;Soplando Fuerte;Volverás;3:25;6087686
+RAF;Sobrevolando America;Enamorado De Ti;4:39;6701283
+RAF;Sobrevolando America;Dulce Dueña;3:20;9102489
+RAF;Sobrevolando America;Fuiste Infiel;3:20;8923478
+RAF;Sobrevolando America;Háblame;2:47;581250
+RAF;Sobrevolando America;Yo Te Digo Adiós;2:55;50124089
+RAF;Imparables;Para Que Baile Mi Gente;3:43;491240
+RAF;Imparables;Mala Mujer;2:57;48104210
+RAF;Imparables;No Puedo Olvidarte;3:25;8192312
+RAF;Imparables;Dónde Andarás;3:20;821940
+RAF;Imparables;Tú Eres Esa Chica;2:40;8410828
+RAF;Amandonos;Noche de estrellas;2:30;6123072
+RAF;Amandonos;Amándonos;4:30;4352324
+RAF;Amandonos;Orgullosa;2:30;214612
+RAF;Amandonos;Una ráfaga de amor;3:20;64218420
+RAF;Amandonos;Una oportunidad;2:20;741290
+DAD;NoMercy;Prelude Opus Yankee;2:25;3274923
+DAD;NoMercy;Run Come Follow Me;4:23;1021384
+DAD;NoMercy;Chica Interesada;4:03;7241901
+DAD;NoMercy;They Cry;4:18;28218930
+DAD;NoMercy;Busca Una Yale;3:42;2813001
+DAD;BarrioFino;King Daddy;2:31;7012480
+DAD;BarrioFino;Dale Caliente;3:15;9012347
+DAD;BarrioFino;No Me Dejes Solo;2:50;12092148
+DAD;BarrioFino;Gasolina;3:13;19421042189
+DAD;Legendaddy;Legendaddy;0:48;1243490
+DAD;Legendaddy;Campeón;3:14;28814099
+DAD;Legendaddy;Remix;2:43;2814941
+DAD;Legendaddy;Pasatiempo;3:24;824140
+DAD;Legendaddy;Rumbatón;4:08;9821047
+NIK;Vida Escante;Nos fuimos;3:11;81240948
+NIK;Vida Escante;Vive contigo;3:17;124912478
+NIK;Vida Escante;Sacando chispa;3:30;8127410
+NIK;Vida Escante;Pasado;3:44;1012840
+NIK;Vida Escante;Chambonea;2:51;7412470
+NIK;Fenix;El ganador;3:21;82140
+NIK;Fenix;Por el momento;3:37;9124021
+NIK;Fenix;El amante;3:39;8219410
+NIK;Fenix;Si tu la ves;3:41;1298041
+NIK;Fenix;Estrella;3:38;1212849
+NIK;Fiel A Tu Piel;Fiel a tu piel;2:42;7421949
+NIK;Fiel A Tu Piel;Me estoy muriendo;4:17;712491
+NIK;Fiel A Tu Piel;Siguen haciendo ruido;3:36;9102409
+NIK;Fiel A Tu Piel;Tus ojos;2:51;301230
+NIK;Fiel A Tu Piel;Loco;2:43;21398
+NIK;Intimo;Sin filtro;3:16;812340421
+NIK;Intimo;Tequila;2:53;82148201
+NIK;Intimo;Whine Up;3:35;218940
+NIK;Intimo;Maniquí;2:55;42535606045
+NIK;Intimo;Perdóname;2:57;4201042104
+OZU;Odisea;Odisea;3:09;9821409412
+OZU;Odisea;Tu foto;3:13;18489124
+OZU;Odisea;Se preparó;3:08;821949812
+OZU;Odisea;Cumpleaños;4:39;44345456
+OZU;Odisea;Dile que tú me quieres;3:44;4421879
+OZU;Odisea;Egoísta;4:07;519825871
+OZU;Odisea;Una flor;3:26;8951289
+OZU;Quiero Repetir;Quiero repetir;3:20;841204218
+OZU;Quiero Repetir;Noches de aventura;3:56;90412892148
+OZU;Quiero Repetir;Pide lo que tú quieras;3:56;4812480
+OZU;Quiero Repetir;Síguelo Bailando;3:46;90521951
+OZU;Quiero Repetir;Bebé;3:50;712490
+OZU;Quiero Repetir;El farsante;3:53;7214890
+OZU;Quiero Repetir;No quiere enamorarse;3:33;18294081
+OZU;Quiero Repetir;Carita de ángel;3:21;129041794
+OZU;Quiero Repetir;Si no te quiere;3:46;8912498
+OZU;Aura;Aura;3:07;8921489
+OZU;Aura;Me dijeron;2:50;8010284
+OZU;Aura;Vaina loca;2:58;21404812
+OZU;Aura;Devuélveme;3:08;812940
+OZU;Aura;Quiero más;4:04;2481980
+OZU;Ozutochi;Kotodama;3:09;2342344
+OZU;Ozutochi;Favorita;3:29;2343555
+OZU;Ozutochi;Te pienso;2:28;2341233
+OZU;Ozutochi;Un lio;3:16;23432443
+OZU;Ozutochi;Mañana;3:13;43552342
