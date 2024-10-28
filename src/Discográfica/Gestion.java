@@ -73,6 +73,14 @@ public class Gestion implements Serializable {
         return artistas;
     }
 
+    public Artista getArtista(String id){
+        if(artistas.containsKey(id)){
+            return artistas.get(id);
+        }else{
+            throw new IllegalArgumentException();
+        }
+    }
+
     //metodo para buscar artistas x id
     public Artista filtraArtistaPorID(String identificador){
         return artistas.get(identificador); //si no encuentra devuelve null
