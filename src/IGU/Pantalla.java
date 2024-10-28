@@ -1,11 +1,13 @@
 package IGU;
 
+import Discográfica.Artista;
 import Discográfica.GeneroMusical;
 import Discográfica.Gestion;
 import Discográfica.Reportes;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.TreeMap;
 
 public class Pantalla extends JFrame {   // Hereda de JFrame
 
@@ -22,6 +24,8 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     private JButton top10Button;
     private JTextField textField6;
     private JButton discosButton;
+    private JComboBox<String> artistaComboBox;
+    private JButton mostrarDatosButton;
     private JTextArea textAreaListadoArtistas;
     private Gestion gestion;
 
@@ -29,7 +33,14 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         this.gestion = gestion;
         add(ventana);
         this.setSize(1000, 700);
-
+        TreeMap<String,Artista> mapa=gestion.getArtistas();
+        String[] identificadores = new String[gestion.getArtistas().size()];
+        int i=0;
+        for(String id: mapa.keySet()){
+            identificadores[i]=id;
+            i++;
+        }
+        artistaComboBox.setModel(new DefaultComboBoxModel<>(identificadores));
         generoComboBox.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
         generoComboBox2.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
         // Acción del botón facturar
@@ -59,7 +70,15 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             mostrarUnidadesVendidas(identificador);
         });
 
-        artistasButton.addActionListener(e -> mostrarListadoArtistas());
+        mostrarDatosButton.addActionListener(e -> {
+            try{
+                String identificador = artistaComboBox.getSelectedItem().toString();
+                Artista artista = gestion.getArtista(identificador);
+                new VentanaDeArtistas(artista).setVisible(true);
+            }catch (IllegalArgumentException ex){
+                JOptionPane.showMessageDialog(this, "No se ha encontrado ese artista");
+            }
+        });
 
         bajaButton.addActionListener(e -> {
             String identificador = textField4.getText().trim();
@@ -90,7 +109,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
 
             JScrollPane scrollPane = new JScrollPane(textArea);
-            scrollPane.setPreferredSize(new Dimension(600, 400));
+            scrollPane.setPreferredSize(new Dimension(800,600));
 
             JOptionPane.showMessageDialog(this, scrollPane, "Artistas filtrados:", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -117,7 +136,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
 
             JScrollPane scrollPane = new JScrollPane(textArea);
-            scrollPane.setPreferredSize(new Dimension(600, 400));
+            scrollPane.setPreferredSize(new Dimension(800,600));
 
             // Mostrar la ventana con la liquidación
             JOptionPane.showMessageDialog(this, scrollPane, "Liquidación del Artista", JOptionPane.INFORMATION_MESSAGE);
@@ -133,7 +152,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
 
             JScrollPane scrollPane = new JScrollPane(textArea);
-            scrollPane.setPreferredSize(new Dimension(600,400));
+            scrollPane.setPreferredSize(new Dimension(800,600));
 
             String titulo = "Top 10 canciones del género "+genero;
             JOptionPane.showMessageDialog(this,scrollPane,titulo,JOptionPane.INFORMATION_MESSAGE);
@@ -148,7 +167,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
 
             JScrollPane scrollPane = new JScrollPane(textArea);
-            scrollPane.setPreferredSize(new Dimension(600,400));
+            scrollPane.setPreferredSize(new Dimension(800,600));
 
             String titulo = "Unidades de Discos vendidas en el mes del Artista "+identificador;
             JOptionPane.showMessageDialog(this,scrollPane,titulo,JOptionPane.INFORMATION_MESSAGE);
@@ -156,6 +175,8 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         catch (IllegalArgumentException e){
             JOptionPane.showMessageDialog(this, "El artista ingresado no existe", "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
 
+    public static class Ventanas {
     }
 }

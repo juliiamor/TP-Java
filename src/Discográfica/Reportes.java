@@ -70,7 +70,7 @@ public abstract class Reportes {
             // Calcula y escribe el promedio de unidades vendidas
             if (cantidadDiscos > 0) {
                 double promedioUnidades = (double) totalUnidadesVendidas / cantidadDiscos;
-                String promedio = "Promedio de unidades vendidas por disco: " + promedioUnidades + "\n";
+                String promedio = "Promedio de unidades vendidas por disco: " + String.format("%.2f",promedioUnidades) + "\n";
                 contenido.append(promedio);
             } else {
                 String noDiscos = "No hay discos para calcular el promedio.\n";

@@ -44,14 +44,14 @@ public class Disco implements Serializable{
 
     public String toString(){
         StringBuilder listado = new StringBuilder();
-        listado.append("\t\tNombre: ").append(nombre).append(" - Unidades Vendidas en el Mes: ").append(unidadesVendidasUltMes).append("\n");
+        listado.append("Nombre: ").append(nombre).append(" - Unidades Vendidas en el Mes: ").append(unidadesVendidasUltMes).append("\n");
         Iterator<Cancion> iterator = canciones.iterator();
         Cancion cancion;
         byte i=0;
         while(iterator.hasNext()){
             i++;
             cancion=iterator.next();
-            listado.append("\t\t").append(i).append(".   ").append(cancion).append("\n");
+            listado.append("\t").append(i).append(".   ").append(cancion).append("\n");
         }
         return listado.toString();
     }

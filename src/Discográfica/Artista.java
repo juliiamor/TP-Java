@@ -53,6 +53,28 @@ public abstract class Artista implements Serializable {
         }
     }
 
+    public String muestraDiscos(){
+        StringBuilder listado=new StringBuilder();
+        Iterator<Disco> iteratorDiscos = discos.iterator();
+        Disco disco;
+        while (iteratorDiscos.hasNext()) {
+            disco = iteratorDiscos.next();
+            listado.append(disco).append("\n");
+        }
+        return listado.toString();
+    }
+
+    public String muestraRecitales(){
+        StringBuilder listado = new StringBuilder();
+        Iterator<Recital> iteratorRecitales = recitales.iterator();
+        Recital recital;
+        while (iteratorRecitales.hasNext()) {
+            recital = iteratorRecitales.next();
+            listado.append(recital).append("\n");
+        }
+        return listado.toString();
+    }
+
     public String toString(){
         StringBuilder listado = new StringBuilder();
         listado.append(identificador).append("- Nombre: ").append(nombre)
@@ -60,19 +82,9 @@ public abstract class Artista implements Serializable {
                 .append(" - Género musical: ").append(generoMusical);
 
         listado.append("\n\tLista de Discos:\n");
-        Iterator<Disco> iteratorDiscos = discos.iterator();
-        Disco disco;
-        while (iteratorDiscos.hasNext()) {
-            disco = iteratorDiscos.next();
-            listado.append(disco).append("\n");
-        }
+        listado.append(muestraDiscos());
         listado.append("\n\tLista de Recitales:\n");
-        Iterator<Recital> iteratorRecitales = recitales.iterator();
-        Recital recital;
-        while (iteratorRecitales.hasNext()) {
-            recital = iteratorRecitales.next();
-            listado.append(recital).append("\n");
-        }
+        listado.append(muestraRecitales());
         return listado.toString();
     }
 
