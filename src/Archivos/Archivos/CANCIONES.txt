@@ -286,3 +286,55 @@ OZU;Ozutochi;Favorita;3:29;2343555
 OZU;Ozutochi;Te pienso;2:28;2341233
 OZU;Ozutochi;Un lio;3:16;23432443
 OZU;Ozutochi;Mañana;3:13;43552342
+JLS;Jazz en Vivo;Improvisación;7:21;198374
+JLS;Jazz en Vivo;Ritmo Nocturno;6:45;219837
+JLS;Jazz en Vivo;Sentimiento Puro;5:58;198273
+JLS;Noche de Jazz;Blue Vibes;5:30;278192
+HBT;Ritmo y Poesía;Ritmo Urbano;3:48;43872109
+HBT;Ritmo y Poesía;Lírica y Beat;4:32;29384712
+HBT;Ritmo y Poesía;Sonido Real;5:01;11923874
+HBT;Calle y Cultura;Voces del Asfalto;4:05;21093487
+SNT;Alma y Pasión;Pasión Latina;4:02;473198
+SNT;Alma y Pasión;Cantares;4:36;382109
+SNT;Alma y Pasión;Reflejo de Ti;5:11;623784
+SNT;Corazón del Sur;Viento de Amor;5:14;278192
+CLS;Clásicos Eternos;Obertura;6:31;198274
+CLS;Clásicos Eternos;Armonía Eterna;5:40;289314
+CLS;Clásicos Eternos;Preludio;6:05;182374
+CLS;Sinfonía de Tiempos;Amanecer;7:02;193842
+CLS;Sinfonía de Tiempos;Brumas;6:44;218374
+WVD;Sueños del Mar;Olas de Silencio;4:19;427198
+WVD;Sueños del Mar;Brisa;3:35;329182
+WVD;Amanecer Pop;Nueva Era;3:55;318927
+NYJ;Melodía Neoyorquina;Jazz en la Ciudad;5:44;218347
+NYJ;Improvisando en la Ciudad;Ritmo Vivo;4:55;312948
+BTS;Sonidos del Barrio;Calles de Fuego;4:00;237849
+BTS;Sonidos del Barrio;Rima del Sur;3:52;418273
+BTS;Poesía de Calle;Barrio Adentro;4:10;328197
+SLS;Buscando el Alma;Raíces;4:25;294381
+SLS;Buscando el Alma;Entre Sueños;5:00;412983
+SLS;Raíces y Sueños;Caminos;3:58;324891
+MGK;Llaves del Tiempo;Notas Eternas;5:22;217384
+MGK;Llaves del Tiempo;Recuerdos;4:49;132984
+MGK;Llaves del Tiempo;Voces del Pasado;5:45;293847
+DYN;Pop Dinámico;Vibra Juvenil;4:08;342198
+DYN;Explosión Juvenil;Éxtasis;3:50;283719
+JMF;Noches de Jazz;Escenario;5:49;283174
+JMF;La Gran Jam Session;Improvisación;6:02;178324
+HTB;Corazón y Alma;Melodía Sentida;3:59;321847
+HTB;Sentimientos Urbanos;Cercanía;4:28;438219
+HTB;Sentimientos Urbanos;Nostalgia;5:07;210983
+GRV;Ritmos Callejeros;Sonido de la Calle;4:33;218394
+GRV;Ritmos Callejeros;Grito Urbano;3:48;312987
+CBL;Clásicos de Oro;Sonata de Otoño;6:15;328749
+CBL;Sinfonía para el Alma;Sinfonía en Do;7:05;389217
+FNT;Sonidos Funky;Funk en la Piel;4:07;427189
+BGB;Azul Profundo;Azul;4:11;217384
+BGB;Azul Profundo;Melancolía;5:22;329874
+RSP;Ritmos del Subsuelo;Bajo Tierra;4:38;198374
+SWT;Voces del Alma;Cantando Sueños;3:57;218347
+SWT;Alma Melódica;Inspiración;4:22;328491
+SWT;Alma Melódica;Luz Interior;4:35;219374
+CLV;Concierto en Vivo;Momento;4:45;237198
+CLV;Concierto en Vivo;Oda;6:00;298174
+CLV;Sinfonía en Directo;Final;5:22;318974

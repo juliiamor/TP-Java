@@ -13,3 +13,22 @@ c;RAF;Rafaga;CUMBIA;5
 c;DAD;Daddy Yankee;REGGAETON;1
 c;NIK;Nicky Jam;REGGAETON;1
 c;OZU;Ozuna;REGGAETON;1
+e;JLS;Los Jazzistas;JAZZ;5
+e;HBT;Ritmo Callejero;HIP_HOP;3
+e;SNT;Alma Latina;SOUL;6
+e;CLS;Sonido Clásico;CLASICA;4
+e;WVD;Olas del Pop;POP;5
+e;NYJ;Jazz Argento;JAZZ;4
+e;BTS;Beats del Sur;HIP_HOP;3
+e;SLS;Buscadores de Alma;SOUL;7
+e;MGK;Llaves Mágicas;CLASICA;4
+e;DYN;Dinamita Pop;POP;5
+e;JMF;Maestros del Jazz;JAZZ;5
+e;HTB;Latido del Alma;SOUL;6
+e;GRV;Ritmo Urbano;HIP_HOP;3
+e;CBL;Esplendor Clásico;CLASICA;5
+e;FNT;Tonos Funky;POP;4
+e;BGB;Groove Azul;JAZZ;5
+e;RSP;Espacio Rítmico;HIP_HOP;4
+e;SWT;Giro del Alma;SOUL;6
+e;CLV;Clásicos en Vivo;CLASICA;3

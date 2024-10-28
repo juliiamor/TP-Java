@@ -59,3 +59,54 @@ OZU;8236954209;Odisea
 OZU;3289652389;Quiero Repetir
 OZU;328329875;Aura
 OZU;329857230;Ozutochi
+JLS;218374;Jazz en Vivo
+JLS;123789;Noche de Jazz
+JLS;193745;Improvisación Urbana
+HBT;318472;Ritmo y Poesía
+HBT;213987;Calle y Cultura
+HBT;294837;Palabras en Movimiento
+SNT;475209;Alma y Pasión
+SNT;193847;Esencia Latina
+SNT;320475;Corazón del Sur
+SNT;210984;Cantos del Alma
+CLS;129384;Clásicos Eternos
+CLS;432187;Sonatas para Siempre
+CLS;387214;Sinfonía de Tiempos
+WVD;217485;Sueños del Mar
+WVD;324987;Amanecer Pop
+NYJ;198732;Melodía Neoyorquina
+NYJ;287654;Improvisando en la Ciudad
+NYJ;319874;Ritmos de Jazz
+BTS;342198;Sonidos del Barrio
+BTS;198274;Poesía de Calle
+SLS;498217;Buscando el Alma
+SLS;287634;Raíces y Sueños
+MGK;374218;Clásicos Mágicos
+MGK;421876;Llaves del Tiempo
+MGK;295874;Ecos de Ayer
+DYN;312897;Pop Dinámico
+DYN;219874;Explosión Juvenil
+DYN;198734;Vibras del Pop
+DYN;432187;Ritmos Contemporáneos
+JMF;217489;Noches de Jazz
+JMF;328471;La Gran Jam Session
+JMF;291874;Vibración Urbana
+HTB;218364;Corazón y Alma
+HTB;312847;Sentimientos Urbanos
+GRV;198374;Ritmos Callejeros
+GRV;214987;Pulsación Urbana
+CBL;324789;Clásicos de Oro
+CBL;198473;Melodías Eternas
+CBL;487321;Sinfonía para el Alma
+CBL;237849;Notas del Pasado
+FNT;184732;Sonidos Funky
+FNT;217493;Ritmos en el Alma
+BGB;219384;Azul Profundo
+BGB;312489;Groove Nocturno
+RSP;432178;Ritmos del Subsuelo
+RSP;298374;Ecos de la Calle
+SWT;214789;Voces del Alma
+SWT;314876;Alma Melódica
+CLV;217894;Concierto en Vivo
+CLV;298374;Ecos de la Historia
+CLV;219384;Sinfonía en Directo
