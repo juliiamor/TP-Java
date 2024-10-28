@@ -26,6 +26,7 @@ public class VentanaDeArtistas extends JFrame {
         textField2.setText(artista.getIdentificador());
         textField4.setText(artista.getNombre());
         textField6.setText(artista.getGeneroMusical().toString());
+        textField8.setText(String.valueOf(artista.getCantIntegrantes()));
         textArea1.setText(artista.muestraDiscos());
         textArea2.setText(artista.muestraRecitales());
         IDENTIFICADORTextField.setEditable(false);
