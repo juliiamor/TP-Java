@@ -1,6 +1,6 @@
 package IGU;
 
-import Archivos.LecturaDeArchivos;
+import Archivos.ArchivosSerializados;
 import Discográfica.Artista;
 import Discográfica.GeneroMusical;
 import Discográfica.Gestion;
@@ -25,7 +25,6 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     private JButton top10Button;
     private JTextField textField6;
     private JButton discosButton;
-    private JComboBox<String> artistaComboBox;
     private JButton mostrarDatosButton;
     private JTextArea textAreaListadoArtistas;
     private Gestion gestion;
@@ -41,7 +40,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             identificadores[i]=id;
             i++;
         }
-        artistaComboBox.setModel(new DefaultComboBoxModel<>(identificadores));
+
         generoComboBox.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
         generoComboBox2.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
         // Acción del botón facturar
@@ -73,9 +72,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
 
         mostrarDatosButton.addActionListener(e -> {
             try{
-                String identificador = artistaComboBox.getSelectedItem().toString();
-                Artista artista = gestion.getArtista(identificador);
-                new VentanaDeArtistas(artista).setVisible(true);
+                new VentanaDeArtistas(gestion.getArtistas()).setVisible(true);
             }catch (IllegalArgumentException ex){
                 JOptionPane.showMessageDialog(this, "No se ha encontrado ese artista");
             }
@@ -87,7 +84,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
                 JOptionPane.showMessageDialog(this, "Ingrese un ID", "Error", JOptionPane.ERROR_MESSAGE);
             }else{
                 bajaArtista(identificador);
-                LecturaDeArchivos.guardarArtistas(gestion.getArtistas());
+                ArchivosSerializados.guardarArtistas(gestion.getArtistas());
             }
         });
     }

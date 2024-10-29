@@ -1,5 +1,5 @@
 package Discográfica;
-import Archivos.LecturaDeArchivos;
+import Archivos.ArchivosSerializados;
 import Archivos.LecturaDeArchivosTXT;
 import IGU.Pantalla;
 
@@ -11,14 +11,14 @@ public class Main {
     public static void main(String[] args) {
 
         Gestion gestion = new Gestion();
-        if(LecturaDeArchivos.serializadoVacio()){
+        if(ArchivosSerializados.serializadoNoExiste()){
             LecturaDeArchivosTXT.leeArtistas(gestion);  // carga de artistas desde txt
             LecturaDeArchivosTXT.leeDiscos(gestion);    // carga de discos desde txt
             LecturaDeArchivosTXT.leeCancion(gestion);   // carga de caciones desde txt
             LecturaDeArchivosTXT.leeRecital(gestion);   // carga de recitales desde txt
-            LecturaDeArchivos.guardarArtistas(gestion.getArtistas());
+            ArchivosSerializados.guardarArtistas(gestion.getArtistas());
         } else
-            LecturaDeArchivos.cargarArtistas(gestion.getArtistas());
+            ArchivosSerializados.cargarArtistas(gestion.getArtistas());
 
         SwingUtilities.invokeLater(new Runnable() {
             @Override
