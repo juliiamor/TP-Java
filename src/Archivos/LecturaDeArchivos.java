@@ -32,4 +32,9 @@ public abstract class LecturaDeArchivos {
             System.out.println("Error al guardar artistas: "+e.getMessage());
         }
     }
+
+    public static boolean serializadoVacio(){
+        File f = new File("src/Archivos/Archivos/artistasSerializado.dat");
+        return !(f.exists());
+    }
 }

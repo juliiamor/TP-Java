@@ -127,17 +127,6 @@ public abstract class Artista implements Serializable {
         return total;
     }
 
-    public int totalDiscosVendidos(){
-        int total=0;
-        Disco disco;
-        Iterator <Disco>iterator=discos.iterator();
-        while(iterator.hasNext()){
-            disco=iterator.next();
-            total+=disco.getUnidadesVendidasUltMes();
-        }
-        return total;
-    }
-
     //agrego para acceder a disco en carga de cancion
     public Disco getDisco(String nombre){
         for(Disco disco : discos){

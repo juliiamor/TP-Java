@@ -111,7 +111,7 @@ public class Gestion implements Serializable {
             listado.append("Recitales \t\t\t ").append(String.format("%.2f",aux)).append("\n");
             total += aux;
 
-            aux = artista.totalDiscosVendidos() * 100; // no se si cada disco tiene el mismo precio o si tiene un costo
+            aux = artista.unidadesDiscosVendidas() * 100; // no se si cada disco tiene el mismo precio o si tiene un costo
             listado.append("Discos \t\t\t\t ").append(String.format("%.2f",aux)).append("\n");
             total += aux;
 

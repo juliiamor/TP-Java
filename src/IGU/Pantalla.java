@@ -1,5 +1,6 @@
 package IGU;
 
+import Archivos.LecturaDeArchivos;
 import Discográfica.Artista;
 import Discográfica.GeneroMusical;
 import Discográfica.Gestion;
@@ -86,6 +87,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
                 JOptionPane.showMessageDialog(this, "Ingrese un ID", "Error", JOptionPane.ERROR_MESSAGE);
             }else{
                 bajaArtista(identificador);
+                LecturaDeArchivos.guardarArtistas(gestion.getArtistas());
             }
         });
     }
