@@ -1,9 +1,6 @@
 package Discográfica;
-import java.util.Iterator;
-import java.util.TreeMap;
+import java.util.*;
 import java.io.Serializable;
-import java.util.List;
-import java.util.ArrayList;
 
 public class Gestion implements Serializable {
     private TreeMap<String, Artista> artistas;
@@ -35,38 +32,40 @@ public class Gestion implements Serializable {
     }
 
     // metodo para filtrar artistas x cant de integrantes y genero
-    public List<Artista> filtrarArtistas(byte cantidadIntegrantes, GeneroMusical genero) {
-        List<Artista> artistasFiltrados = new ArrayList<>();
-
-        for (Artista artista : artistas.values()) {
-            if (artista.getCantIntegrantes() == cantidadIntegrantes && artista.getGeneroMusical() == genero) {
-                artistasFiltrados.add(artista);
+    public TreeMap<String,Artista> filtrarArtistas(byte cantidadIntegrantes, GeneroMusical genero) {
+        TreeMap<String,Artista> artistasFiltrados = new TreeMap<>();
+        Artista artista;
+        for(String id: artistas.keySet()){
+            artista=artistas.get(id);
+            if(artista.getCantIntegrantes() == cantidadIntegrantes && artista.getGeneroMusical()==genero){
+                artistasFiltrados.put(id,artista);
             }
         }
         return artistasFiltrados;
     }
     //filtra solo por cant de integrantes
-    public List<Artista> filtrarArtistas(byte cantidadIntegrantes){
-        List<Artista> artistasFiltrados = new ArrayList<>();
-
-        for(Artista artista : artistas.values()){
-            if(artista.getCantIntegrantes()== cantidadIntegrantes){
-                artistasFiltrados.add(artista);
+    public TreeMap<String,Artista> filtrarArtistas(byte cantidadIntegrantes){
+        TreeMap<String,Artista> artistasFiltrados = new TreeMap<>();
+        Artista artista;
+        for(String id: artistas.keySet()){
+            artista=artistas.get(id);
+            if(artista.getCantIntegrantes() == cantidadIntegrantes){
+                artistasFiltrados.put(id,artista);
             }
         }
         return artistasFiltrados;
     }
     //filtra solo por genero
-    public List<Artista> filtrarArtistas(GeneroMusical genero){
-        List<Artista> artistasFiltrados = new ArrayList<>();
-
-        for(Artista artista : artistas.values()){
-            if(artista.getGeneroMusical()== genero){
-                artistasFiltrados.add(artista);
+    public TreeMap<String,Artista> filtrarArtistas(GeneroMusical genero){
+        TreeMap<String,Artista> artistasFiltrados = new TreeMap<>();
+        Artista artista;
+        for(String id: artistas.keySet()){
+            artista=artistas.get(id);
+            if(artista.getGeneroMusical()==genero){
+                artistasFiltrados.put(id,artista);
             }
         }
         return artistasFiltrados;
-
     }
 
     public TreeMap<String, Artista> getArtistas() {

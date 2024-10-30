@@ -85,7 +85,7 @@ public abstract class Reportes {
         }
     }
 
-    public static String consultaDatosConFiltros(byte cantIntegrantes, GeneroMusical genero, Gestion gestion) {
+    /*public static String consultaDatosConFiltros(byte cantIntegrantes, GeneroMusical genero, Gestion gestion) {
         StringBuilder resultado = new StringBuilder();
         List<Artista> artistasFiltrados = new ArrayList<>();
         if(cantIntegrantes==0 && genero!=GeneroMusical.INGRESE_GENERO){
@@ -111,5 +111,5 @@ public abstract class Reportes {
             resultado.append("\n\n").append(artista);
         }
         return resultado.toString();
-    }
+    }*/
 }
