@@ -48,18 +48,25 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             String identificador = textField1.getText().trim();
             mostrarLiquidacion(identificador);
         });
-        // Acción del botón para filtrar artistas por género musical
+        // Acción del botón para filtrar artistas por género musical e Integrantes
         consultarButton.addActionListener(e -> {
             GeneroMusical generoSeleccionado = (GeneroMusical) generoComboBox.getSelectedItem();
             String integrantesStr = textField2.getText().trim();
             byte cantidadIntegrantes;
-            if (integrantesStr.isEmpty()) {
-                cantidadIntegrantes = 0;
-            } else {
-                cantidadIntegrantes = Byte.parseByte(integrantesStr);
+            try{
+                if (integrantesStr.isEmpty()) {
+                    cantidadIntegrantes = 0;
+                } else {
+                    cantidadIntegrantes = Byte.parseByte(integrantesStr);
+                }
+                if(cantidadIntegrantes<0){
+                    JOptionPane.showMessageDialog(this, "El numero de integrantes no puede ser negativo");
+                }else
+                    filtrarArtistasPorGeneroYIntegrantes(generoSeleccionado, cantidadIntegrantes);
+            }catch (NumberFormatException ex){
+                JOptionPane.showMessageDialog(this, "Cantidad de integrantes invalida");
             }
 
-            filtrarArtistasPorGeneroYIntegrantes(generoSeleccionado, cantidadIntegrantes);
         });
         top10Button.addActionListener(e -> {
             GeneroMusical generoSeleccionado = (GeneroMusical) generoComboBox2.getSelectedItem();
@@ -93,26 +100,26 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         // TODO: place custom component creation code here
     }
 
-    public void mostrarListadoArtistas() {
-        String listado=gestion.toString();
-        textAreaListadoArtistas.setText(listado);
-    }
-
     private void filtrarArtistasPorGeneroYIntegrantes(GeneroMusical genero,byte cantidadIntegrantes) {
-        String artistasEncontrados = Reportes.consultaDatosConFiltros(cantidadIntegrantes,genero,gestion);
-        if (artistasEncontrados.contains("error")) {
-            JOptionPane.showMessageDialog(this, "No se ha ingresado ningun dato válido");
-        }else {
-            JTextArea textArea = new JTextArea(artistasEncontrados);
-            textArea.setEditable(false);
-            textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
+        if(genero.toString().equals("INGRESE_GENERO") && cantidadIntegrantes==0){
+            JOptionPane.showMessageDialog(this, "Ingrese Filtros");
+        }else{
+            TreeMap<String,Artista> artistasFiltrados;
 
-            JScrollPane scrollPane = new JScrollPane(textArea);
-            scrollPane.setPreferredSize(new Dimension(800,600));
+            if(genero.toString()=="INGRESE_GENERO"){
+                artistasFiltrados=gestion.filtrarArtistas(cantidadIntegrantes);
+            } else if (cantidadIntegrantes==0) {
+                artistasFiltrados=gestion.filtrarArtistas(genero);
+            }else{
+                artistasFiltrados=gestion.filtrarArtistas(cantidadIntegrantes,genero);
+            }
 
-            JOptionPane.showMessageDialog(this, scrollPane, "Artistas filtrados:", JOptionPane.INFORMATION_MESSAGE);
+            if(artistasFiltrados.isEmpty()){
+                JOptionPane.showMessageDialog(this,"No existen artistas con esos filtros");
+            }else{
+                new VentanaDeArtistas(artistasFiltrados).setVisible(true);
+            }
         }
-
     }
 
     public void bajaArtista(String identificador){
@@ -158,7 +165,6 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         }
     }
 
-
     public void mostrarUnidadesVendidas(String identificador){
         try{
             JTextArea textArea = new JTextArea(Reportes.unidadesVendidas(identificador,gestion.getArtistas()));
@@ -174,8 +180,5 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         catch (IllegalArgumentException e){
             JOptionPane.showMessageDialog(this, "El artista ingresado no existe", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }
-
-    public static class Ventanas {
     }
 }
