@@ -64,7 +64,7 @@ public abstract class Reportes {
             }
 
             // Escribe el total de discos
-            String totalDiscos = "\nTotal de discos: " + totalUnidadesVendidas + "\n";
+            String totalDiscos = "\nTotal de discos: " + cantidadDiscos + "\n";
             contenido.append(totalDiscos);
 
             // Calcula y escribe el promedio de unidades vendidas

@@ -144,4 +144,8 @@ public abstract class Artista implements Serializable {
         return false;
     }
 
+    public int cantidadDiscos(){
+        return discos.size();
+    }
+
 }
