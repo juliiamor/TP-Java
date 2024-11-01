@@ -6,9 +6,18 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.lang.String;
 
-public abstract class LecturaDeArchivosTXT{
+public class LecturaDeArchivosTXT{
+    InformeConsistenciaDatos informe;
 
-    public static void leeArtistas(Gestion mapaArtistas) {
+    public LecturaDeArchivosTXT(){
+        informe = new InformeConsistenciaDatos();
+    }
+
+    public void generaInforme(){
+        informe.generaInforme();
+    }
+
+    public void leeArtistas(Gestion mapaArtistas) {
         try {
             BufferedReader lector = new BufferedReader(new FileReader("src/Archivos/Archivos/ARTISTAS.txt"));
             String linea = "";
@@ -21,24 +30,23 @@ public abstract class LecturaDeArchivosTXT{
                     String nombre = bloque[2];
                     String gen = bloque[3];
                     byte integrantes = Byte.parseByte(bloque[4]);
-                    System.out.println("categoria: " + cat +" id: "+ id + " nombre: "+ nombre + " genero: "+ gen + " integrantes: "+ integrantes);//para verificar carga de artista por consola
                     if (cat == 'c')
                         mapaArtistas.addArtista(new ArtistaConsagrado(id, nombre, integrantes, GeneroMusical.valueOf(gen)));
                     else
                         mapaArtistas.addArtista(new ArtistaEmergente(id, nombre, integrantes, GeneroMusical.valueOf(gen)));
                 } catch (StringIndexOutOfBoundsException e) {
-                    System.out.println("Error: cantidad de datos erronea");
+                    informe.agregaError("Error: cantidad de datos erronea");
                 } catch (IllegalArgumentException e) {
-                    System.out.println("Error de datos en la linea: " + linea + "-" + e.getMessage());
+                    informe.agregaError("Error de datos en la linea: " + linea + "-" + e.getMessage());
                 }
             }
             lector.close();
         } catch (IOException e) {
-            System.out.println("Error al leer el archivo " + e.getMessage());
+            informe.agregaError("Error al leer el archivo " + e.getMessage());
         }
     }
 
-    public static void validaDatosArtista(String[] bloque) throws IllegalArgumentException, StringIndexOutOfBoundsException, NumberFormatException {
+    public void validaDatosArtista(String[] bloque) throws IllegalArgumentException, StringIndexOutOfBoundsException, NumberFormatException {
         if (bloque.length != 5) {
             throw new StringIndexOutOfBoundsException("Error: cantidad de datos errónea.");
         }
@@ -68,7 +76,7 @@ public abstract class LecturaDeArchivosTXT{
         }
     }
 
-    public static void leeDiscos(Gestion mapaArtistas) {
+    public void leeDiscos(Gestion mapaArtistas) {
         try {
             BufferedReader lector = new BufferedReader(new FileReader("src/Archivos/Archivos/DISCOS.txt"));
             String linea = "";
@@ -79,21 +87,20 @@ public abstract class LecturaDeArchivosTXT{
                     String id = bloque[0];
                     long unidadesVendidas = Long.parseLong(bloque[1]);
                     String nombre = bloque[2];
-                    System.out.println("id: "+ id +" unidades vendidas: " + unidadesVendidas + " nombre: " + nombre); //para verificar carga de disco por consola
                     mapaArtistas.filtraArtistaPorID(id).addDisco(new Disco(unidadesVendidas, nombre));
                 } catch (StringIndexOutOfBoundsException e) {
-                    System.out.println("Error: cantidad de datos erronea");
+                    informe.agregaError("Error: cantidad de datos erronea");
                 } catch (IllegalArgumentException e) {
-                    System.out.println("Error de datos en la linea: " + linea + "-" + e.getMessage());
+                    informe.agregaError("Error de datos en la linea: " + linea + "-" + e.getMessage());
                 }
             }
             lector.close();
         } catch (IOException e) {
-            System.out.println("Error al leer el archivo " + e.getMessage());
+            informe.agregaError("Error al leer el archivo " + e.getMessage());
         }
     }
 
-    public static void validaDatosDisco(String[] bloque, Gestion mapaArtistas) throws IllegalArgumentException, StringIndexOutOfBoundsException {
+    public void validaDatosDisco(String[] bloque, Gestion mapaArtistas) throws IllegalArgumentException, StringIndexOutOfBoundsException {
         if (bloque.length != 3) {
             throw new StringIndexOutOfBoundsException("Error: cantidad de datos errónea.");
         }
@@ -118,7 +125,7 @@ public abstract class LecturaDeArchivosTXT{
         }
     }
 
-    public static void leeCancion(Gestion mapaArtistas) {
+    public void leeCancion(Gestion mapaArtistas) {
         try {
             BufferedReader lector = new BufferedReader(new FileReader("src/Archivos/Archivos/CANCIONES.txt"));
             String linea = "";
@@ -133,21 +140,20 @@ public abstract class LecturaDeArchivosTXT{
                     String nombre = bloque[2];
                     String duracion = bloque[3];
                     long cantReproducciones = Long.parseLong(bloque[4]);
-                    System.out.println("DATOS CANCION id: "+id+" nombre disco: "+nombreDisco+" nombre cancion: "+nombre+" duracion: "+duracion+" reprodiucciones: "+cantReproducciones); //para verificar carga de cancion por consola
                     mapaArtistas.filtraArtistaPorID(id).getDisco(nombreDisco).addCancion(new Cancion(nombre, duracion, cantReproducciones));
                 } catch (StringIndexOutOfBoundsException e) {
-                    System.out.println("Error: cantidad de datos erronea");
+                    informe.agregaError("Error: cantidad de datos erronea");
                 } catch (IllegalArgumentException e) {
-                    System.out.println("Error de datos en la linea: " + linea + "-" + e.getMessage());
+                    informe.agregaError("Error de datos en la linea: " + linea + "-" + e.getMessage());
                 }
             }
             lector.close();
         } catch (IOException e) {
-            System.out.println("Error al leer el archivo " + e.getMessage());
+            informe.agregaError("Error al leer el archivo " + e.getMessage());
         }
     }
 
-    public static void validaDatosCancion(String[] bloque, Gestion mapaArtistas) throws IllegalArgumentException, StringIndexOutOfBoundsException {
+    public void validaDatosCancion(String[] bloque, Gestion mapaArtistas) throws IllegalArgumentException, StringIndexOutOfBoundsException {
 
         if (bloque.length != 5) {
             throw new StringIndexOutOfBoundsException("Error: cantidad de datos errónea.");
@@ -188,7 +194,7 @@ public abstract class LecturaDeArchivosTXT{
         }
     }
 
-    public static void validaDuracion(String duracion) throws IllegalArgumentException, StringIndexOutOfBoundsException {
+    public void validaDuracion(String duracion) throws IllegalArgumentException, StringIndexOutOfBoundsException {
         String[] bloque = duracion.split(":");
         if (bloque.length != 2) {
             throw new IllegalArgumentException("Error: Formato de duracion debe ser minutos:segundos");
@@ -214,7 +220,7 @@ public abstract class LecturaDeArchivosTXT{
         }
     }
 
-    public static void leeRecital(Gestion mapaArtistas) {
+    public void leeRecital(Gestion mapaArtistas) {
 
         try {
 
@@ -228,21 +234,20 @@ public abstract class LecturaDeArchivosTXT{
                     float recaudacion = Float.parseFloat(bloque[2]);
                     String fecha = bloque[1];
                     float costosProduccion = Float.parseFloat(bloque[3]);
-                    System.out.println("fecha: "+fecha+ "recacudacion: " + recaudacion+ " costos :" +costosProduccion);   // para verificar carga por consola
                     mapaArtistas.filtraArtistaPorID(id).addRecital(new Recital(fecha, recaudacion, costosProduccion));
                 } catch (StringIndexOutOfBoundsException e) {
-                    System.out.println("Error: cantidad de datos erronea");
+                    informe.agregaError("Error: cantidad de datos erronea");
                 } catch (IllegalArgumentException e) {
-                    System.out.println("Error de datos en la linea: " + linea + "-" + e.getMessage());
+                    informe.agregaError("Error de datos en la linea: " + linea + "-" + e.getMessage());
                 }
             }
             lector.close();
         } catch (IOException e) {
-            System.out.println("Error al leer el archivo " + e.getMessage());
+            informe.agregaError("Error al leer el archivo " + e.getMessage());
         }
     }
 
-    public static   void validaDatosRecital(String[] bloque, Gestion mapaArtistas) throws IllegalArgumentException , StringIndexOutOfBoundsException {
+    public void validaDatosRecital(String[] bloque, Gestion mapaArtistas) throws IllegalArgumentException , StringIndexOutOfBoundsException {
         if(bloque.length != 4) {
             throw new IllegalArgumentException("Error: cantidad de datos erronea.");
         }

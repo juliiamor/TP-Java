@@ -11,11 +11,13 @@ public class Main {
     public static void main(String[] args) {
 
         Gestion gestion = new Gestion();
+        LecturaDeArchivosTXT arch = new LecturaDeArchivosTXT();
         if(ArchivosSerializados.serializadoNoExiste()){
-            LecturaDeArchivosTXT.leeArtistas(gestion);  // carga de artistas desde txt
-            LecturaDeArchivosTXT.leeDiscos(gestion);    // carga de discos desde txt
-            LecturaDeArchivosTXT.leeCancion(gestion);   // carga de caciones desde txt
-            LecturaDeArchivosTXT.leeRecital(gestion);   // carga de recitales desde txt
+            arch.leeArtistas(gestion);  // carga de artistas desde txt
+            arch.leeDiscos(gestion);    // carga de discos desde txt
+            arch.leeCancion(gestion);   // carga de caciones desde txt
+            arch.leeRecital(gestion);   // carga de recitales desde txt
+            arch.generaInforme();
             ArchivosSerializados.guardarArtistas(gestion.getArtistas());
         } else
             ArchivosSerializados.cargarArtistas(gestion.getArtistas());

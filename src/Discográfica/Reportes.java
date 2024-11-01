@@ -18,9 +18,9 @@ public abstract class Reportes {
         // Lista para almacenar canciones del género dado
         List<Cancion> cancionesDelGenero = new ArrayList<>();
 
-        for (Artista artista : artistas.values()) {
+        for (Artista artista:artistas.values()) {
             if (artista.getGeneroMusical()== genero) {
-                for (Disco disco : artista.getDiscos()) {
+                for (Disco disco:artista.getDiscos()) {
                     cancionesDelGenero.addAll(disco.getCanciones());
                 }
             }
@@ -54,7 +54,7 @@ public abstract class Reportes {
 
             // Variables para calcular el total de unidades vendidas y el promedio
             long totalUnidadesVendidas = artista.unidadesDiscosVendidas(); //Utiliza el metodo ya existente que calcula el total de unidades de discos vendidos
-            int cantidadDiscos = artista.getDiscos().size();
+            int cantidadDiscos = artista.cantidadDiscos();
 
             // Recorre los discos del artista
             for (Disco disco : artista.getDiscos()) {
@@ -64,8 +64,9 @@ public abstract class Reportes {
             }
 
             // Escribe el total de discos
-            String totalDiscos = "\nTotal de discos: " + cantidadDiscos + "\n";
-            contenido.append(totalDiscos);
+            String totalDiscos = "\nTotal de discos: " + cantidadDiscos;
+            String totalDiscosVendidos = "\nTotal de Vendidos: " + totalUnidadesVendidas + "\n";
+            contenido.append(totalDiscos).append(totalDiscosVendidos);
 
             // Calcula y escribe el promedio de unidades vendidas
             if (cantidadDiscos > 0) {
@@ -84,32 +85,4 @@ public abstract class Reportes {
             throw new IllegalArgumentException("Artista no encontrado");
         }
     }
-
-    /*public static String consultaDatosConFiltros(byte cantIntegrantes, GeneroMusical genero, Gestion gestion) {
-        StringBuilder resultado = new StringBuilder();
-        List<Artista> artistasFiltrados = new ArrayList<>();
-        if(cantIntegrantes==0 && genero!=GeneroMusical.INGRESE_GENERO){
-            resultado.append("Artistas Filtrados por");
-            artistasFiltrados = gestion.filtrarArtistas(genero);
-            resultado.append(" Genero: ").append(genero);
-        }else if(genero==GeneroMusical.INGRESE_GENERO && cantIntegrantes!=0){
-            resultado.append("Artistas Filtrados por");
-            artistasFiltrados = gestion.filtrarArtistas(cantIntegrantes);
-            resultado.append(" Cantidad de Integrantes: ").append(cantIntegrantes);
-        }else if(genero==GeneroMusical.INGRESE_GENERO && cantIntegrantes==0){
-            resultado.append("error");
-        }
-        else{
-            resultado.append("Artistas Filtrados por");
-            artistasFiltrados = gestion.filtrarArtistas(cantIntegrantes,genero);
-            resultado.append(" Genero ").append(genero).append(" y Cantidad de Integrantes ").append(cantIntegrantes);
-        }
-        Iterator<Artista> iterator = artistasFiltrados.iterator();
-        Artista artista;
-        while (iterator.hasNext()) {
-            artista = iterator.next();
-            resultado.append("\n\n").append(artista);
-        }
-        return resultado.toString();
-    }*/
 }
