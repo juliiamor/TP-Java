@@ -121,7 +121,7 @@ public class Gestion implements Serializable {
             throw new IllegalArgumentException();
         } else {
             Artista artista = artistas.get(id);
-            return artista.unidadesDiscosVendidas() * 20;
+            return artista.unidadesDiscosVendidas() * 100;
         }
     }
 
