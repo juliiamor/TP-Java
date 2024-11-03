@@ -19,12 +19,12 @@ public class VentanaFacturacion extends JFrame{
         setTitle("Facturacion");
         add(Ventana);
         setSize(530, 600);
-        textField1.setText(String.format("%.2f", totalArt));
-        textField2.setText(String.format("%.2f",totalDiscografica));
+        textField1.setText("$ "+String.format("%.2f", totalArt));
+        textField2.setText("$ "+String.format("%.2f",totalDiscografica));
         textField3.setText(artista);
-        textField4.setText(String.format("%.2f",totalDiscos));
-        textField5.setText(String.format("%.2f", totalRepro));
-        textField6.setText(String.format("%.2f",totalRecital));
-        textField7.setText(String.format("%.2f", total));
+        textField4.setText("$ "+String.format("%.2f",totalDiscos));
+        textField5.setText("$ "+String.format("%.2f", totalRepro));
+        textField6.setText("$ "+String.format("%.2f",totalRecital));
+        textField7.setText("$ "+String.format("%.2f", total));
     }
 }
