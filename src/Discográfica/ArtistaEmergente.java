@@ -8,4 +8,9 @@ public class ArtistaEmergente extends Artista{
     public String toString() {
         return "ArtistaEmergente - "+super.toString();
     }
+
+    @Override
+    public float porcentajeRegalias() {
+        return 0.35f;
+    }
 }

@@ -98,38 +98,78 @@ public class Gestion implements Serializable {
         return listado.toString();
     }
 
-    public StringBuilder facturacionUltMes(String identificador) {
+    public double totalRecitalesMes(String id) {
+        if (!artistas.containsKey(id)) {
+            throw new IllegalArgumentException();
+        }else{
+            Artista artista = artistas.get(id);
+            return artista.netoRecitalUltMes();
+        }
+    }
+
+    public double totalReproduccionesMes(String id) {
+        if (!artistas.containsKey(id)) {
+            throw new IllegalArgumentException();
+        }else{
+            Artista artista = artistas.get(id);
+            return artista.reproduccionesUltMes() * 0.1f;
+        }
+    }
+
+    public double totalDiscosVendidosMes(String id) {
+        if (!artistas.containsKey(id)) {
+            throw new IllegalArgumentException();
+        } else {
+            Artista artista = artistas.get(id);
+            return artista.unidadesDiscosVendidas() * 20;
+        }
+    }
+
+    public double totalGenerado(String id) {
+        if (!artistas.containsKey(id)) {
+            throw new IllegalArgumentException();
+        } else {
+            return totalDiscosVendidosMes(id) + totalReproduccionesMes(id) + totalRecitalesMes(id);
+        }
+    }
+
+    public double totalArtista(String id) {
+        if (!artistas.containsKey(id)) {
+            throw new IllegalArgumentException();
+        } else {
+            return totalGenerado(id) - totalDiscografica(id);
+        }
+    }
+
+    public double totalDiscografica(String id) {
+        if (!artistas.containsKey(id)) {
+            throw new IllegalArgumentException();
+        } else {
+            Artista artista = artistas.get(id);
+            return totalGenerado(id) * artista.porcentajeRegalias();
+        }
+    }
+
+   /* public StringBuilder facturacionUltMes(String identificador) {
         Artista artista = artistas.get(identificador);
-        double total = 0, aux;
+        double total = 0;
         StringBuilder listado = new StringBuilder();
 
         if (artista != null) {
             listado.append("Artista: ").append(artista.getNombre());
             listado.append("\nDescripción \t\t\t Total recaudado").append("\n");
-            aux = artista.netoRecitalUltMes();
-            listado.append("Recitales \t\t\t ").append(String.format("%.2f",aux)).append("\n");
-            total += aux;
+            listado.append("Recitales \t\t\t ").append(String.format("%.2f",totalRecitalesMes(artista))).append("\n");
 
-            aux = artista.unidadesDiscosVendidas() * 100; // no se si cada disco tiene el mismo precio o si tiene un costo
-            listado.append("Discos \t\t\t\t ").append(String.format("%.2f",aux)).append("\n");
-            total += aux;
+            listado.append("Discos \t\t\t\t ").append(String.format("%.2f",totalDiscosVendidosMes(artista))).append("\n");
 
-            aux = artista.reproduccionesUltMes() * 0.1f; // cualquier cosa se cambia el precio del disco y de la reproduccion
-            listado.append("Reproducciones \t\t\t ").append(String.format("%.2f",aux)).append("\n");
-            total += aux;
+            listado.append("Reproducciones \t\t\t ").append(String.format("%.2f",totalReproduccionesMes(artista))).append("\n");
 
-            if (artista instanceof ArtistaConsagrado) {
-                aux = total * 0.2f;
-                listado.append("Regalías (20%) \t\t\t-").append(String.format("%.2f",aux)).append("\n");
-            } else {
-                aux = total * 0.35f;
-                listado.append("Regalías (35%) \t\t\t-").append(String.format("%.2f",aux)).append("\n");
-            }
-            total -= aux;
-            listado.append("Total: \t\t\t\t ").append(String.format("%.2f",total)).append("\n");
+            listado.append("\n\nTotal a Discografica (").append(artista.porcentajeRegalias()*100).append("%) \t ").append(String.format("%.2f",totalDiscografica(identificador))).append("\n");
+
+            listado.append("Total para el Artista: \t\t").append(String.format("%.2f",totalArtista(identificador))).append("\n");
         } else {
             listado.append("No se encontró al artista");
         }
         return listado;
-    }
+    }*/
 }

@@ -132,20 +132,20 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     }
 
     public void mostrarLiquidacion(String identificador) {
-        StringBuilder liquidacion = gestion.facturacionUltMes(identificador);
+        try{
+            Artista artista = gestion.getArtista(identificador);
+            new VentanaFacturacion(
+                    artista.getNombre(),
+                    gestion.totalRecitalesMes(identificador),
+                    gestion.totalReproduccionesMes(identificador),
+                    gestion.totalDiscosVendidosMes(identificador),
+                    gestion.totalArtista(identificador),
+                    gestion.totalDiscografica(identificador),
+                    gestion.totalGenerado(identificador)
+            ).setVisible(true);
 
-        if (liquidacion.toString().contains("No se encontró al artista")) {
-            JOptionPane.showMessageDialog(this, liquidacion.toString());
-        }else {
-            JTextArea textArea = new JTextArea(liquidacion.toString());
-            textArea.setEditable(false);
-            textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
-
-            JScrollPane scrollPane = new JScrollPane(textArea);
-            scrollPane.setPreferredSize(new Dimension(800,600));
-
-            // Mostrar la ventana con la liquidación
-            JOptionPane.showMessageDialog(this, scrollPane, "Liquidación del Artista", JOptionPane.INFORMATION_MESSAGE);
+        }catch (IllegalArgumentException ex){
+            JOptionPane.showMessageDialog(this,"No existe ningun artista con ese ID");
         }
     }
 

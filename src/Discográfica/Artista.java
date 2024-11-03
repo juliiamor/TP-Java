@@ -148,4 +148,5 @@ public abstract class Artista implements Serializable {
         return discos.size();
     }
 
+    public abstract float porcentajeRegalias();
 }
