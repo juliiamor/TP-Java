@@ -55,8 +55,8 @@ public class LecturaDeArchivosTXT{
             throw new IllegalArgumentException("Error: la categoria debe ser 'c'(consagrado) o 'e'(emergente)");
         }
         String id = bloque[1];
-        if (bloque[1].length() > 25) {
-            throw new IllegalArgumentException("Error: ID excede 3 caracteres");
+        if (bloque[1].length() != 6) {
+            throw new IllegalArgumentException("Error: ID debe tener 6 caracteres");
         }
         String nom = bloque[2];
         if (bloque[2].length() > 25) {
@@ -105,8 +105,8 @@ public class LecturaDeArchivosTXT{
             throw new StringIndexOutOfBoundsException("Error: cantidad de datos errónea.");
         }
         String id = bloque[0];
-        if (id.length() != 3) {
-            throw new IllegalArgumentException("Error: ID excede 3 caracteres");
+        if (id.length() != 6) {
+            throw new IllegalArgumentException("Error: ID debe tener 6 caracteres");
         }
         if (mapaArtistas.filtraArtistaPorID(id) == null) {
             throw new IllegalArgumentException("Error: ID no se encuentra entre los artistas");
@@ -159,8 +159,8 @@ public class LecturaDeArchivosTXT{
             throw new StringIndexOutOfBoundsException("Error: cantidad de datos errónea.");
         }
         String id = bloque[0];
-        if (id.length() != 3) {
-            throw new IllegalArgumentException("Error: ID debe ser de 3 caracteres");
+        if (id.length() != 6) {
+            throw new IllegalArgumentException("Error: ID debe tener 6 caracteres");
         }
         if (mapaArtistas.filtraArtistaPorID(id) == null) {
             throw new IllegalArgumentException("Error: ID no se encuentra entre los artistas");
@@ -252,8 +252,8 @@ public class LecturaDeArchivosTXT{
             throw new IllegalArgumentException("Error: cantidad de datos erronea.");
         }
         String id = bloque[0];
-        if(id.length() != 3) {
-            throw new IllegalArgumentException("Error: ID debe ser de 3 caracteres");
+        if(id.length() != 6) {
+            throw new IllegalArgumentException("Error: ID debe tener 6 caracteres");
         }
         if (mapaArtistas.filtraArtistaPorID(id) == null) {
             throw new IllegalArgumentException("Error: ID artista no existe");

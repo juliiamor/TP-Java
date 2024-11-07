@@ -1,112 +1,112 @@
-TBI;621874;La Ultima Noche Magica
-TBI;172498;Wonderful Noches
-TBI;8920124;Canciones Del Huracan
-TBI;9984435;Obsesionario
-TBI;823952;Destinologia
-MAN;3278509;Maná
-MAN;3275932;Falta Amor
-MAN;3256754;Sueños Líquidos
-MAN;3456367;Revolución De Amor
-MAN;3295788;Drama y Luz
-TSF;3267854789;Fearless
-TSF;6540278325;Speak Now
-TSF;6320237568;Lover
-TSF;7420358721;Folklore
-TSF;8216502511;Midnights
-COL;1204121946;Parachutes
-COL;7301248961;Music Of The Spheres
-COL;7832786214;A Head Full Of Dreams
-PIN;7893202489;Para Cantar He Nacido
-PIN;328945032;Todos Los Dias Un Poco
-PIN;101284821;Sentidos
-PIN;67120412;Reflejo Real
-PIN;892140214;La Llave
-SHA;83205423579;Magia
-SHA;382580223;Peligro
-SHA;3298410312;Pies Descalzos
-SHA;37862491241;Loba
-DUA;12786419419;Genesis
-DUA;601294712;Future Nostalgia
-DUA;7621958420;Radical Optimism
-UTW;712041712;Boy
-UTW;12894210;October
-UTW;218451041;War
-UTW;2195489162;Zooropa
-UTW;1274512214;Pop
-MAR;72149;Todo Comenzo Bailando
-MAR;21849;La Culpa
-TOT;7123549812;Sin Mirar Atras
-TOT;28176845921;Cuestion De Tiempo
-TOT;129578182;Y Ahora Vivo
-TOT;1258512;Me Veras Bailando
-TOT;73825021;Encontrandonos
-LGA;316259;A Escondidas
-LGA;324786;Uno Mas Uno
-LGA;3091240;El Baile de las Egresadas
-LGA;3788592;Gucci
-RAF;37289522;Soplando Fuerte
-RAF;23759238;Sobrevolando America
-RAF;23586792;Imparables
-RAF;32589729;Amandonos
-DAD;2385769223;NoMercy
-DAD;32957320923;BarrioFino
-DAD;2375623992;Legendaddy
-NIK;81289641;Vida Escante
-NIK;127410162;Fenix
-NIK;2189674120;Fiel A Tu Piel
-NIK;127498120;Intimo
-OZU;8236954209;Odisea
-OZU;3289652389;Quiero Repetir
-OZU;328329875;Aura
-OZU;329857230;Ozutochi
-JLS;218374;Jazz en Vivo
-JLS;123789;Noche de Jazz
-JLS;193745;Improvisación Urbana
-HBT;318472;Ritmo y Poesía
-HBT;213987;Calle y Cultura
-HBT;294837;Palabras en Movimiento
-SNT;475209;Alma y Pasión
-SNT;193847;Esencia Latina
-SNT;320475;Corazón del Sur
-SNT;210984;Cantos del Alma
-CLS;129384;Clásicos Eternos
-CLS;432187;Sonatas para Siempre
-CLS;387214;Sinfonía de Tiempos
-WVD;217485;Sueños del Mar
-WVD;324987;Amanecer Pop
-NYJ;198732;Melodía Neoyorquina
-NYJ;287654;Improvisando en la Ciudad
-NYJ;319874;Ritmos de Jazz
-BTS;342198;Sonidos del Barrio
-BTS;198274;Poesía de Calle
-SLS;498217;Buscando el Alma
-SLS;287634;Raíces y Sueños
-MGK;374218;Clásicos Mágicos
-MGK;421876;Llaves del Tiempo
-MGK;295874;Ecos de Ayer
-DYN;312897;Pop Dinámico
-DYN;219874;Explosión Juvenil
-DYN;198734;Vibras del Pop
-DYN;432187;Ritmos Contemporáneos
-JMF;217489;Noches de Jazz
-JMF;328471;La Gran Jam Session
-JMF;291874;Vibración Urbana
-HTB;218364;Corazón y Alma
-HTB;312847;Sentimientos Urbanos
-GRV;198374;Ritmos Callejeros
-GRV;214987;Pulsación Urbana
-CBL;324789;Clásicos de Oro
-CBL;198473;Melodías Eternas
-CBL;487321;Sinfonía para el Alma
-CBL;237849;Notas del Pasado
-FNT;184732;Sonidos Funky
-FNT;217493;Ritmos en el Alma
-BGB;219384;Azul Profundo
-BGB;312489;Groove Nocturno
-RSP;432178;Ritmos del Subsuelo
-RSP;298374;Ecos de la Calle
-SWT;214789;Voces del Alma
-SWT;314876;Alma Melódica
-CLV;217894;Concierto en Vivo
-CLV;298374;Ecos de la Historia
-CLV;219384;Sinfonía en Directo
+000TBI;621874;La Ultima Noche Magica
+000TBI;172498;Wonderful Noches
+000TBI;8920124;Canciones Del Huracan
+000TBI;9984435;Obsesionario
+000TBI;823952;Destinologia
+000MAN;3278509;Maná
+000MAN;3275932;Falta Amor
+000MAN;3256754;Sueños Líquidos
+000MAN;3456367;Revolución De Amor
+000MAN;3295788;Drama y Luz
+000TSF;3267854789;Fearless
+000TSF;6540278325;Speak Now
+000TSF;6320237568;Lover
+000TSF;7420358721;Folklore
+000TSF;8216502511;Midnights
+000COL;1204121946;Parachutes
+000COL;7301248961;Music Of The Spheres
+000COL;7832786214;A Head Full Of Dreams
+000PIN;7893202489;Para Cantar He Nacido
+000PIN;328945032;Todos Los Dias Un Poco
+000PIN;101284821;Sentidos
+000PIN;67120412;Reflejo Real
+000PIN;892140214;La Llave
+000SHA;83205423579;Magia
+000SHA;382580223;Peligro
+000SHA;3298410312;Pies Descalzos
+000SHA;37862491241;Loba
+000DUA;12786419419;Genesis
+000DUA;601294712;Future Nostalgia
+000DUA;7621958420;Radical Optimism
+000UTW;712041712;Boy
+000UTW;12894210;October
+000UTW;218451041;War
+000UTW;2195489162;Zooropa
+000UTW;1274512214;Pop
+000MAR;72149;Todo Comenzo Bailando
+000MAR;21849;La Culpa
+000TOT;7123549812;Sin Mirar Atras
+000TOT;28176845921;Cuestion De Tiempo
+000TOT;129578182;Y Ahora Vivo
+000TOT;1258512;Me Veras Bailando
+000TOT;73825021;Encontrandonos
+000LGA;316259;A Escondidas
+000LGA;324786;Uno Mas Uno
+000LGA;3091240;El Baile de las Egresadas
+000LGA;3788592;Gucci
+000RAF;37289522;Soplando Fuerte
+000RAF;23759238;Sobrevolando America
+000RAF;23586792;Imparables
+000RAF;32589729;Amandonos
+000DAD;2385769223;NoMercy
+000DAD;32957320923;BarrioFino
+000DAD;2375623992;Legendaddy
+000NIK;81289641;Vida Escante
+000NIK;127410162;Fenix
+000NIK;2189674120;Fiel A Tu Piel
+000NIK;127498120;Intimo
+000OZU;8236954209;Odisea
+000OZU;3289652389;Quiero Repetir
+000OZU;328329875;Aura
+000OZU;329857230;Ozutochi
+000JLS;218374;Jazz en Vivo
+000JLS;123789;Noche de Jazz
+000JLS;193745;Improvisación Urbana
+000HBT;318472;Ritmo y Poesía
+000HBT;213987;Calle y Cultura
+000HBT;294837;Palabras en Movimiento
+000SNT;475209;Alma y Pasión
+000SNT;193847;Esencia Latina
+000SNT;320475;Corazón del Sur
+000SNT;210984;Cantos del Alma
+000CLS;129384;Clásicos Eternos
+000CLS;432187;Sonatas para Siempre
+000CLS;387214;Sinfonía de Tiempos
+000WVD;217485;Sueños del Mar
+000WVD;324987;Amanecer Pop
+000NYJ;198732;Melodía Neoyorquina
+000NYJ;287654;Improvisando en la Ciudad
+000NYJ;319874;Ritmos de Jazz
+000BTS;342198;Sonidos del Barrio
+000BTS;198274;Poesía de Calle
+000SLS;498217;Buscando el Alma
+000SLS;287634;Raíces y Sueños
+000MGK;374218;Clásicos Mágicos
+000MGK;421876;Llaves del Tiempo
+000MGK;295874;Ecos de Ayer
+000DYN;312897;Pop Dinámico
+000DYN;219874;Explosión Juvenil
+000DYN;198734;Vibras del Pop
+000DYN;432187;Ritmos Contemporáneos
+000JMF;217489;Noches de Jazz
+000JMF;328471;La Gran Jam Session
+000JMF;291874;Vibración Urbana
+000HTB;218364;Corazón y Alma
+000HTB;312847;Sentimientos Urbanos
+000GRV;198374;Ritmos Callejeros
+000GRV;214987;Pulsación Urbana
+000CBL;324789;Clásicos de Oro
+000CBL;198473;Melodías Eternas
+000CBL;487321;Sinfonía para el Alma
+000CBL;237849;Notas del Pasado
+000FNT;184732;Sonidos Funky
+000FNT;217493;Ritmos en el Alma
+000BGB;219384;Azul Profundo
+000BGB;312489;Groove Nocturno
+000RSP;432178;Ritmos del Subsuelo
+000RSP;298374;Ecos de la Calle
+000SWT;214789;Voces del Alma
+000SWT;314876;Alma Melódica
+000CLV;217894;Concierto en Vivo
+000CLV;298374;Ecos de la Historia
+000CLV;219384;Sinfonía en Directo

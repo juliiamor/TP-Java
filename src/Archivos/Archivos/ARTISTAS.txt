@@ -1,34 +1,34 @@
-c;TBI;Tan Bionica;POP;4
-c;MAN;Maná;ROCK;5
-c;TSF;Tylor Swift;POP;1
-c;COL;Coldplay;ROCK;5
-c;PIN;Abel Pintos;POP;1
-c;SHA;Shakira;POP;1
-c;DUA;Dua Lipa;POP;1
-c;UTW;U2;ROCK;5
-c;MAR;Marama;CUMBIA;5
-c;TOT;Los Totora;CUMBIA;4
-c;LGA;LGante;CUMBIA;1
-c;RAF;Rafaga;CUMBIA;5
-c;DAD;Daddy Yankee;REGGAETON;1
-c;NIK;Nicky Jam;REGGAETON;1
-c;OZU;Ozuna;REGGAETON;1
-e;JLS;Los Jazzistas;JAZZ;5
-e;HBT;Ritmo Callejero;HIP_HOP;3
-e;SNT;Alma Latina;SOUL;6
-e;CLS;Sonido Clásico;CLASICA;4
-e;WVD;Olas del Pop;POP;5
-e;NYJ;Jazz Argento;JAZZ;4
-e;BTS;Beats del Sur;HIP_HOP;3
-e;SLS;Buscadores de Alma;SOUL;7
-e;MGK;Llaves Mágicas;CLASICA;4
-e;DYN;Dinamita Pop;POP;5
-e;JMF;Maestros del Jazz;JAZZ;5
-e;HTB;Latido del Alma;SOUL;6
-e;GRV;Ritmo Urbano;HIP_HOP;3
-e;CBL;Esplendor Clásico;CLASICA;5
-e;FNT;Tonos Funky;POP;4
-e;BGB;Groove Azul;JAZZ;5
-e;RSP;Espacio Rítmico;HIP_HOP;4
-e;SWT;Giro del Alma;SOUL;6
-e;CLV;Clásicos en Vivo;CLASICA;3
+c;000TBI;Tan Bionica;POP;4
+c;000MAN;Maná;ROCK;5
+c;000TSF;Tylor Swift;POP;1
+c;000COL;Coldplay;ROCK;5
+c;000PIN;Abel Pintos;POP;1
+c;000SHA;Shakira;POP;1
+c;000DUA;Dua Lipa;POP;1
+c;000UTW;U2;ROCK;5
+c;000MAR;Marama;CUMBIA;5
+c;000TOT;Los Totora;CUMBIA;4
+c;000LGA;LGante;CUMBIA;1
+c;000RAF;Rafaga;CUMBIA;5
+c;000DAD;Daddy Yankee;REGGAETON;1
+c;000NIK;Nicky Jam;REGGAETON;1
+c;000OZU;Ozuna;REGGAETON;1
+e;000JLS;Los Jazzistas;JAZZ;5
+e;000HBT;Ritmo Callejero;HIP_HOP;3
+e;000SNT;Alma Latina;SOUL;6
+e;000CLS;Sonido Clásico;CLASICA;4
+e;000WVD;Olas del Pop;POP;5
+e;000NYJ;Jazz Argento;JAZZ;4
+e;000BTS;Beats del Sur;HIP_HOP;3
+e;000SLS;Buscadores de Alma;SOUL;7
+e;000MGK;Llaves Mágicas;CLASICA;4
+e;000DYN;Dinamita Pop;POP;5
+e;000JMF;Maestros del Jazz;JAZZ;5
+e;000HTB;Latido del Alma;SOUL;6
+e;000GRV;Ritmo Urbano;HIP_HOP;3
+e;000CBL;Esplendor Clásico;CLASICA;5
+e;000FNT;Tonos Funky;POP;4
+e;000BGB;Groove Azul;JAZZ;5
+e;000RSP;Espacio Rítmico;HIP_HOP;4
+e;000SWT;Giro del Alma;SOUL;6
+e;000CLV;Clásicos en Vivo;CLASICA;3
