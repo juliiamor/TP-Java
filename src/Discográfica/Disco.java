@@ -8,6 +8,7 @@ public class Disco implements Serializable{
     private long unidadesVendidasUltMes;
     private String nombre;
     private Set<Cancion> canciones;
+    private static final long serialVersionUID=12345678910111213L;
 
     public Disco(long unidadesVendidasUltMes, String nombre) {
         this.unidadesVendidasUltMes = unidadesVendidasUltMes;

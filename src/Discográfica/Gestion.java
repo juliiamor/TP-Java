@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Gestion implements Serializable {
     private TreeMap<String, Artista> artistas;
-
+    private static final long serialVersionUID=123456L;
     //constructor
 
     public Gestion(){
