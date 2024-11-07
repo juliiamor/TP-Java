@@ -98,6 +98,8 @@ public class Gestion implements Serializable {
         return listado.toString();
     }
 
+
+
     public double totalRecitalesMes(String id) {
         if (!artistas.containsKey(id)) {
             throw new IllegalArgumentException();

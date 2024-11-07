@@ -75,6 +75,7 @@ public abstract class Artista implements Serializable {
         return listado.toString();
     }
 
+
     public String toString(){
         StringBuilder listado = new StringBuilder();
         listado.append(identificador).append("- Nombre: ").append(nombre)

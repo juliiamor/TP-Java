@@ -85,4 +85,12 @@ public abstract class Reportes {
             throw new IllegalArgumentException("Artista no encontrado");
         }
     }
+
+    public static String muestraListadoArtistasId(TreeMap<String, Artista> artistas) {
+        StringBuilder listado = new StringBuilder();
+        for(Artista artista:artistas.values()) {
+            listado.append(artista.getIdentificador()).append("\t").append(artista.getNombre()).append("\n");
+        }
+        return listado.toString();
+    }
 }
