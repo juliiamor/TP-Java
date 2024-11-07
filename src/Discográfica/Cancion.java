@@ -4,6 +4,7 @@ public class Cancion implements Serializable{
     private String nombre;
     private String duracion; //string o que??? porq dice minutos y segundos, puede ser 3:23
     private long cantReprodUltMes;
+    private static final long serialVersionUID=123456789101112L;
 
     public Cancion(String nombre, String duracion, long cantReprodUltMes){
         this.cantReprodUltMes=cantReprodUltMes;

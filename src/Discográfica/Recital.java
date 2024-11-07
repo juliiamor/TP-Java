@@ -7,6 +7,7 @@ public class Recital implements Serializable {
     private String fecha;
     private float recaudacion;
     private float costosProduccion;
+    private static final long serialVersionUID=12345L;
 
     public Recital(String fecha, float recaudacion,float costosProduccion){
         this.costosProduccion=costosProduccion;

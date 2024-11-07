@@ -13,7 +13,7 @@ public abstract class Artista implements Serializable {
     private byte cantIntegrantes;
     private Set<Disco> discos;
     private Set<Recital> recitales;
-
+    private static final long serialVersionUID=12345689L;
 
     //Constructor
     public Artista(String identificador,String nombre,byte cantIntegrantes,GeneroMusical generoMusical){
