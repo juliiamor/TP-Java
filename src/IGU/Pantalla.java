@@ -44,7 +44,11 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             i++;
         }
 
-      listadoReferenciaIdArtistas.setText(Reportes.muestraListadoArtistasId(gestion.getArtistas()));
+        listadoReferenciaIdArtistas.setText(Reportes.muestraListadoArtistasId(gestion.getArtistas()));
+        TextPrompt placeHolder1 = new TextPrompt("Ingrese id del artista",textField1);
+        TextPrompt placeHolder2 = new TextPrompt("Ingrese cantidad de integrantes",textField2);
+        TextPrompt placeHolder4 = new TextPrompt("Ingrese id del artista",textField4);
+        TextPrompt placeHolder6 = new TextPrompt("Ingrese id del artista",textField6);
 
         generoComboBox.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
         generoComboBox2.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
