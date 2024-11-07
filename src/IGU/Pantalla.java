@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.TreeMap;
 
+
 public class Pantalla extends JFrame {   // Hereda de JFrame
 
     private JPanel ventana;
@@ -83,7 +84,10 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
 
         mostrarDatosButton.addActionListener(e -> {
             try{
-                new VentanaDeArtistas(gestion.getArtistas()).setVisible(true);
+                VentanaDeArtistas venta = new VentanaDeArtistas(gestion.getArtistas());
+                venta.setVisible(true);
+                venta.setLocationRelativeTo(null);
+
             }catch (IllegalArgumentException ex){
                 JOptionPane.showMessageDialog(this, "No se ha encontrado ese artista");
             }
@@ -121,7 +125,9 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             if(artistasFiltrados.isEmpty()){
                 JOptionPane.showMessageDialog(this,"No existen artistas con esos filtros");
             }else{
-                new VentanaDeArtistas(artistasFiltrados).setVisible(true);
+               VentanaDeArtistas venta = new VentanaDeArtistas(artistasFiltrados);
+               venta.setVisible(true);
+               venta.setLocationRelativeTo(null);
             }
         }
     }
@@ -138,7 +144,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     public void mostrarLiquidacion(String identificador) {
         try{
             Artista artista = gestion.getArtista(identificador);
-            new VentanaFacturacion(
+            VentanaFacturacion venta = new VentanaFacturacion(
                     artista.getNombre(),
                     gestion.totalRecitalesMes(identificador),
                     gestion.totalReproduccionesMes(identificador),
@@ -146,7 +152,10 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
                     gestion.totalArtista(identificador),
                     gestion.totalDiscografica(identificador),
                     gestion.totalGenerado(identificador)
-            ).setVisible(true);
+            );
+            venta.setVisible(true);
+            venta.setLocationRelativeTo(null);
+
 
         }catch (IllegalArgumentException ex){
             JOptionPane.showMessageDialog(this,"No existe ningun artista con ese ID");
