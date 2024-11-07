@@ -86,6 +86,7 @@ public abstract class Reportes {
         }
     }
 
+
     public static String muestraListadoArtistasId(TreeMap<String, Artista> artistas) {
         StringBuilder listado = new StringBuilder();
         for(Artista artista:artistas.values()) {
