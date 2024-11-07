@@ -26,6 +26,8 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     private JTextField textField6;
     private JButton discosButton;
     private JButton mostrarDatosButton;
+    private JTextArea listadoReferenciaIdArtistas;
+    private JTextField listadoReferencia;
     private JTextArea textAreaListadoArtistas;
     private Gestion gestion;
 
@@ -40,6 +42,8 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             identificadores[i]=id;
             i++;
         }
+
+      listadoReferenciaIdArtistas.setText(Reportes.muestraListadoArtistasId(gestion.getArtistas()));
 
         generoComboBox.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
         generoComboBox2.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
