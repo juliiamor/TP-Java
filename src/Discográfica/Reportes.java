@@ -90,7 +90,8 @@ public abstract class Reportes {
     public static String muestraListadoArtistasId(TreeMap<String, Artista> artistas) {
         StringBuilder listado = new StringBuilder();
         for(Artista artista:artistas.values()) {
-            listado.append(artista.getIdentificador()).append("\t").append(artista.getNombre()).append("\n");
+            listado.append(artista.getIdentificador()).append("\t\t").append(artista.getNombre()).append("\n").append("-----------------------------------------------------------------").append("\n");
+
         }
         return listado.toString();
     }
