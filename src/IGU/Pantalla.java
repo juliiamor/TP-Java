@@ -126,7 +126,6 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                ArchivosSerializados.guardarArtistas(gestion.getArtistas());
                 System.exit(0);
             }
         });
@@ -164,6 +163,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         try{
             gestion.removeArtista(identificador);
             JOptionPane.showMessageDialog(this,"Se ha dado de baja al artista con éxito","Baja Artista",JOptionPane.INFORMATION_MESSAGE);
+            ArchivosSerializados.guardarArtistas(gestion.getArtistas());
         }catch (IllegalArgumentException e){
             JOptionPane.showMessageDialog(this, "El artista ingresado no existe", "Error", JOptionPane.ERROR_MESSAGE);
         }
