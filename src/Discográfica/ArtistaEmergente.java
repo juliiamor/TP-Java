@@ -1,4 +1,7 @@
 package Discográfica;
+
+import java.io.Serializable;
+
 public class ArtistaEmergente extends Artista implements Serializable{
     private static final long serialVersionUID=123456891011L;
     public ArtistaEmergente(String identificador,String nombre,byte cantIntegrantes,GeneroMusical generoMusical){
