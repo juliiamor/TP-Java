@@ -34,7 +34,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     public Pantalla(Gestion gestion) {
         this.gestion = gestion;
         add(ventana);
-        this.setSize(1000, 700);
+        this.setSize(1300, 800);
         TreeMap<String, Artista> mapa = gestion.getArtistas();
         String[] identificadores = new String[gestion.getArtistas().size()];
         int i = 0;
@@ -44,10 +44,19 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         }
 
         listadoReferenciaIdArtistas.setText(Reportes.muestraListadoArtistasId(gestion.getArtistas()));
+
         TextPrompt placeHolder1 = new TextPrompt("Ingrese ID", textField1);
         TextPrompt placeHolder2 = new TextPrompt("Ingrese n° de integrantes", textField2);
         TextPrompt placeHolder4 = new TextPrompt("Ingrese ID", textField4);
         TextPrompt placeHolder6 = new TextPrompt("Ingrese ID", textField6);
+        placeHolder1.changeAlpha(0.75f);
+        placeHolder1.changeStyle(Font.ITALIC);
+        placeHolder2.changeAlpha(0.75f);
+        placeHolder2.changeStyle(Font.ITALIC);
+        placeHolder4.changeAlpha(0.75f);
+        placeHolder4.changeStyle(Font.ITALIC);
+        placeHolder6.changeAlpha(0.75f);
+        placeHolder6.changeStyle(Font.ITALIC);
 
         generoComboBox.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
         generoComboBox2.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
