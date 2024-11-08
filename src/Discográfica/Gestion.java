@@ -2,6 +2,14 @@ package Discográfica;
 import java.util.*;
 import java.io.Serializable;
 
+/**
+ * Clase que gestiona la informacion de los Artistas y las regalías dependiendo de sus actividades
+ *
+ * Contiene un Mapa de artistas y metodos para el manejo de sus datos, métodos para gestionar porcentajes de regalías y
+ *
+ * Implementa la interface Serializable
+ */
+
 public class Gestion implements Serializable {
     private TreeMap<String, Artista> artistas;
     private static final long serialVersionUID=123456L;
@@ -72,14 +80,6 @@ public class Gestion implements Serializable {
         return artistas;
     }
 
-    public Artista getArtista(String id){
-        if(artistas.containsKey(id)){
-            return artistas.get(id);
-        }else{
-            throw new IllegalArgumentException();
-        }
-    }
-
     //metodo para buscar artistas x id
     public Artista filtraArtistaPorID(String identificador){
         return artistas.get(identificador); //si no encuentra devuelve null
@@ -97,8 +97,6 @@ public class Gestion implements Serializable {
         }
         return listado.toString();
     }
-
-
 
     public double totalRecitalesMes(String id) {
         if (!artistas.containsKey(id)) {
@@ -151,27 +149,4 @@ public class Gestion implements Serializable {
             return totalGenerado(id) * artista.porcentajeRegalias();
         }
     }
-
-   /* public StringBuilder facturacionUltMes(String identificador) {
-        Artista artista = artistas.get(identificador);
-        double total = 0;
-        StringBuilder listado = new StringBuilder();
-
-        if (artista != null) {
-            listado.append("Artista: ").append(artista.getNombre());
-            listado.append("\nDescripción \t\t\t Total recaudado").append("\n");
-            listado.append("Recitales \t\t\t ").append(String.format("%.2f",totalRecitalesMes(artista))).append("\n");
-
-            listado.append("Discos \t\t\t\t ").append(String.format("%.2f",totalDiscosVendidosMes(artista))).append("\n");
-
-            listado.append("Reproducciones \t\t\t ").append(String.format("%.2f",totalReproduccionesMes(artista))).append("\n");
-
-            listado.append("\n\nTotal a Discografica (").append(artista.porcentajeRegalias()*100).append("%) \t ").append(String.format("%.2f",totalDiscografica(identificador))).append("\n");
-
-            listado.append("Total para el Artista: \t\t").append(String.format("%.2f",totalArtista(identificador))).append("\n");
-        } else {
-            listado.append("No se encontró al artista");
-        }
-        return listado;
-    }*/
 }
