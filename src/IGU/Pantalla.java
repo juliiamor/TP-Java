@@ -141,7 +141,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         }else{
             TreeMap<String,Artista> artistasFiltrados;
 
-            if(genero.toString()=="INGRESE_GENERO"){
+            if(genero.toString().equals("INGRESE_GENERO")){
                 artistasFiltrados=gestion.filtrarArtistas(cantidadIntegrantes);
             } else if (cantidadIntegrantes==0) {
                 artistasFiltrados=gestion.filtrarArtistas(genero);
