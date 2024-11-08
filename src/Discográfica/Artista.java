@@ -211,6 +211,7 @@ public abstract class Artista implements Serializable {
 
     /**
      * Obtiene el total de la cantidad de reproducciones en el ultimo mes
+     * En caso de ser sencillo, las reproducciones se multiplican por 1.5 (Reproducciones*1.5)
      *
      * @return total de reproducciones en el ultimo mes
      */
