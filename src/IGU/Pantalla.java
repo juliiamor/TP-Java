@@ -170,8 +170,8 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     }
 
     public void mostrarLiquidacion(String identificador) {
-        try{
-            Artista artista = gestion.getArtista(identificador);
+        Artista artista = gestion.filtraArtistaPorID(identificador);
+        if(artista!=null){
             VentanaFacturacion venta = new VentanaFacturacion(
                     artista.getNombre(),
                     gestion.totalRecitalesMes(identificador),
@@ -183,10 +183,8 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             );
             venta.setVisible(true);
             venta.setLocationRelativeTo(null);
-
-
-        }catch (IllegalArgumentException ex){
-            JOptionPane.showMessageDialog(this,"No existe ningun artista con ese ID");
+        }else {
+            JOptionPane.showMessageDialog(this, "El artista ingresado no existe", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
