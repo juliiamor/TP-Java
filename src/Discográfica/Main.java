@@ -5,18 +5,28 @@ import IGU.Pantalla;
 
 import javax.swing.*;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+/**
+ * Clase principal de la aplicación que ejecuta el programa
+ * @version 1.0
+ */
+
 public class Main {
+    /**
+     * Metodo principal del programa.
+     *
+     * Verifica si hay que cargar datos desde txt o del serializado, y ejecuta la ventana principal
+     *
+     * @param args Argumentos de la línea de comandos (no utilizados).
+     */
     public static void main(String[] args) {
 
         Gestion gestion = new Gestion();
         LecturaDeArchivosTXT arch = new LecturaDeArchivosTXT();
         if(ArchivosSerializados.serializadoNoExiste()){
-            arch.leeArtistas(gestion);  // carga de artistas desde txt
-            arch.leeDiscos(gestion);    // carga de discos desde txt
-            arch.leeCancion(gestion);   // carga de caciones desde txt
-            arch.leeRecital(gestion);   // carga de recitales desde txt
+            arch.leeArtistas(gestion);
+            arch.leeDiscos(gestion);
+            arch.leeCancion(gestion);
+            arch.leeRecital(gestion);
             arch.generaInforme();
             ArchivosSerializados.guardarArtistas(gestion.getArtistas());
         } else

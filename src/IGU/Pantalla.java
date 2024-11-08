@@ -126,7 +126,6 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                ArchivosSerializados.guardarArtistas(gestion.getArtistas());
                 System.exit(0);
             }
         });
@@ -142,7 +141,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         }else{
             TreeMap<String,Artista> artistasFiltrados;
 
-            if(genero.toString()=="INGRESE_GENERO"){
+            if(genero.toString().equals("INGRESE_GENERO")){
                 artistasFiltrados=gestion.filtrarArtistas(cantidadIntegrantes);
             } else if (cantidadIntegrantes==0) {
                 artistasFiltrados=gestion.filtrarArtistas(genero);
@@ -164,14 +163,15 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         try{
             gestion.removeArtista(identificador);
             JOptionPane.showMessageDialog(this,"Se ha dado de baja al artista con éxito","Baja Artista",JOptionPane.INFORMATION_MESSAGE);
+            ArchivosSerializados.guardarArtistas(gestion.getArtistas());
         }catch (IllegalArgumentException e){
             JOptionPane.showMessageDialog(this, "El artista ingresado no existe", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     public void mostrarLiquidacion(String identificador) {
-        try{
-            Artista artista = gestion.getArtista(identificador);
+        Artista artista = gestion.filtraArtistaPorID(identificador);
+        if(artista!=null){
             VentanaFacturacion venta = new VentanaFacturacion(
                     artista.getNombre(),
                     gestion.totalRecitalesMes(identificador),
@@ -183,10 +183,8 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             );
             venta.setVisible(true);
             venta.setLocationRelativeTo(null);
-
-
-        }catch (IllegalArgumentException ex){
-            JOptionPane.showMessageDialog(this,"No existe ningun artista con ese ID");
+        }else {
+            JOptionPane.showMessageDialog(this, "El artista ingresado no existe", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -194,7 +192,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         if(genero.equals(GeneroMusical.INGRESE_GENERO)){
             JOptionPane.showMessageDialog(this, "No se ha ingresado ningun género válido");
         }else{
-            JTextArea textArea = new JTextArea(Reportes.Top10CancionesPorGenero(gestion.getArtistas(),genero));
+            JTextArea textArea = new JTextArea(Reportes.Top10CancionesPorGenero(gestion.filtrarArtistas(genero),genero));
             textArea.setEditable(false);
             textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
 

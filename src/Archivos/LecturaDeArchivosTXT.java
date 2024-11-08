@@ -63,8 +63,8 @@ public class LecturaDeArchivosTXT{
             throw new IllegalArgumentException("Error: NOMBRE excede 25 caracteres");
         }
         String gen = bloque[3];
-        if (!GeneroMusical.pertenece(gen)) {
-            throw new IllegalArgumentException("Error: GENERO no incluido");
+        if (!GeneroMusical.pertenece(gen) || gen.equals("INGRESE_GENERO")) {
+            throw new IllegalArgumentException("Error: GENERO no incluido o Invalido");
         }
         try {
             byte integrantes = Byte.parseByte(bloque[4]);
