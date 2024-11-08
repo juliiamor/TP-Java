@@ -338,3 +338,20 @@
 000CLV;Concierto en Vivo;Momento;4:45;237198
 000CLV;Concierto en Vivo;Oda;6:00;298174
 000CLV;Sinfonía en Directo;Final;5:22;318974
+000BGB;Groove Nocturno;Groove Nocturno;3:33;432451
+000CBL;Melodías Eternas;Melodías Eternas;2:29;312455
+000CBL;Notas del Pasado;Notas del Pasado;3:56;111134
+000CLS;Sonatas para Siempre;Sonatas para Siempre;3:44;122333
+000CLV;Ecos de la Historia;Ecos de la Historia;2:22;545555
+000DYN;Vibras del Pop;Vibras del Pop;2:59;100402
+000DYN;Ritmos Contemporáneos;Ritmos Contemporáneos;2:11;424242
+000FNT;Ritmos en el Alma;Ritmos en el Alma;3:22;4125356
+000GRV;Pulsación Urbana;Pulsación Urbana;2:50;423523
+000HBT;Palabras en Movimiento;Palabras en Movimiento;2:22;312312
+000JLS;Improvisación Urbana;Improvisación Urbana;4:42;3132122
+000JMF;Vibración Urbana;Vibración Urbana;5:05;111120
+000MGK;Clásicos Mágicos;Clásicos Mágicos;6:06;505010
+000NYJ;Ritmos de Jazz;Ritmos de Jazz;4:02;545410
+000RSP;Ecos de la Calle;Ecos de la Calle;4:03;423144
+000SNT;Esencia Latina;Esencia Latina;3:03;312333
+000SNT;Cantos del Alma;Cantos del Alma;3:40;444442
