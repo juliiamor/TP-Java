@@ -8,7 +8,6 @@ import java.io.Serializable;
  * Implementa la interface {@link Serializable} para la persistencia de datos
  *
  * @version 1.0
- * @see Artista
  * @see Serializable
  */
 
