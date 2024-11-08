@@ -8,13 +8,14 @@ import Discográfica.Reportes;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.TreeMap;
 
 
 public class Pantalla extends JFrame {   // Hereda de JFrame
 
     private JPanel ventana;
-    private JButton artistasButton;
     private JTextField textField1; // ID del artista para la facturación
     private JButton facturarButton; // Botón para facturar
     private JComboBox<GeneroMusical> generoComboBox; // ComboBox para el género musical
@@ -28,74 +29,81 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     private JButton discosButton;
     private JButton mostrarDatosButton;
     private JTextArea listadoReferenciaIdArtistas;
-    private JTextField listadoReferencia;
-    private JTextArea textAreaListadoArtistas;
     private Gestion gestion;
 
     public Pantalla(Gestion gestion) {
         this.gestion = gestion;
         add(ventana);
         this.setSize(1000, 700);
-        TreeMap<String,Artista> mapa=gestion.getArtistas();
+        TreeMap<String, Artista> mapa = gestion.getArtistas();
         String[] identificadores = new String[gestion.getArtistas().size()];
-        int i=0;
-        for(String id: mapa.keySet()){
-            identificadores[i]=id;
+        int i = 0;
+        for (String id : mapa.keySet()) {
+            identificadores[i] = id;
             i++;
         }
 
         listadoReferenciaIdArtistas.setText(Reportes.muestraListadoArtistasId(gestion.getArtistas()));
-        TextPrompt placeHolder1 = new TextPrompt("Ingrese ID",textField1);
-        TextPrompt placeHolder2 = new TextPrompt("Ingrese n° de integrantes",textField2);
-        TextPrompt placeHolder4 = new TextPrompt("Ingrese ID",textField4);
-        TextPrompt placeHolder6 = new TextPrompt("Ingrese ID",textField6);
+        TextPrompt placeHolder1 = new TextPrompt("Ingrese ID", textField1);
+        TextPrompt placeHolder2 = new TextPrompt("Ingrese n° de integrantes", textField2);
+        TextPrompt placeHolder4 = new TextPrompt("Ingrese ID", textField4);
+        TextPrompt placeHolder6 = new TextPrompt("Ingrese ID", textField6);
 
         generoComboBox.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
         generoComboBox2.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
+
+
         // Acción del botón facturar
         facturarButton.addActionListener(e -> {
             String identificador = textField1.getText().trim();
             mostrarLiquidacion(identificador);
         });
+
         // Acción del botón para filtrar artistas por género musical e Integrantes
         consultarButton.addActionListener(e -> {
             GeneroMusical generoSeleccionado = (GeneroMusical) generoComboBox.getSelectedItem();
             String integrantesStr = textField2.getText().trim();
             byte cantidadIntegrantes;
-            try{
+            try {
                 if (integrantesStr.isEmpty()) {
                     cantidadIntegrantes = 0;
                 } else {
                     cantidadIntegrantes = Byte.parseByte(integrantesStr);
                 }
-                if(cantidadIntegrantes<0){
+                if (cantidadIntegrantes < 0) {
                     JOptionPane.showMessageDialog(this, "El numero de integrantes no puede ser negativo");
-                }else
+                } else
                     filtrarArtistasPorGeneroYIntegrantes(generoSeleccionado, cantidadIntegrantes);
-            }catch (NumberFormatException ex){
+            } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(this, "Cantidad de integrantes invalida");
             }
 
         });
+
+
         top10Button.addActionListener(e -> {
             GeneroMusical generoSeleccionado = (GeneroMusical) generoComboBox2.getSelectedItem();
             mostrarTop10(generoSeleccionado);
         });
-        discosButton.addActionListener( e -> {
+
+
+        discosButton.addActionListener(e -> {
             String identificador = textField6.getText().trim();
             mostrarUnidadesVendidas(identificador);
         });
 
+
         mostrarDatosButton.addActionListener(e -> {
-            try{
+            try {
                 VentanaDeArtistas venta = new VentanaDeArtistas(gestion.getArtistas());
                 venta.setVisible(true);
                 venta.setLocationRelativeTo(null);
 
-            }catch (IllegalArgumentException ex){
+            } catch (IllegalArgumentException ex) {
                 JOptionPane.showMessageDialog(this, "No se ha encontrado ese artista");
             }
         });
+
 
         bajaButton.addActionListener(e -> {
             String identificador = textField4.getText().trim();
@@ -103,7 +111,14 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
                 JOptionPane.showMessageDialog(this, "Ingrese un ID", "Error", JOptionPane.ERROR_MESSAGE);
             }else{
                 bajaArtista(identificador);
+            }
+        });
+
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
                 ArchivosSerializados.guardarArtistas(gestion.getArtistas());
+                System.exit(0);
             }
         });
     }
