@@ -192,7 +192,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         if(genero.equals(GeneroMusical.INGRESE_GENERO)){
             JOptionPane.showMessageDialog(this, "No se ha ingresado ningun género válido");
         }else{
-            JTextArea textArea = new JTextArea(Reportes.Top10CancionesPorGenero(gestion.getArtistas(),genero));
+            JTextArea textArea = new JTextArea(Reportes.Top10CancionesPorGenero(gestion.filtrarArtistas(genero),genero));
             textArea.setEditable(false);
             textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
 
