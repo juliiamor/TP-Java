@@ -1,8 +1,5 @@
 package IGU;
 
-import Discográfica.Artista;
-import Discográfica.Gestion;
-
 import javax.swing.*;
 
 public class VentanaFacturacion extends JFrame{

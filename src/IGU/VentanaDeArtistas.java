@@ -1,6 +1,6 @@
 package IGU;
 
-import Discográfica.*;
+import Discografica.*;
 import javax.swing.*;
 import java.util.TreeMap;
 

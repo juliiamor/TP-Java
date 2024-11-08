@@ -1,10 +1,10 @@
 package IGU;
 
 import Archivos.ArchivosSerializados;
-import Discográfica.Artista;
-import Discográfica.GeneroMusical;
-import Discográfica.Gestion;
-import Discográfica.Reportes;
+import Discografica.Artista;
+import Discografica.GeneroMusical;
+import Discografica.Gestion;
+import Discografica.Reportes;
 
 import javax.swing.*;
 import java.awt.*;
@@ -45,10 +45,10 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         }
 
         listadoReferenciaIdArtistas.setText(Reportes.muestraListadoArtistasId(gestion.getArtistas()));
-        TextPrompt placeHolder1 = new TextPrompt("Ingrese id del artista",textField1);
-        TextPrompt placeHolder2 = new TextPrompt("Ingrese cantidad de integrantes",textField2);
-        TextPrompt placeHolder4 = new TextPrompt("Ingrese id del artista",textField4);
-        TextPrompt placeHolder6 = new TextPrompt("Ingrese id del artista",textField6);
+        TextPrompt placeHolder1 = new TextPrompt("Ingrese ID",textField1);
+        TextPrompt placeHolder2 = new TextPrompt("Ingrese n° de integrantes",textField2);
+        TextPrompt placeHolder4 = new TextPrompt("Ingrese ID",textField4);
+        TextPrompt placeHolder6 = new TextPrompt("Ingrese ID",textField6);
 
         generoComboBox.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
         generoComboBox2.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
