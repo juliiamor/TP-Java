@@ -35,7 +35,7 @@ public class LecturaDeArchivosTXT{
                     else
                         mapaArtistas.addArtista(new ArtistaEmergente(id, nombre, integrantes, GeneroMusical.valueOf(gen)));
                 } catch (StringIndexOutOfBoundsException e) {
-                    informe.agregaError("Error: cantidad de datos erronea");
+                    informe.agregaError("Error en linea "+linea+" - "+e.getMessage());
                 } catch (IllegalArgumentException e) {
                     informe.agregaError("Error de datos en la linea: " + linea + "-" + e.getMessage());
                 }
@@ -89,7 +89,7 @@ public class LecturaDeArchivosTXT{
                     String nombre = bloque[2];
                     mapaArtistas.filtraArtistaPorID(id).addDisco(new Disco(unidadesVendidas, nombre));
                 } catch (StringIndexOutOfBoundsException e) {
-                    informe.agregaError("Error: cantidad de datos erronea");
+                    informe.agregaError("Error en linea "+linea+ "-" +e.getMessage());
                 } catch (IllegalArgumentException e) {
                     informe.agregaError("Error de datos en la linea: " + linea + "-" + e.getMessage());
                 }
@@ -142,7 +142,7 @@ public class LecturaDeArchivosTXT{
                     long cantReproducciones = Long.parseLong(bloque[4]);
                     mapaArtistas.filtraArtistaPorID(id).getDisco(nombreDisco).addCancion(new Cancion(nombre, duracion, cantReproducciones));
                 } catch (StringIndexOutOfBoundsException e) {
-                    informe.agregaError("Error: cantidad de datos erronea");
+                    informe.agregaError("Error en linea: " + linea + "-" + e.getMessage());
                 } catch (IllegalArgumentException e) {
                     informe.agregaError("Error de datos en la linea: " + linea + "-" + e.getMessage());
                 }
@@ -236,7 +236,7 @@ public class LecturaDeArchivosTXT{
                     float costosProduccion = Float.parseFloat(bloque[3]);
                     mapaArtistas.filtraArtistaPorID(id).addRecital(new Recital(fecha, recaudacion, costosProduccion));
                 } catch (StringIndexOutOfBoundsException e) {
-                    informe.agregaError("Error: cantidad de datos erronea");
+                    informe.agregaError("Error en linea "+linea+ "-" +e.getMessage());
                 } catch (IllegalArgumentException e) {
                     informe.agregaError("Error de datos en la linea: " + linea + "-" + e.getMessage());
                 }
@@ -283,6 +283,3 @@ public class LecturaDeArchivosTXT{
         }
     }
 }
-
-
-
