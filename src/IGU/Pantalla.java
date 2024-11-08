@@ -34,7 +34,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     public Pantalla(Gestion gestion) {
         this.gestion = gestion;
         add(ventana);
-        this.setSize(1000, 700);
+        this.setSize(1030, 730);
         TreeMap<String, Artista> mapa = gestion.getArtistas();
         String[] identificadores = new String[gestion.getArtistas().size()];
         int i = 0;
