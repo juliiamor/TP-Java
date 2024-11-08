@@ -1,10 +1,10 @@
 package IGU;
 
 import Archivos.ArchivosSerializados;
-import Discografica.Artista;
-import Discografica.GeneroMusical;
-import Discografica.Gestion;
-import Discografica.Reportes;
+import Discográfica.Artista;
+import Discográfica.GeneroMusical;
+import Discográfica.Gestion;
+import Discográfica.Reportes;
 
 import javax.swing.*;
 import java.awt.*;
