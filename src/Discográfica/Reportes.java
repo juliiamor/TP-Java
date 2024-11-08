@@ -7,32 +7,51 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
+
+/**
+ * Clase abstracta que proporciona métodos para generar reportes relacionados con artistas, discos y canciones
+ *
+ * Los reportes incluyen el top 10 de canciones por género, el reporte de unidades vendidas y el listado de artistas (ID - NOMBRE).
+ *
+ * Implementa funcionalidades relacionadas con el manejo de datos de artistas y discos musicales, y proporciona métodos
+ * para generar reportes en formato de texto.
+ *
+ * @version 1.0
+ */
 
 public abstract class Reportes {
 
+    /**
+     * Constructor por defecto
+     */
     public Reportes() {
     }
 
+    /**
+     * Genera un reporte de las 10 canciones más reproducidas del último mes por genero
+     * Almacena y Ordena las canciones por cantidad de reproducciones en una coleccion List y devuelve las 10 más escuchadas
+     * Genera el listado y almacenado un archivo de Texto manejado por la clase {@link GeneraArchivos}
+     *
+     * @param artistas Mapa de artistas previamente ya filtrados
+     * @param genero El género musical por el que se desea generar el reporte
+     * @return Un String con el reporte de las top 10 canciones del género solicitado
+     */
     public static String Top10CancionesPorGenero(TreeMap<String, Artista> artistas,GeneroMusical genero) {
-        // Lista para almacenar canciones del género dado
         List<Cancion> cancionesDelGenero = new ArrayList<>();
 
         for (Artista artista:artistas.values()) {
-            if (artista.getGeneroMusical()== genero) {
+            if (artista.getGeneroMusical() == genero) {
                 for (Disco disco:artista.getDiscos()) {
                     cancionesDelGenero.addAll(disco.getCanciones());
                 }
             }
         }
-        // Ordena las canciones por cantidad de reproducciones en orden descendente
+
         Collections.sort(cancionesDelGenero, Comparator.comparingLong(Cancion::getCantReprodUltMes).reversed());
 
-        // Genera una sublista con las primeras 10 canciones, si hay menos de 10 la genera con la cantidad que haya
         List<Cancion> top10Canciones = cancionesDelGenero.subList(0, Math.min(10, cancionesDelGenero.size()));
 
         StringBuilder resultado = new StringBuilder();
-        // Imprimir en pantalla
         resultado.append("Top 10 canciones del género ").append(genero).append(":\n");
         for (int i = 0; i < top10Canciones.size(); i++) {
             Cancion cancion = top10Canciones.get(i);
@@ -43,32 +62,34 @@ public abstract class Reportes {
         return resultado.toString();
     }
 
+    /**
+     * Genera un reporte de las unidades vendidas de los discos de un artista, incluyendo detalles de cada disco
+     * Calcula el total de unidades vendidas y el promedio de unidades vendidas por disco
+     *
+     * @param identificador El identificador del artista para el que se desea generar el reporte
+     * @param artistas Un mapa de artistas
+     * @return String con el reporte de las unidades vendidas para el artista indicado
+     * @throws IllegalArgumentException Si el artista no existe en el mapa.
+     */
     public static String unidadesVendidas(String identificador, TreeMap<String, Artista> artistas) {
-        // Verifica si el artista existe
         if (artistas.containsKey(identificador)) {
             Artista artista = artistas.get(identificador);
 
-            // Crea el contenido del reporte
             StringBuilder contenido = new StringBuilder();
             contenido.append("Reporte de Unidades Vendidas para ").append(artista.getNombre()).append(":\n");
 
-            // Variables para calcular el total de unidades vendidas y el promedio
-            long totalUnidadesVendidas = artista.unidadesDiscosVendidas(); //Utiliza el metodo ya existente que calcula el total de unidades de discos vendidos
+            long totalUnidadesVendidas = artista.unidadesDiscosVendidas();
             int cantidadDiscos = artista.cantidadDiscos();
 
-            // Recorre los discos del artista
             for (Disco disco : artista.getDiscos()) {
-                // Escribe el nombre del disco y sus unidades vendidas
                 String discoInfo = "Disco: " + disco.getNombre() + " - Unidades vendidas: " + disco.getUnidadesVendidasUltMes() + "\n";
                 contenido.append(discoInfo);
             }
 
-            // Escribe el total de discos
             String totalDiscos = "\nTotal de discos: " + cantidadDiscos;
             String totalDiscosVendidos = "\nTotal de Vendidos: " + totalUnidadesVendidas + "\n";
             contenido.append(totalDiscos).append(totalDiscosVendidos);
 
-            // Calcula y escribe el promedio de unidades vendidas
             if (cantidadDiscos > 0) {
                 double promedioUnidades = (double) totalUnidadesVendidas / cantidadDiscos;
                 String promedio = "Promedio de unidades vendidas por disco: " + String.format("%.2f",promedioUnidades) + "\n";
@@ -78,7 +99,6 @@ public abstract class Reportes {
                 contenido.append(noDiscos);
             }
 
-            // Llama al método para generar el archivo con las unidades vendidas
             GeneraArchivos.generaArchivoUnidadesVendidas(artista.getNombre(), contenido.toString());
             return contenido.toString();
         } else {
@@ -86,7 +106,12 @@ public abstract class Reportes {
         }
     }
 
-
+    /**
+     * Genera un listado de todos los artistas, mostrando su ID y nombre
+     *
+     * @param artistas Un mapa de artistas con su identificador como clave
+     * @return Un String con el listado de artistas y sus ID
+     */
     public static String muestraListadoArtistasId(TreeMap<String, Artista> artistas) {
         StringBuilder listado = new StringBuilder();
         for(Artista artista:artistas.values()) {
