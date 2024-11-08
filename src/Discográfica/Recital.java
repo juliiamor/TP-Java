@@ -19,6 +19,7 @@ public class Recital implements Serializable {
 
     public String getFecha(){return fecha;}
     public String toString() {
-        return "Fecha - "+fecha+" - Recaudacion - "+recaudacion+" - Costos de Produccion - "+costosProduccion;
+        DecimalFormat df = new DecimalFormat("0.00");
+        return "Fecha - " + fecha + " - Recaudacion - " + df.format(recaudacion) + " - Costos de Produccion - " + df.format(costosProduccion);
     }
 }
