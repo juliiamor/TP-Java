@@ -1,5 +1,6 @@
 package Discográfica;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Clase que representa una canción de un artista o grupo musical
@@ -78,5 +79,49 @@ public class Cancion implements Serializable{
      */
     public String toString(){
         return nombre+" - Duracion: "+duracion+" - Reproducciones en el Mes: "+cantReprodUltMes;
+    }
+
+    /**
+     * Metodo equals para verificar si una cancion es igual a otra
+     *
+     * En caso de que el objeto no sea una instancia de Cancion devuelve falso, tambien verifica gracias a Objects, que no sea nulo alguno
+     * de los dos campos a comparar
+     *
+     * @param obj objeto a verificar
+     * @return false si no es igual, true si los objetos son iguales
+     */
+    public boolean equals(Object obj){
+        if (this == obj)
+            return true;
+
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+
+        Cancion cancion = (Cancion) obj;
+
+        if (!Objects.equals(nombre, cancion.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(duracion, cancion.duracion)) {
+            return false;
+        }
+        if (cantReprodUltMes != cancion.cantReprodUltMes) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     *
+     * Calcula el valor hash de la canción, basado en los atributos: nombre, duración y cantidad de reproducciones en el último mes.
+     * <p>
+     * Este valor es utilizado por estructuras como {@link java.util.HashSet} o {@link java.util.HashMap} para realizar comparaciones rápidas
+     * y evitar duplicados.
+     * 
+     * @return El valor hash calculado para esta canción.
+     */
+    public int hashCode() {
+        return Objects.hash(nombre, duracion, cantReprodUltMes);
     }
 }
