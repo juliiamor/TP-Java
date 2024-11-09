@@ -30,7 +30,7 @@ public abstract class Reportes {
     /**
      * Genera un reporte de las 10 canciones más reproducidas del último mes por genero
      * Almacena y Ordena las canciones por cantidad de reproducciones en una coleccion List y devuelve las 10 más escuchadas
-     * Genera el listado y almacenado un archivo de Texto manejado por la clase {@link GeneraArchivos}
+     * Genera el listado y es almacenado un archivo de Texto manejado por la clase {@link GeneraArchivos}
      *
      * @param artistas Mapa de artistas previamente ya filtrados
      * @param genero El género musical por el que se desea generar el reporte
@@ -58,7 +58,7 @@ public abstract class Reportes {
             resultado.append((i + 1)).append(". ").append(cancion.getNombre()).append(" ").append(cancion.getCantReprodUltMes()).append(" reproducciones\n");
         }
 
-        GeneraArchivos.generaArchivoTop10Canciones(genero, top10Canciones);
+        GeneraArchivos.generaArchivoTop10Canciones(genero, resultado.toString());
         return resultado.toString();
     }
 
