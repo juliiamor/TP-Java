@@ -87,7 +87,7 @@ public abstract class Reportes {
             }
 
             String totalDiscos = "\nTotal de discos: " + cantidadDiscos;
-            String totalDiscosVendidos = "\nTotal de Vendidos: " + totalUnidadesVendidas + "\n";
+            String totalDiscosVendidos = "\nTotal de discos vendidos: " + totalUnidadesVendidas + "\n";
             contenido.append(totalDiscos).append(totalDiscosVendidos);
 
             if (cantidadDiscos > 0) {

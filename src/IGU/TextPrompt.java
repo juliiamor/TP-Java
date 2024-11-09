@@ -16,18 +16,16 @@ import javax.swing.event.*;
 import javax.swing.text.*;
 
 /**
- * The TextPrompt class will display a prompt over top of a text component when
- * the Document of the text field is empty. The Show property is used to
- * determine the visibility of the prompt.
+ * La clase TextPrompt mostrará un mensaje sobre un componente de texto cuando
+ * el contenido del campo de texto está vacío. El atributo Show se utiliza
+ * para determinar la visibilidad el mensaje.
  *
- * The Font and foreground Color of the prompt will default to those properties
- * of the parent text component. You are free to change the properties after
- * class construction.
+ * La fuente y el color de primer plano del mensaje tendran por defecto esas propiedades
+ * del componente de texto principal. Se pueden modificar estas propiedades luego de instanciar
+ * la clase.
  */
 public class TextPrompt extends JLabel implements FocusListener, DocumentListener {
-    /**
-     *
-     */
+
     private static final long serialVersionUID = 1L;
 
     public enum Show {
@@ -67,22 +65,22 @@ public class TextPrompt extends JLabel implements FocusListener, DocumentListene
     }
 
     /**
-     * Convenience method to change the alpha value of the current foreground
-     * Color to the specifice value.
+     *Metodo para cambiar el valor alpha del plano actual
+     * a el color especificado.
      *
      * @param alpha
-     *            value in the range of 0 - 1.0.
+     *            rango de valores: 0 - 1.0.
      */
     public void changeAlpha(float alpha) {
         changeAlpha((int) (alpha * 255));
     }
 
     /**
-     * Convenience method to change the alpha value of the current foreground
-     * Color to the specifice value.
+     *Metodo para cambiar el valor alpha del plano actual
+     * a el color especificado.
      *
      * @param alpha
-     *            value in the range of 0 - 255.
+     *            rango de valores: 0 - 255.
      */
     public void changeAlpha(int alpha) {
         alpha = alpha > 255 ? 255 : alpha < 0 ? 0 : alpha;
@@ -97,66 +95,66 @@ public class TextPrompt extends JLabel implements FocusListener, DocumentListene
     }
 
     /**
-     * Convenience method to change the style of the current Font. The style
-     * values are found in the Font class. Common values might be: Font.BOLD,
+     * Metodo para cambiar el estilo de la fuente actual. Los valores de style
+     * se encuentran en la clase Fuente. Los valores mas comunes podrían ser: Font.BOLD,
      * Font.ITALIC and Font.BOLD + Font.ITALIC.
      *
      * @param style
-     *            value representing the the new style of the Font.
+     *            valor que representa el nuevo estilo de fuente.
      */
     public void changeStyle(int style) {
         setFont(getFont().deriveFont(style));
     }
 
     /**
-     * Get the Show property
+     * Obtiene el atributo show
      *
-     * @return the Show property.
+     * @return el atributo show.
      */
     public Show getShow() {
         return show;
     }
 
     /**
-     * Set the prompt Show property to control when the promt is shown. Valid
-     * values are:
+     * Guarda el atributo show, establece cuando se muestra el mensaje.
+     * Los valores validos son:
      *
-     * Show.AWLAYS (default) - always show the prompt Show.Focus_GAINED - show
-     * the prompt when the component gains focus (and hide the prompt when focus
-     * is lost) Show.Focus_LOST - show the prompt when the component loses focus
-     * (and hide the prompt when focus is gained)
+     * Show.AWLAYS (por defecto) - muestra siempre el mensaje.
+     * Focus_GAINED - muesta el mensaje cuando se hace foco sobre el campo de texto.
+     * Show.Focus_LOST - muestra mensaje cuando se pierde el foco sobre el campo
+     * (y oculta el mensaje cuando se pierde el foco)
      *
      * @param show
-     *            a valid Show enum
+     *            un enum valido de show
      */
     public void setShow(Show show) {
         this.show = show;
     }
 
     /**
-     * Get the showPromptOnce property
+     * Obtiene el atributo showPromptOnce
      *
-     * @return the showPromptOnce property.
+     * @return el atributo showPromptOnce.
      */
     public boolean getShowPromptOnce() {
         return showPromptOnce;
     }
 
     /**
-     * Show the prompt once. Once the component has gained/lost focus once, the
-     * prompt will not be shown again.
+     * Muestra el mensaje una vez. Una vez que el campo de texto tiene foco o se retira,
+     * luego el mensaje no se volverá a mostrar.
      *
      * @param showPromptOnce
-     *            when true the prompt will only be shown once, otherwise it
-     *            will be shown repeatedly.
+     *            Cuando es true, el mensaje se mostrará sólo una vez, de lo contrario
+     *            se mostrará repetidamente.
      */
     public void setShowPromptOnce(boolean showPromptOnce) {
         this.showPromptOnce = showPromptOnce;
     }
 
     /**
-     * Check whether the prompt should be visible or not. The visibility will
-     * change on updates to the Document and on focus changes.
+     * Comprueba si el mensaje debe ser visible o no. La visibilidad
+     * cambiará en la actualizacion del contenido o en los cambios de focus.
      */
     private void checkForPrompt() {
         // Text has been entered, remove the prompt
