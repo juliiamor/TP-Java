@@ -2,6 +2,7 @@ package Discográfica;
 
 import java.text.DecimalFormat;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Clase que representa un recital de un artista o grupo musical.
@@ -73,5 +74,40 @@ public class Recital implements Serializable {
     public String toString() {
         DecimalFormat df = new DecimalFormat("0.00");
         return "Fecha - " + fecha + " - Recaudacion - " + df.format(recaudacion) + " - Costos de Produccion - " + df.format(costosProduccion);
+    }
+
+    /**
+     * Metodo equals para verificar si un recital es igual a otro
+     *
+     * En caso de que el objeto no sea una instancia de Recital devuelve falso, tambien verifica gracias a Objects, que no sea nulo alguno
+     * de los dos campos a comparar
+     *
+     * @param obj objeto a verificar
+     * @return false si no es igual, true si los objetos son iguales
+     */
+    public boolean equals(Object obj){
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+
+        Recital recital = (Recital) obj;
+
+        if (!Objects.equals(fecha, recital.fecha) && Float.compare(recaudacion, recital.recaudacion) != 0 && Float.compare(costosProduccion, recital.costosProduccion) != 0)
+            return false;
+        else
+            return true;
+    }
+
+    /**
+     * Calcula el valor hash de la canción, basado en los atributos de recital.
+     * <p>
+     * Este valor es utilizado por estructuras como {@link java.util.HashSet} o {@link java.util.HashMap} para realizar comparaciones rápidas
+     * y evitar duplicados.
+     *
+     * @return El valor hash calculado para esta canción.
+     */
+    public int hashCode() {
+        return Objects.hash(fecha, recaudacion, costosProduccion);
     }
 }
