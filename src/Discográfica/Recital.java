@@ -92,11 +92,7 @@ public class Recital implements Serializable {
             return false;
 
         Recital recital = (Recital) obj;
-
-        if (!Objects.equals(fecha, recital.fecha) || Float.compare(recaudacion, recital.recaudacion) != 0 || Float.compare(costosProduccion, recital.costosProduccion) != 0)
-            return false;
-        else
-            return true;
+        return (Objects.equals(fecha, recital.fecha) && Float.compare(recaudacion, recital.recaudacion)==0 && Float.compare(costosProduccion, recital.costosProduccion) == 0);
     }
 
     /**
