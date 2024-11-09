@@ -13,6 +13,15 @@ import java.awt.event.WindowEvent;
 import java.util.TreeMap;
 
 
+/**
+ * Clase de la ventana principal de la Interfaz gráfica
+ * Utiliza la biblioteca swing para generar la interfaz
+ * Extiende de {@link JFrame}
+ *
+ * Esta clase otorga funciones y operaciones de gestion de artistas
+ *
+ * @see JFrame
+ */
 public class Pantalla extends JFrame {   // Hereda de JFrame
 
     private JPanel ventana;
@@ -29,8 +38,16 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
     private JButton discosButton;
     private JButton mostrarDatosButton;
     private JTextArea listadoReferenciaIdArtistas;
+
+    /**
+     * Objeto Gestion en el que se almacena todos los artistas
+     */
     private Gestion gestion;
 
+    /**
+     * Constructor de la clase, inicializa los componentes de la Interfaz Gráfica
+     * @param gestion Objeto de la clase {@link Gestion} que gestiona los datos de los artistas
+     */
     public Pantalla(Gestion gestion) {
         this.gestion = gestion;
         add(ventana);
@@ -61,7 +78,6 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         generoComboBox.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
         generoComboBox2.setModel(new DefaultComboBoxModel<>(GeneroMusical.values()));
 
-
         // Acción del botón facturar
         facturarButton.addActionListener(e -> {
             String identificador = textField1.getText().trim();
@@ -89,31 +105,30 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
 
         });
 
-
+        //Accion del boton de Top 10 Canciones
         top10Button.addActionListener(e -> {
             GeneroMusical generoSeleccionado = (GeneroMusical) generoComboBox2.getSelectedItem();
             mostrarTop10(generoSeleccionado);
         });
 
-
+        //Accion del boton de Discos para listar los discos
         discosButton.addActionListener(e -> {
             String identificador = textField6.getText().trim();
             mostrarUnidadesVendidas(identificador);
         });
 
-
+        //Accion del boton de mostrar Datos
         mostrarDatosButton.addActionListener(e -> {
             try {
                 VentanaDeArtistas venta = new VentanaDeArtistas(gestion.getArtistas());
                 venta.setVisible(true);
                 venta.setLocationRelativeTo(null);
-
             } catch (IllegalArgumentException ex) {
                 JOptionPane.showMessageDialog(this, "No se ha encontrado ese artista");
             }
         });
 
-
+        //Accion del boton de baja de un artista
         bajaButton.addActionListener(e -> {
             String identificador = textField4.getText().trim();
             if(identificador.isEmpty()){
@@ -123,6 +138,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             }
         });
 
+        //Termina el programa al cerrar la ventana principal
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -131,10 +147,22 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         });
     }
 
+    /**
+     * Crea los componentes de la interfaz de usuario.
+     * Este metodo está diseñado para realizar cualquier inicialización o configuración adicional de los componentes gráficos,
+     * como crear componentes personalizados si fuera necesario.
+     */
     private void createUIComponents() {
-        // TODO: place custom component creation code here
     }
 
+    /**
+     * Filtra los artistas según el género musical y la cantidad de integrantes.
+     * Si ambos parámetros no son válidos, se muestra un mensaje indicando que se deben ingresar filtros
+     * Si el filtro es exitoso, se muestra una ventana con los artistas filtrados.
+     *
+     * @param genero El género musical seleccionado
+     * @param cantidadIntegrantes La cantidad de integrantes por la que se filtran los artistas
+     */
     private void filtrarArtistasPorGeneroYIntegrantes(GeneroMusical genero,byte cantidadIntegrantes) {
         if(genero.toString().equals("INGRESE_GENERO") && cantidadIntegrantes==0){
             JOptionPane.showMessageDialog(this, "Ingrese Filtros");
@@ -159,6 +187,13 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         }
     }
 
+    /**
+     * Da de baja a un artista según su ID
+     * Si el artista existe, se elimina y se guarda la lista actualizada de artistas en el archivo.
+     * En caso de que el artista no exista, se muestra un mensaje de error.
+     *
+     * @param identificador El ID del artista que se desea eliminar
+     */
     public void bajaArtista(String identificador){
         try{
             gestion.removeArtista(identificador);
@@ -169,6 +204,13 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         }
     }
 
+    /**
+     * Muestra la liquidación del artista, con los detalles de sus recitales, reproducciones y ventas de discos,
+     * el total recaudado, total destinado a Artista y total destinado a Discográfica
+     * Si el artista no existe, se muestra un mensaje de error
+     *
+     * @param identificador El ID del artista para obtener la información de su liquidación.
+     */
     public void mostrarLiquidacion(String identificador) {
         Artista artista = gestion.filtraArtistaPorID(identificador);
         if(artista!=null){
@@ -188,6 +230,12 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         }
     }
 
+    /**
+     * Muestra el top 10 de canciones más reproducidas dentro de un género musical
+     * Si el género no es válido, se muestra un mensaje de error.
+     *
+     * @param genero El género musical seleccionado.
+     */
     public void mostrarTop10(GeneroMusical genero){
         if(genero.equals(GeneroMusical.INGRESE_GENERO)){
             JOptionPane.showMessageDialog(this, "No se ha ingresado ningun género válido");
@@ -198,6 +246,12 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         }
     }
 
+    /**
+     * Muestra una ventana con la cantidad de discos vendidos por un artista
+     * Si el artista no existe, se muestra un mensaje de error.
+     *
+     * @param identificador El ID del artista para obtener detalles de las unidades vendidas.
+     */
     public void mostrarUnidadesVendidas(String identificador){
         try{
             VentanaListados venta = new VentanaListados(Reportes.unidadesVendidas(identificador,gestion.getArtistas()),"Discos Vendidos");

@@ -4,6 +4,15 @@ import Discográfica.*;
 import javax.swing.*;
 import java.util.TreeMap;
 
+/**
+ * Clase de la ventana que lista Artistas
+ * Utiliza la biblioteca swing para generar la interfaz
+ * Extiende de {@link JFrame}
+ *
+ * Esta clase otorga funciones para mostrar los datos completos de artistas
+ *
+ * @see JFrame
+ */
 public class VentanaDeArtistas extends JFrame {
     private JTextField textField2;
     private JTextField textField4;
@@ -18,6 +27,11 @@ public class VentanaDeArtistas extends JFrame {
     private JTextField textArtista;
     private JButton consultaButton;
 
+    /**
+     * Constructor de la Clase, genera una ventana en la que se muestran los datos completos de los artistas,
+     * teniendo un boton desplegable para seleccionar al artista
+     * @param artistas Mapa con todos los artistas que se quieren listar
+     */
     public VentanaDeArtistas(TreeMap<String, Artista> artistas){
         add(Ventana);
         this.setSize(1600,800);
