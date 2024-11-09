@@ -107,7 +107,6 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
                 VentanaDeArtistas venta = new VentanaDeArtistas(gestion.getArtistas());
                 venta.setVisible(true);
                 venta.setLocationRelativeTo(null);
-                venta.setSize(1500,800 );
 
             } catch (IllegalArgumentException ex) {
                 JOptionPane.showMessageDialog(this, "No se ha encontrado ese artista");
@@ -156,7 +155,6 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
                VentanaDeArtistas venta = new VentanaDeArtistas(artistasFiltrados);
                venta.setVisible(true);
                venta.setLocationRelativeTo(null);
-               venta.setSize(1500,800 );
             }
         }
     }

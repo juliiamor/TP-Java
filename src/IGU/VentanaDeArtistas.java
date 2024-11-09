@@ -20,7 +20,7 @@ public class VentanaDeArtistas extends JFrame {
 
     public VentanaDeArtistas(TreeMap<String, Artista> artistas){
         add(Ventana);
-        this.setSize(1200,800);
+        this.setSize(1600,800);
         String[] identificadores = new String[artistas.size()];
         int i=0;
         for(String id: artistas.keySet()){

@@ -152,11 +152,11 @@ public abstract class Artista implements Serializable {
         StringBuilder listado=new StringBuilder();
         Iterator<Disco> iteratorDiscos = discos.iterator();
         Disco disco;
-        listado.append("----------------------------------------------------------------------------------------------------------------------------" +
+        listado.append("-------------------------------------------------------------------------------------------------------------------------------------------------" +
                 "\n\n");
         while (iteratorDiscos.hasNext()) {
             disco = iteratorDiscos.next();
-            listado.append("  ").append(disco).append("\n----------------------------------------------------------------------------------------------------------------------------\n\n");
+            listado.append("  ").append(disco).append("\n-------------------------------------------------------------------------------------------------------------------------------------------------\n\n");
         }
         return listado.toString();
     }
@@ -170,11 +170,11 @@ public abstract class Artista implements Serializable {
         StringBuilder listado = new StringBuilder();
         Iterator<Recital> iteratorRecitales = recitales.iterator();
         Recital recital;
-        listado.append("----------------------------------------------------------------------------------------------------------------------------" +
-                "\n\n");
+        listado.append("-------------------------------------------------------------------------------------------------------------------------------------------------" +
+                "\n\n  ");
         while (iteratorRecitales.hasNext()) {
             recital = iteratorRecitales.next();
-            listado.append(recital).append("\n\n----------------------------------------------------------------------------------------------------------------------------\n\n");
+            listado.append(recital).append("\n\n-------------------------------------------------------------------------------------------------------------------------------------------------\n\n  ");
         }
         return listado.toString();
     }
