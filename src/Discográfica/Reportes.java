@@ -52,10 +52,10 @@ public abstract class Reportes {
         List<Cancion> top10Canciones = cancionesDelGenero.subList(0, Math.min(10, cancionesDelGenero.size()));
 
         StringBuilder resultado = new StringBuilder();
-        resultado.append("Top 10 canciones del género ").append(genero).append(":\n");
+        resultado.append("Top 10 canciones del género ").append(genero).append(":\n\n");
         for (int i = 0; i < top10Canciones.size(); i++) {
             Cancion cancion = top10Canciones.get(i);
-            resultado.append((i + 1)).append(". ").append(cancion.getNombre()).append(" ").append(cancion.getCantReprodUltMes()).append(" reproducciones\n");
+            resultado.append("\t").append((i + 1)).append(". ").append(cancion.getNombre()).append(" - ").append(cancion.getCantReprodUltMes()).append(" reproducciones\n");
         }
 
         GeneraArchivos.generaArchivoTop10Canciones(genero, resultado.toString());
@@ -76,13 +76,13 @@ public abstract class Reportes {
             Artista artista = artistas.get(identificador);
 
             StringBuilder contenido = new StringBuilder();
-            contenido.append("Reporte de Unidades Vendidas para ").append(artista.getNombre()).append(":\n");
+            contenido.append("Reporte de Unidades Vendidas de ").append(artista.getNombre()).append(":\n\n");
 
             long totalUnidadesVendidas = artista.unidadesDiscosVendidas();
             int cantidadDiscos = artista.cantidadDiscos();
 
             for (Disco disco : artista.getDiscos()) {
-                String discoInfo = "Disco: " + disco.getNombre() + " - Unidades vendidas: " + disco.getUnidadesVendidasUltMes() + "\n";
+                String discoInfo = "Disco: " + disco.getNombre() + "\n\t- Unidades vendidas: " + disco.getUnidadesVendidasUltMes() + "\n";
                 contenido.append(discoInfo);
             }
 

@@ -192,29 +192,17 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
         if(genero.equals(GeneroMusical.INGRESE_GENERO)){
             JOptionPane.showMessageDialog(this, "No se ha ingresado ningun género válido");
         }else{
-            JTextArea textArea = new JTextArea(Reportes.Top10CancionesPorGenero(gestion.filtrarArtistas(genero),genero));
-            textArea.setEditable(false);
-            textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
-
-            JScrollPane scrollPane = new JScrollPane(textArea);
-            scrollPane.setPreferredSize(new Dimension(800,600));
-
-            String titulo = "Top 10 canciones del género "+genero;
-            JOptionPane.showMessageDialog(this,scrollPane,titulo,JOptionPane.INFORMATION_MESSAGE);
+            VentanaListados vent = new VentanaListados(Reportes.Top10CancionesPorGenero(gestion.filtrarArtistas(genero),genero),"TOP 10");
+            vent.setVisible(true);
+            vent.setLocationRelativeTo(null);
         }
     }
 
     public void mostrarUnidadesVendidas(String identificador){
         try{
-            JTextArea textArea = new JTextArea(Reportes.unidadesVendidas(identificador,gestion.getArtistas()));
-            textArea.setEditable(false);
-            textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
-
-            JScrollPane scrollPane = new JScrollPane(textArea);
-            scrollPane.setPreferredSize(new Dimension(800,600));
-
-            String titulo = "Unidades de Discos vendidas en el mes del Artista "+identificador;
-            JOptionPane.showMessageDialog(this,scrollPane,titulo,JOptionPane.INFORMATION_MESSAGE);
+            VentanaListados venta = new VentanaListados(Reportes.unidadesVendidas(identificador,gestion.getArtistas()),"Discos Vendidos");
+            venta.setVisible(true);
+            venta.setLocationRelativeTo(null);
         }
         catch (IllegalArgumentException e){
             JOptionPane.showMessageDialog(this, "El artista ingresado no existe", "Error", JOptionPane.ERROR_MESSAGE);
