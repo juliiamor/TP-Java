@@ -1,7 +1,6 @@
 package Archivos;
 import Discográfica.Artista;
 
-import javax.swing.*;
 import java.io.*;
 import java.util.Iterator;
 import java.util.TreeMap;
