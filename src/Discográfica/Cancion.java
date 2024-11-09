@@ -98,18 +98,7 @@ public class Cancion implements Serializable{
             return false;
 
         Cancion cancion = (Cancion) obj;
-
-        if (!Objects.equals(nombre, cancion.nombre)) {
-            return false;
-        }
-        if (!Objects.equals(duracion, cancion.duracion)) {
-            return false;
-        }
-        if (cantReprodUltMes != cancion.cantReprodUltMes) {
-            return false;
-        }
-
-        return true;
+        return (Objects.equals(nombre, cancion.nombre) && Objects.equals(duracion, cancion.duracion) && cantReprodUltMes==cancion.cantReprodUltMes);
     }
 
     /**
