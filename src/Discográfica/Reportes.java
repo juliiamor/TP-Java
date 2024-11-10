@@ -53,11 +53,13 @@ public abstract class Reportes {
 
         StringBuilder resultado = new StringBuilder();
         resultado.append("Top 10 canciones del género ").append(genero).append(":\n\n");
-        for (int i = 0; i < top10Canciones.size(); i++) {
-            Cancion cancion = top10Canciones.get(i);
-            resultado.append("\t").append((i + 1)).append(". ").append(cancion.getNombre()).append(" - ").append(cancion.getCantReprodUltMes()).append(" reproducciones\n");
-        }
-
+        if(top10Canciones.size() == 0)
+            resultado.append("\t No hay canciones del género seleccionado.");
+        else
+            for (int i = 0; i < top10Canciones.size(); i++) {
+                Cancion cancion = top10Canciones.get(i);
+                resultado.append("\t").append((i + 1)).append(". ").append(cancion.getNombre()).append(" - ").append(cancion.getCantReprodUltMes()).append(" reproducciones\n");
+            };
         GeneraArchivos.generaArchivoTop10Canciones(genero, resultado.toString());
         return resultado.toString();
     }

@@ -199,6 +199,7 @@ public class Pantalla extends JFrame {   // Hereda de JFrame
             gestion.removeArtista(identificador);
             JOptionPane.showMessageDialog(this,"Se ha dado de baja al artista con éxito","Baja Artista",JOptionPane.INFORMATION_MESSAGE);
             ArchivosSerializados.guardarArtistas(gestion.getArtistas());
+            listadoReferenciaIdArtistas.setText(Reportes.muestraListadoArtistasId(gestion.getArtistas()));
         }catch (IllegalArgumentException e){
             JOptionPane.showMessageDialog(this, "El artista ingresado no existe", "Error", JOptionPane.ERROR_MESSAGE);
         }
